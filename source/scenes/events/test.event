@@ -1,5 +1,5 @@
 title: test event
-view-if: year == 1936
+view-if: year = 1936
 frequency: 1000
 max-visits: 1
 
