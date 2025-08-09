@@ -4,6 +4,7 @@ new-page: true
 view-if: year = 1936
 frequency: 1000
 max-visits: 1
+tags: event
 
 = The Schleicher Kabinett has been blown up by Boris Savinkov
 
