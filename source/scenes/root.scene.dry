@@ -20,9 +20,10 @@ go-to: start_menu_2
 on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
+// game start at june 1935, 5 years before 2WK
 Q.time = 1;
-Q.year = 1928;
-Q.month = 1;
+Q.year = 1935;
+Q.month = 6;
 // how many actions have been taken this month?
 Q.month_actions = 0;
 
@@ -46,44 +47,45 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['left', 'center', 'labor', 'reformist', 'neorevisionist'];
+Q.factions = ['jungturken', 'center', 'labor', 'staatspolitiker', 'neorevisionist'];
 // should this be normalized to 100%?
-Q.left_strength = 15;
-Q.left_dissent = 20;
+Q.jungturken_strength = 15;
+Q.jungturken_dissent = 20;
 Q.center_strength = 30;
 Q.center_dissent = 0;
 Q.labor_strength = 25;
 Q.labor_dissent = 5;
-Q.reformist_strength = 25;
-Q.reformist_dissent = 5;
+Q.staatspolitiker_strength = 25;
+Q.staatspolitiker_dissent = 5;
 Q.neorevisionist_strength = 5;
 Q.neorevisionist_dissent = 10;
 
 // secret events...
 Q.unions_independent = 0;
 Q.centrists_resign = 0;
-Q.left_split = 0;
-Q.reformists_resigned = 0;
+Q.jungturken_split = 0;
+Q.staatspolitiker_resigned = 0;
 
 // have we discovered neorevisionism?
 Q.neorevisionism = 0;
 
 // crisis_urgency indicates how seriously the SPD is taking the economic crisis - scale from 0 to 10.
+// to be used for Black Monday instead of Great Depression
 Q.crisis_urgency = 0;
 // nazi_urgency indicates how seriously the SPD takes the nazis - scale from 0 to 10.
+// this will not be used
 Q.nazi_urgency = 0;
 // radicalization indicates how radical the SPD's rhetoric is - scale from 0 to 10.
-Q.radicalization = 0;
+// 5 is the current SPD, 0 represents a reformist people's party, 10 a borderline syndicalist party
+Q.radicalization = 5;
 // Support for the WTB plan and proto-Keynesian works creation plans in general
 Q.wtb_support = 0;
 // Support for Pacifism within the SPD relative to 1928
 Q.pacifism = 0;
 // Support for democratic reform within the SPD relative to 1928
 Q.democratization = 0;
-// Support for a communist coalition relative to 1928
-Q.communist_coalition = 0;
 // economic_plan: have we adopted *any* economic plan?
-// 1 - WTB plan, 2 - AfA-bund plan, 3 - radical plan (mass nationalization of industries)
+// 1 - TB plan, 2 - AfA-bund plan, 3 - radical plan (mass nationalization of industries)
 Q.economic_plan = 0;
 // have we officially adopted the WTB plan?
 Q.wtb_adopted = 0;
@@ -101,17 +103,16 @@ Q.moderate_plan_adopted = 0;
 // organizations
 
 // inter-party relations
-Q.z_relation = 50;
-Q.kpd_relation = 25;
-Q.ddp_relation = 60;
-Q.dvp_relation = 35;
-// DNVP and NSDAP are invariably hostile
-Q.DNVP_relation = 10;
-Q.NSDAP_relation = 0;
+Q.z_relation = 55;
+Q.lvp_relation = 45;
+Q.nlp_relation = 15;
+Q.sp_relation = 25;
+// DkP and DVLP are invariably hostile
+Q.DkP_relation = 10;
+Q.DVLP_relation = 0;
 
-Q.kpd_leader = "Thälmann";
-// alternative is the Conciliators as party leader
-Q.kpd_party_leader = "Thälmann";
+
+// kpd deleted, no more Thälmann
 Q.z_leader = "Brüning";
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
 Q.z_party_leader = "Marx";
@@ -155,8 +156,8 @@ Q.prussian_police_militancy = 1;
 Q.prussian_police_loyalty = 0.5;
 
 // strength includes actual military and de facto reserves?
-Q.reichswehr_strength = 100;
-Q.reichswehr_militancy = 5;
+Q.reichswehr_strength = 700;
+Q.reichswehr_militancy = 1;
 Q.reichswehr_loyalty = 0.2;
 
 // The state of the country
@@ -164,11 +165,11 @@ Q.reichswehr_loyalty = 0.2;
 // popular opinion
 // national ideology - on a binary scale
 // nationalism vs internationalism or pacifism or non-nationalism
-Q.nationalism = 60;
+Q.nationalism = 70;
 // socialism vs capitalism
-Q.socialism = 40;
+Q.socialism = 35;
 // pro-republic vs anti-republic
-Q.pro_republic = 59;
+Q.pro_republic = 55;
 
 Q.emergency_rule = 0;
 
