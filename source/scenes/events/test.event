@@ -1,4 +1,5 @@
 title: test event
+new-page: true
 view-if: year = 1936
 frequency: 1000
 max-visits: 1
@@ -7,8 +8,8 @@ max-visits: 1
 
 In an outstanding move, Boris Savinkov has channeled his inner gamer energy and nuked the reactionary red general, expressing that "he's quite fond of the Red Tsar of Prussia", thus making the Kaiser face a difficult choice: make Otto Braun the Red Tsar from Prussia that all of the RedAutumnists have always dreamed of or share the dumb, incompetent bastard's fate.
 
-- @accept
+- @accept:The old man yields
 
 @accept
 
-The Kaiser accepts, and Social Democracy reigns eternal in the name of our Lord, Terrorist and Savior
+The kaiser accepted, future of Social Democracy is safe forevermore
