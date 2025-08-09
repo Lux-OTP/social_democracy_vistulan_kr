@@ -1,17 +1,15 @@
-title: test event
-subtitle: Pale Horse or something, idk I'm not a professional bomber
+title: schleicher nuked
 new-page: true
-view-if: year = 1936
-frequency: 1000
+view-if: year >= 1935
+tags: events
 max-visits: 1
-tags: event
 
-= The Schleicher Kabinett has been blown up by Boris Savinkov
+= Schleicher Kabinett fucking explodes
 
-In an outstanding move, Boris Savinkov has channeled his inner gamer energy and nuked the reactionary red general, expressing that "he's quite fond of the Red Tsar of Prussia", thus making the Kaiser face a difficult choice: make Otto Braun the Red Tsar from Prussia that all of the RedAutumnists have always dreamed of or share the dumb, incompetent bastard's fate.
+In a surprising turn of events, our lord and savior Boris Savinkov showed up in Berlin today wielding a steel chair, and with the words "I am quite fond of Red Tsar from Prussia" he threw it at the general direction of the decrepit fool Schleicher, obliterating him in a nuclear explosion. Kaiser Wilhelm II has been faced with a difficult choice: make Otto Braun the Red Tsar of Germany or face the second steel chair cast by the vozhd with god's grace
 
-- @accept:The old man yields
+- @old_man_yields: Savinkov saves the day, as always
 
-@accept
+@old_man_yields
 
-The kaiser accepted, future of Social Democracy is safe forevermore
+Kaiser 
