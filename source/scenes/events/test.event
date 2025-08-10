@@ -1,6 +1,6 @@
 title: schleicher nuked
 new-page: true
-view-if: year >= 1935
+view-if: month = 12
 tags: events
 max-visits: 1
 
