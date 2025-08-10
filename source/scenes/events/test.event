@@ -1,6 +1,6 @@
 title: schleicher nuked
 new-page: true
-view-if: month = 12
+view-if: month = 3
 tags: events
 max-visits: 1
 
