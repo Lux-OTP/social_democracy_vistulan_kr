@@ -1,7 +1,7 @@
 title: Test Scene
 subtitle: Test again
 new-page: true
-view-if: year = 1928 and month = 3
+view-if: year = 1935 and month = 6
 max-visits: 1
 tags: event
 
