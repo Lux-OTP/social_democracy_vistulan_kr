@@ -1,8 +1,7 @@
-title: The Death of Hindenburg
-subtitle: The Great War hero and one-time president has died...
+title: Test Scene
+subtitle: Test again
 new-page: true
 view-if: year = 1928 and month = 3
-on-arrival: hindenburg_dead = 1
 max-visits: 1
 tags: event
 face-image: img/Hindenburg_head.jpg
