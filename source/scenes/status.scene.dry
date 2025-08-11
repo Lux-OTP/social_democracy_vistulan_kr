@@ -78,15 +78,15 @@ Economic growth: [+ economic_growth_2 +]%
 
 {!<span class="tooltip-text" title="Center Party">Z</span>!}: [+ z_relation : relationships +]
 
-{!<span class="tooltip-text" title="German Democratic Party">!}[? if not ddp_name: LVP?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ lvp_relation : relationships +]
+{!<span class="tooltip-text" title="Liberal People's Party">LVP</span>!}: [+ lvp_relation : relationships +]
 
-{!<span class="tooltip-text" title="German People's Party">NLP</span>!}: [+ nlp_relation : relationships +]
+{!<span class="tooltip-text" title="Minority Bloc">Minority Bloc</span>!}: [+ minority_bloc_relation : relationships +]
 
-{!<span class="tooltip-text" title="Communist Party of Germany">SP</span>!}: [+ sp_relation : relationships +]
+{!<span class="tooltip-text" title="Socialist Party of Germany">SP</span>!}: [+ sp_relation : relationships +]
 
-{!<span class="tooltip-text" title="German National People's Party">DkP</span>!}: [+ dkp_relation : relationships +]
+{!<span class="tooltip-text" title="German Conservative Party">DkP</span>!}: [+ dkp_relation : relationships +]
 
-{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)">DVLP</span>!}: [+ dvlp_relation : relationships +]
+{!<span class="tooltip-text" title="German Fatherland Party">DVLP</span>!}: [+ dvlp_relation : relationships +]
 
 = Internal Factions of the SPD
 

@@ -72,14 +72,13 @@ Q.neorevisionism = 0;
 // crisis_urgency indicates how seriously the SPD is taking the economic crisis - scale from 0 to 10.
 // to be used for Black Monday instead of Great Depression
 Q.crisis_urgency = 0;
-// nazi_urgency indicates how seriously the SPD takes the nazis - scale from 0 to 10.
-// this will not be used
-Q.nazi_urgency = 0;
+// dvlp_urgency indicates how seriously the SPD takes the far-right - scale from 0 to 10.
+Q.dvlp_urgency = 0;
 // radicalization indicates how radical the SPD's rhetoric is - scale from 0 to 10.
-// 5 is the current SPD, 0 represents a reformist people's party, 10 a borderline syndicalist party
-Q.radicalization = 5;
-// Support for the WTB plan and proto-Keynesian works creation plans in general
-Q.wtb_support = 0;
+// 3 is the current SPD, 0 represents a reformist people's party, 10 a borderline syndicalist party
+Q.radicalization = 3;
+// Support for the TB plan and proto-Keynesian works creation plans in general
+Q.tb_support = 0;
 // Support for Pacifism within the SPD relative to 1928
 Q.pacifism = 0;
 // Support for democratic reform within the SPD relative to 1928
@@ -105,7 +104,7 @@ Q.moderate_plan_adopted = 0;
 // inter-party relations
 Q.z_relation = 55;
 Q.lvp_relation = 45;
-Q.nlp_relation = 15;
+Q.minority_bloc_relation = 15;
 Q.sp_relation = 25;
 // DkP and DVLP are invariably hostile
 Q.dkp_relation = 10;
@@ -115,8 +114,8 @@ Q.dvlp_relation = 0;
 // kpd deleted, no more Thälmann
 Q.z_leader = "Brüning";
 // party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
-Q.z_party_leader = "Marx";
-Q.nsdap_leader = "Hitler";
+Q.z_party_leader = "von Dirksen";
+Q.dvlp_leader = "von Hassell";
 
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 25;
