@@ -108,8 +108,8 @@ Q.lvp_relation = 45;
 Q.nlp_relation = 15;
 Q.sp_relation = 25;
 // DkP and DVLP are invariably hostile
-Q.DkP_relation = 10;
-Q.DVLP_relation = 0;
+Q.dkp_relation = 10;
+Q.dvlp_relation = 0;
 
 
 // kpd deleted, no more Thälmann
@@ -624,10 +624,10 @@ audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
-= 1928
+= 1935
 
-It is a bright time for German democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality. 
+It is a prosperous time for Germany. With our hegemony on the european continent uncontested for over a decade by now, Kaiserreich has cemented itself as the sole master of the world.
 
-Now, the task of Social Democracy is to prepare for the next election. The bourgeois-right government of Wilhelm Marx is unpopular, and we stand to gain. Perhaps the next government will have a socialist majority.
+Despite those successes, the task of Social Democracy is a hard one. The bourgeois-right government of Herbert von Dirksen is unpopular, and we stand to gain... just like the other political forces of the Empire.
 
 
