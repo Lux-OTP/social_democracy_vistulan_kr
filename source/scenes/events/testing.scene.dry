@@ -4,7 +4,6 @@ new-page: true
 view-if: year = 1928 and month = 3
 max-visits: 1
 tags: event
-face-image: img/Hindenburg_head.jpg
 
 = Test Event
 
