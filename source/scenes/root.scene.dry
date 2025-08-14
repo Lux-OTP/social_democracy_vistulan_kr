@@ -173,6 +173,9 @@ Q.pro_republic = 55;
 
 Q.emergency_rule = 0;
 
+//has Schleicher been ousted?
+Q.schleicher_ousted = 0
+
 // minimum percentage of votes to be represented in the Reichstag
 Q.electoral_threshold = 0;
 // constitutional reform level

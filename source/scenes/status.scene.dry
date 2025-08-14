@@ -31,7 +31,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-President: [+ president +]
+Head of State: [+ president +]
 
 Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
@@ -81,6 +81,8 @@ Economic growth: [+ economic_growth_2 +]%
 {!<span class="tooltip-text" title="Liberal People's Party">LVP</span>!}: [+ lvp_relation : relationships +]
 
 {!<span class="tooltip-text" title="Minority Bloc">Minority Bloc</span>!}: [+ minority_bloc_relation : relationships +]
+
+{!<span class="tooltip-text" title="Agrarians">Agrarians</span>!}: [+ agrarians_relation : relationships +]
 
 {!<span class="tooltip-text" title="Socialist Party of Germany">SP</span>!}: [+ sp_relation : relationships +]
 
@@ -180,16 +182,16 @@ Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Workers: SPD: [+ workers_spd_display +]%, Z: [+ workers_z_display +]%, SP: [+ workers_kpd_display +]%, LVP: [+ workers_lvp_display +]%, Minority Bloc: [+ workers_minority_bloc_display +]%; DkP: [+ workers_dkp_display +]%, DVLP: [+ workers_dvlp_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
+Workers: SPD: [+ workers_spd_display +]%, Z: [+ workers_z_display +]%, SP: [+ workers_sp_display +]%, LVP: [+ workers_lvp_display +]%, Minority Bloc: [+ workers_minority_bloc_display +]%;  Agrarians: [+ workers_agrarians_display +]%; DkP: [+ workers_dkp_display +]%, DVLP: [+ workers_dvlp_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 
-New Middle Class: SPD: [+ new_middle_spd_display +]%, Z: [+ new_middle_z_display +]%, SP: [+ new_middle_sp_display +]%, LVP: [+ new_middle_ddp_display +]%, Minority Bloc: [+ new_middle_minority_bloc_display +]%; DkP: [+ new_middle_dkp_display +]%, DVLP: [+ new_middle_dvlp_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
+New Middle Class: SPD: [+ new_middle_spd_display +]%, Z: [+ new_middle_z_display +]%, SP: [+ new_middle_sp_display +]%, LVP: [+ new_middle_ddp_display +]%, Minority Bloc: [+ new_middle_minority_bloc_display +]%; Agrarians: [+ new_middle_agrarians_display +]%; DkP: [+ new_middle_dkp_display +]%, DVLP: [+ new_middle_dvlp_display +]%, Others: [+ new_middle_other_display +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_display +]% ?]
 
-Old Middle Class: SPD: [+ old_middle_spd_display +]%, Z: [+ old_middle_z_display +]%, SP: [+ old_middle_sp_display +]%, LVP: [+ old_middle_ddp_display +]%, Minority Bloc: [+ old_middle_minority_bloc_display +]%; DkP: [+ old_middle_dkp_display +]%, NSDAP: [+ old_middle_dvlp_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
+Old Middle Class: SPD: [+ old_middle_spd_display +]%, Z: [+ old_middle_z_display +]%, SP: [+ old_middle_sp_display +]%, LVP: [+ old_middle_ddp_display +]%, Minority Bloc: [+ old_middle_minority_bloc_display +]%; Agrarians: [+ old_middle_agrarians_display +]%; DkP: [+ old_middle_dkp_display +]%, NSDAP: [+ old_middle_dvlp_display +]%, Others: [+ old_middle_other_display +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_display +]% ?]
 
-Rural: SPD: [+ rural_spd_display +]%, Z: [+ rural_z_display +]%, SP: [+ rural_sp_display +]%, LVP: [+ rural_lvp_display +]%, Minority Bloc: [+ rural_minority_bloc_display +]%; DkP: [+ rural_dkp_display +]%, DVLP: [+ rural_dvlp_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
+Rural: SPD: [+ rural_spd_display +]%, Z: [+ rural_z_display +]%, SP: [+ rural_sp_display +]%, LVP: [+ rural_lvp_display +]%, Minority Bloc: [+ rural_minority_bloc_display +]%; Agrarians: [+ rural_agrarians_display +]%; DkP: [+ rural_dkp_display +]%, DVLP: [+ rural_dvlp_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: SAPD: [+ rural_sapd_display +]% ?]
 
-Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, SP: [+ unemployed_sp_display +]%, LVP: [+ unemployed_lvp_display +]%, Minority Bloc: [+ unemployed_minority_bloc_display +]%; DkP: [+ unemployed_dkp_display +]%, DVLP: [+ unemployed_dvlp_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
+Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, SP: [+ unemployed_sp_display +]%, LVP: [+ unemployed_lvp_display +]%, Minority Bloc: [+ unemployed_minority_bloc_display +]%; Agrarians: [+ unemployed_agrarians_display +]%; DkP: [+ unemployed_dkp_display +]%, DVLP: [+ unemployed_dvlp_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, SP: [+ catholics_sp_display +]%, LVP: [+ catholics_lvp_display +]%, Minority Bloc: [+ catholics_minority_bloc_display +]%; DkP: [+ catholics_dkp_display +]%, DVLP: [+ catholics_dvlp_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, SP: [+ catholics_sp_display +]%, LVP: [+ catholics_lvp_display +]%, Minority Bloc: [+ catholics_minority_bloc_display +]%; Agrarians: [+ catholics_agrarians_display +]%; DkP: [+ catholics_dkp_display +]%, DVLP: [+ catholics_dvlp_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 Support for the Republic: [+ pro_republic_disp +]%
