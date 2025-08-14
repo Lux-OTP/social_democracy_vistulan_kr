@@ -105,6 +105,7 @@ Q.moderate_plan_adopted = 0;
 Q.z_relation = 55;
 Q.lvp_relation = 45;
 Q.minority_bloc_relation = 15;
+Q.agrarians_relation = 15;
 Q.sp_relation = 25;
 // DkP and DVLP are invariably hostile
 Q.dkp_relation = 10;
@@ -226,7 +227,7 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+Q.parties = ['spd', 'sp', 'z', 'lvp', 'minority_bloc', 'dkp', 'dvlp', 'other'];
 
 // TODO: add 'sapd' later on
 Q.sapd_formed = 0;
@@ -234,57 +235,63 @@ Q.sapd_formed = 0;
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
 Q.workers_spd = 60;
-Q.workers_kpd = 20;
+Q.workers_sp = 20;
 Q.workers_z = 5;
-Q.workers_ddp = 0;
-Q.workers_dvp = 0;
-Q.workers_dnvp = 5;
-Q.workers_nsdap = 0;
+Q.workers_lvp = 0;
+Q.workers_minority_bloc = 0;
+Q.workers_agrarians = 0;
+Q.workers_dkp = 5;
+Q.workers_dvlp = 0;
 Q.workers_other = 10;
 
 Q.old_middle_spd = 5;
-Q.old_middle_kpd = 0;
+Q.old_middle_sp = 0;
 Q.old_middle_z = 5;
-Q.old_middle_ddp= 10;
-Q.old_middle_dvp = 25;
-Q.old_middle_dnvp = 25;
-Q.old_middle_nsdap = 10;
+Q.old_middle_lvp = 10;
+Q.old_middle_minority_bloc = 25;
+Q.old_middle_agrarians = 0;
+Q.old_middle_dkp = 25;
+Q.old_middle_dvlp = 10;
 Q.old_middle_other = 10;
 
 Q.new_middle_spd = 5;
-Q.new_middle_kpd = 1;
+Q.new_middle_sp = 1;
 Q.new_middle_z = 10;
-Q.new_middle_ddp= 25;
-Q.new_middle_dvp = 25;
-Q.new_middle_dnvp = 10;
-Q.new_middle_nsdap = 5;
+Q.new_middle_lvp = 25;
+Q.new_middle_minority_bloc = 25;
+Q.new_middle_agrarians = 0;
+Q.new_middle_dkp = 10;
+Q.new_middle_dvlp = 5;
 Q.new_middle_other = 15;
 
 Q.rural_spd = 10;
-Q.rural_kpd = 0;
+Q.rural_sp = 0;
 Q.rural_z = 5;
-Q.rural_ddp= 5;
-Q.rural_dvp = 15;
-Q.rural_dnvp = 45;
-Q.rural_nsdap = 5;
+Q.rural_lvp = 5;
+Q.rural_minority_bloc = 15;
+Q.rural_agrarians = 0;
+Q.rural_dkp = 45;
+Q.rural_dvlp = 5;
 Q.rural_other = 10;
 
 Q.unemployed_spd = 25;
-Q.unemployed_kpd = 55;
+Q.unemployed_sp = 55;
 Q.unemployed_z = 1;
-Q.unemployed_ddp = 0;
-Q.unemployed_dvp = 0;
-Q.unemployed_dnvp = 5;
-Q.unemployed_nsdap = 15;
+Q.unemployed_lvp = 0;
+Q.unemployed_minority_bloc = 0;
+Q.unemployed_agrarians = 0;
+Q.unemployed_dkp = 5;
+Q.unemployed_dvlp = 15;
 Q.unemployed_other = 9;
 
 Q.catholics_spd = 15;
-Q.catholics_kpd = 2;
+Q.catholics_sp = 2;
 Q.catholics_z = 50;
-Q.catholics_ddp = 0;
-Q.catholics_dvp = 5;
-Q.catholics_dnvp = 5;
-Q.catholics_nsdap = 0;
+Q.catholics_lvp = 0;
+Q.catholics_minority_bloc = 5;
+Q.catholics_agrarians = 0;
+Q.catholics_dkp = 5;
+Q.catholics_dvlp = 0;
 Q.catholics_other = 12;
 
 
@@ -295,22 +302,24 @@ Q.catholics_other = 12;
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
 Q.spd_r = 26;
-Q.kpd_r = 9;
+Q.sp_r = 9;
 Q.z_r = 17;
-Q.ddp_r = 6;
-Q.dvp_r = 10;
-Q.dnvp_r = 20;
-Q.nsdap_r = 3;
+Q.lvp_r = 6;
+Q.minority_bloc_r = 10;
+Q.agrarians = 0;
+Q.dkp_r = 20;
+Q.dvlp_r = 3;
 Q.other_r = 9;
 
 // diff from prev
 Q.old_spd_r = 26;
-Q.old_kpd_r = 9;
+Q.old_sp_r = 9;
 Q.old_z_r = 17;
-Q.old_ddp_r = 6;
-Q.old_dvp_r = 10;
-Q.old_dnvp_r = 20;
-Q.old_nsdap_r = 3;
+Q.old_lvp_r = 6;
+Q.old_minority_bloc_r = 10;
+Q.agrarians = 0;
+Q.old_dkp_r = 20;
+Q.old_dvlp_r = 3;
 Q.old_other_r = 9;
 
 // sapd isn't formed yet, but it may be formed
@@ -329,17 +338,18 @@ Q.economic_records = [];
 
 
 // State of the government
-Q.president = "Hindenburg";
-// starting chancellor: Wilhelm Marx
-Q.chancellor = "Marx";
+Q.president = "Kaiser Wilhelm II";
+// starting chancellor: Herbert von Dirksen
+Q.chancellor = "von Dirksen";
 Q.chancellor_party = 'Z';
 Q.spd_in_government = 0;
 Q.z_in_government = 1;
-Q.ddp_in_government = 0;
-Q.dvp_in_government = 1;
-Q.dnvp_in_government = 1;
-Q.kpd_in_government = 0;
-Q.nsdap_in_government = 0;
+Q.lvp_in_government = 0;
+Q.minority_bloc_in_government = 1;
+Q.agrarians_in_government = 0;
+Q.dkp_in_government = 1;
+Q.sp_in_government = 0;
+Q.dvlp_in_government = 0;
 
 Q.in_right_coalition = 0;
 // Weimar coalition = SPD + Z + DDP
@@ -591,11 +601,11 @@ For more information on the politics and government of the German Republic, see 
 - @1928_historical: Begin (historical mode)
 
 @1928_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; sp_relation = 29; z_relation = 54; minority_bloc_relation = 49; budget = 5;
 go-to: 1928_main
 
 @1928_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31; budget = 3;
+on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; sp_relation = 16; minority_bloc_relation = 31; budget = 3;
 go-to: 1928_main
 
 @1928_historical
@@ -611,8 +621,8 @@ Q.left_dissent = 30;
 Q.labor_dissent = 25;
 Q.center_dissent = 25;
 Q.z_relation = 41;
-Q.kpd_relation = 16;
-Q.dvp_relation = 31;
+Q.sp_relation = 16;
+Q.minority_bloc_relation = 31;
 Q.budget = 2;
 this.state.disableSaves = true;
 !}
