@@ -333,8 +333,8 @@ There are some potential coalition arrangements.
 - @no_majority
 - @brauns_dilemma
 - @left_coalition
-// zentrum would never approach syndicalists
-// - @popular_front_coalition
+# zentrum would never approach syndicalists
+# - @popular_front_coalition
 - @right_coalition
 
 # TODO: black-brown coalition
