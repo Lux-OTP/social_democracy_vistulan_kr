@@ -110,7 +110,6 @@ view-if: secularized = 0
 
 Are you sure about this? The Weimar Coalition had an agreement to not touch religious schools; the Catholic Center Party will revolt.
 
-- @secularize_2: Yes, do it.
 - @ed_menu: No, do not touch religious education.
 - @cancel_advisor_action
 
