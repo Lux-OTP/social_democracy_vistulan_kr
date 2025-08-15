@@ -1,0 +1,7 @@
+title: All the placeholders
+view-if: rb_strength >= 0
+tags: event
+
+- @placeholder_option: part of WIP content
+
+@placeholder_option

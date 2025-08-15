@@ -71,13 +71,13 @@ The KPD is not interested in a "toleration" arrangement; they will only support 
 
 @support_kpd_grand
 
-- @election_1928.popular_front_coalition: Form a "Popular Front" coalition?
-- @election_1928.left_coalition
+- @kr_placeholders.placeholder_option: Form a "Popular Front" coalition?
+- @kr_placeholders.placeholder_option
 - @try_assuage: Never mind. We must deal with this some other way.
 
 @support_kpd_weimar
 
-- @election_1928.left_coalition
+- @kr_placeholders.placeholder_option
 - @try_assuage: Never mind. We must deal with this some other way.
 
 
