@@ -12,9 +12,11 @@ max-visits: 12
 
 The SPD cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the SPD, Center, and Democratic parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
-- @liberals: Strengthen our bonds with the left-liberal German Democratic Party and conservative-liberal German People's Party.
-- @center: Strengthen our bonds with the Catholic Center Party.
-- @kpd: Work towards repairing relationships with the Communist Party.
+- @liberals: Strengthen our bonds with the Liberal People's Party.
+- @center: Strengthen our bonds with Zentrum, center-right pro-democratic party.
+- @minority_and_agrarians: Reach out to Minority Bloc and Agrarians, moderately influential in rural and border areas.
+- @kpd: Work towards improving relations with the Socialist Party.
+- @call_for_democracy: Rally democratic parties to form a ruling coalition and abolish Schleicher's government.
 - @spd_alone: The SPD can stand alone for now.
 - @easy_discard
 
@@ -68,50 +70,41 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; z_relation += 2 if z_party_leader == "Joos"
-go-to: center_op if z_in_government = 1 and spd_in_government = 0 and chancellor != "Brüning"; center_coalition if spd_in_government = 1 and z_in_government = 1; center_bruning if chancellor = "Brüning"
+go-to: center_op if z_in_government = 1 and spd_in_government = 0; center_coalition if spd_in_government = 1 and z_in_government = 1
 
 @center_op
 on-arrival: z_relation += 5*(1 - dissent)
 
-We are currently in opposition to the Center-led government, but that does not preclude the general building of feelings of good will.
+We are currently in "permanent opposition" against Zentrum and their allies, making it difficult to mend relations.
 
 @center_coalition
 on-arrival: z_relation += 8*(1 - dissent)
 
 We are currently coalition partners with them, so improving relations comes naturally.
 
-@center_bruning
-on-arrival: z_relation += 5*(1 - dissent)
+@call_for_democracy
+view-if: n_elections <= 1 and schleicher_ousted != 1
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; z_relation += 5*(1 - dissent); lvp_relation += 5*(1 - dissent); minority_bloc_relation += 5*(1 - dissent); agrarians_relation += 5*(1 - dissent)
 
-The Brüning semi-autocratic regime makes building friendly relations difficult, but not impossible.
+Appointment of Schleicher by Wilhelm II has caused turmoil in the parliament, making it easy for us to rally democratic parties of the Reichstag around us.
 
 @liberals
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; ddp_relation += 5*(1 - dissent)
-go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930; dvp_moribound if year > 1930
+on-arrival: resources -= 1; lvp_relation += 5*(1 - dissent)
 
-The [+ ddp_name +] has been one of our closest allies through the course of the Republic.
+The LVP has been one of our closest allies through the course of the Republic.
 
-@dvp_stresemann
-on-arrival: dvp_relation += 8*(1 - dissent)
+Growing opposition against the german democracy makes it easier to reach common ground between our parties.
 
-Gustav Stresemann, the leader of the DVP is the best foreign policy leaders of the republic, and while he has previously expressed monarchist tendencies, he has been friendly towards us.
+@minority_and_agrarians
+on_arrival: minority_bloc_relation += 5*(1 - dissent); agrarians_relation += 5*(1 - dissent)
 
-@dvp_loss
-on-arrival: dvp_relation += 5*(1 - dissent)
-
-With the death of Gustav Stresemann, the DVP is much less likely to be accommodating of us. In addition, the liberal parties are electorally in decline, so perhaps our efforts are best spent elsewhere.
-
-However, given the influence of the DVP among the other right-leaning parties [? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
-
-@dvp_moribound
-on-arrival: dvp_relation += 5*(1 - dissent)
-
-The liberal parties (both the [+ ddp_name +] and DVP) are electorally moribund, so perhaps our efforts are best spent elsewhere.
-
-However, given the influence of the DVP among the other right-leaning parties[? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
+The 
 
 @spd_alone
 

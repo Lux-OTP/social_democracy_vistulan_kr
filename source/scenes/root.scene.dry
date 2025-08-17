@@ -146,6 +146,9 @@ Q.rfb_strength = 130;
 Q.rfb_militancy = 0.5;
 Q.rfb_banned = 0;
 Q.rfb_banned_prussia = 0;
+Q.ruhrkampf_intensity = 0;
+Q.ruhrkampf_strength = 0;
+Q.ruhrkampf_agreement = 0;
 
 Q.interior_police_strength = 50;
 Q.interior_police_militancy = 1;
@@ -410,7 +413,7 @@ Q.panzerkreuzer_failed = 0;
 Q.unemployment_insurance_seen = 0;
 // unemployment insurance event is seen if the unemployment level is at least 4 more than the threshold...
 Q.unemployment_insurance_threshold = 10;
-Q.blutmai = 0;
+Q.ruhrkampf = 0;
 
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = 0;

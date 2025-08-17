@@ -345,13 +345,16 @@ title: Schleicher appointed Reichskanzler!
 subtitle: Grim news for Kaiserreich's democracy.
 unavailable-subtitle: The Red General has wasted his chance. It's Reichstag's turn to act. 
 view-if: n_elections <= 1
-choose-if: n_elections <= 1 and schleicher_ousted != 1 and grand_coalition < 50
+choose-if: n_elections <= 1 and schleicher_ousted != 1 and grand_coalition < 50 and right_coalition < 50
 
 Seeing Reichstag unable to find a sensible majority after the election, [+ president +] has chosen to appoint prussian minister of war, Kurt von Schleicher, to the post of Reichskanzler.
 
 Extremely unpopular within the parliament, the "Red General" will have to maneuvre his way through german politics or face defeat, should a parliamentary force sufficient to abolish his rule emerge in the following months.
 
-- @popular_front_2: Form the Popular Front!
+- @schleicher_theres_nothing_we_can_do: For now, the Reichstag has to accept Kaiser's maneuvering.
+
+@schleicher_theres_nothing_we_can_do
+subtitle: Government will be formed by the Prussian Minister of War.
 
 @popular_front_coalition
 title: A new "Popular Front" coalition?
@@ -436,19 +439,17 @@ The Center manages to diffuse some of the hostility from the Reichswehr and the 
 
 @far_right_coalition
 title: Far-right coalition
-subtitle: NSDAP + DNVP ([+ far_right_coalition +]%)
+subtitle: DkP + DVLP ([+ far_right_coalition +]%)
 view-if: far_right_coalition >= 50
-go-to: far_right_win if (year >= 1932 or dvlp_r >= 44) and president != "Braun"; far_right_fail if (year < 1932 and dvlp_r < 44) and president != "Braun"; far_right_braun if president == "Braun"
+go-to: far_right_win if (year >= 1937 and month >= 5) ; far_right_fail if (year <= 1937 and month )
 priority: 2
 
-There are enough votes for the Nazis and the DNVP to form a coalition. [+ nsdap_leader +] has made his participation in government contingent on being appointed chancellor. It is up to President [+ president +] to decide.
+There are enough votes for the Conservatives and the DVLP to form a coalition. [+ dvlp_leader +] has made his participation in government contingent on being appointed chancellor. It is up to [+ president +] to decide.
 
 @far_right_win
-on-arrival: chancellor = nsdap_leader; chancellor_party = "NSDAP"
+on-arrival: chancellor = dvlp_leader; chancellor_party = "DVLP"
 
-[? if president == "Hindenburg" : President Hindenburg's camarilla ?][? if president == "Braun" : President Braun somehow ?] has decided that [+ nsdap_leader +] must be chancellor [? if president == "Hindenburg": , and the aging president accepts their recommendations. ?][? if president == "Braun" : because it is what the constitution would stipulate. ?]
-
-- @hitler_takes_power: What do we do now?
+[+ president +] has decided that [+ nsdap_leader +] must be chancellor.
 
 
 @far_right_fail
