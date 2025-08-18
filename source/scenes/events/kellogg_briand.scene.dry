@@ -3,16 +3,30 @@ new-page: true
 subtitle: An international treaty for peace
 view-if: year = 1938 and (month = 8 or month = 9)
 max-visits: 1
-on-arrival: kellogg_briand_seen = 1; kellogg_briand_signed = 1 if foreign_minister_party = "DVP"
+on-arrival: kellogg_briand_seen = 1; kellogg_briand_signed = 1 if foreign_minister_party != "SPD"
 tags: event
 #face-image: img/portraits/StresemannGustav.jpg
 
 = Kellogg-Briand Pact
 
-An international treaty has been negotiated which promises deescalation of franco-german tensions. The treaty, negotiated by both great powers' delegations in neutral Copenhagen, promises mutual assurances of good will and a common pursuit of peace. .
+An international treaty has been negotiated which promises deescalation of franco-german tensions. The treaty, negotiated by both great powers' delegations in neutral Copenhagen, promises mutual assurances of good will and a common pursuit of peace. Although many, especially among the military, are highly skeptical of the treaty's efficacy, hopes for a Europe free of war might come a step closer to realisation.
 
+- @sign_treaty: German delegation will sign the treaty, of course.
+- @spd_sign_treaty: German delegation will sign the treaty, of course.
+- @refuse_treaty: The treaty is but a worthless piece of paper
 
-- @sign_treaty: Foreign Minister Breitscheid will sign the treaty, of course.
-- @step_forward
-- @not_enough
+@sign_treaty
+view-if: foreign_minister_party != "SPD"
+Who would want to start another horrible war anyways?
 
+@spd_sign_treaty
+view_if: foreign_minister_party == "SPD"
+on_arrival: jungturken_dissent -= 5; kellogg_briand_signed = 1
+
+As we currently hold the foreign ministry, we sign the treaty without hesitation. The left wing of our party endorses our course of action.
+
+@refuse_treaty
+view_if: foreign_minister_party == "SPD"
+on_arrival: jungturken_dissent += 10; labor_dissent += 5; center_dissent += 5; kellogg_briand_signed = 0
+
+For one reason or another, we refuse to enter any negotiations with syndicalist menace. Many in our party see this as a show of support for a bloody reactionary war against the Commune of France.
