@@ -610,7 +610,7 @@ title: A "Grand Coalition" of all the constitutional parties?
 subtitle: SPD + Z + BVP + LVP + Minority Bloc + Agrarians + Others ([+ neo_weimar_coalition +]%)
 view-if: neo_weimar_coalition >= 50 and grand_coalition < 50
 choose-if: z_relation >= 40 and lvp_relation >= 40 and minority_bloc_relation >= 40 and agrarians_relation >= 40
-unavailable-subtitle: SPD + Z + BVP + LVP + Minority Bloc + Agrarians + Others ([+ neo_weimar_coalition +]%) - [? if z_relation < 40 or lvp_relation < 40 minority_bloc_relation < 40 agrarians_relation < 40 : We do not have suffiecient relations with all potential coalition members ?]
+unavailable-subtitle: SPD + Z + BVP + LVP + Minority Bloc + Agrarians + Others ([+ neo_weimar_coalition +]%) - [? if z_relation < 40 or lvp_relation < 40 or minority_bloc_relation < 40 or agrarians_relation < 40 : We do not have suffiecient relations with all potential coalition members ?]
 
 Although the potential members of this coalition are opposed to a far-right rule, we still have to convince them to join us in the government.
 
