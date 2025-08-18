@@ -622,7 +622,7 @@ Although the potential members of this coalition are opposed to a far-right rule
 title: Use our resources to smooth over the creation of a coalition.
 subtitle: -2 resources
 unavailable-subtitle: Not enough resources (need 2).
-view-if: 
+view-if: z_relation < 55 or lvp_relation < 55 or minority_bloc_relation < 55 or agrarians_relation < 55
 choose-if: resources >= 2
 on-arrival: resources -= 2; spd_in_government = 1; in_grand_coalition = 1; jungturken_dissent += 4;
 
