@@ -20,7 +20,7 @@ What are we to do? On one hand, workers' cause is our own, and turning our back 
 - @ruhr_support: As workers' representatives in the parliament, we'll ensure their voice is heard.
 - @ruhr_join: Worker's struggle can only be won in the factories and on the streets. 
 
-@ruhr-crackdown:
+@ruhr_crackdown:
 subtitle: This will be viewed as betrayal of the working class.
 unavailable-subtitle: Nobody in the party supports this.
 choose-if: radicalization < 4
