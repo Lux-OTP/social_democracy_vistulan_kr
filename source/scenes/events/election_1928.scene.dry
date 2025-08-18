@@ -585,7 +585,7 @@ Even though the DVLP and Center are reluctant to participate in such a coalition
 @no_majority
 title: There is no clear governing majority.
 view-if: weimar_coalition < 50 and grand_coalition < 50 and far_right_coalition < 50 and right_coalition < 50
-choose-if: president != "Hitler" != "Kaiser WIlhelm II" or no_majority_elections <= 3
+choose-if: president != "Kaiser WIlhelm II" or no_majority_elections <= 3
 on-arrival: no_majority_elections += 1
 go-to: no_majority_spd if chancellor_party = "SPD" or chancellor == "Marx"
 
