@@ -17,6 +17,7 @@ An international treaty has been negotiated which promises deescalation of franc
 
 @sign_treaty
 view-if: foreign_minister_party != "SPD"
+
 Who would want to start another horrible war anyways?
 
 @spd_sign_treaty
