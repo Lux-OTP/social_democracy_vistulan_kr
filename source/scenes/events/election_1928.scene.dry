@@ -597,7 +597,7 @@ There is no path to an obviously workable majority. Since President Hindenburg i
 @new_grand_coalition
 title: We can form a "Democratic Union".
 subtitle: SPD + Z + BVP + LVP + Minority Bloc + Agrarians + Others ([+ neo_weimar_coalition +]%)
-view-if: neo_weimar_coalition >= 50 and 
+view-if: neo_weimar_coalition >= 50 and grand_coalition_fail == 1
 choose-if: z_relation >= 40 and lvp_relation >= 40 and minority_bloc_relation >= 40 and agrarians_relation >= 40
 unavailable-subtitle: SPD + Z + BVP + LVP + Minority Bloc + Agrarians + Others ([+ neo_weimar_coalition +]%) - [? if z_relation < 40 or lvp_relation < 40 or minority_bloc_relation < 40 or agrarians_relation < 40 : We do not have suffiecient relations with all potential coalition members. ?]
 
