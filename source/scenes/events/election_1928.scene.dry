@@ -322,7 +322,6 @@ There are some potential coalition arrangements.
 
 @coalition_menu
 
-- @schleicher_appointed
 - @spd_majority
 - @weimar_coalition
 - @grand_coalition
@@ -574,7 +573,7 @@ title: There is no clear governing majority.
 view-if: weimar_coalition < 50 and grand_coalition < 50 and far_right_coalition < 50 and right_coalition < 50
 choose-if: president != "Kaiser WIlhelm II" or no_majority_elections <= 3
 on-arrival: no_majority_elections += 1
-go-to: no_majority_spd if chancellor_party = "SPD" or chancellor == "Marx"
+go-to: no_majority_spd if chancellor_party = "SPD" or chancellor == "Marx"; schleicher_appointed if n_elections <= 1
 
 # TODO: if there is an anti-democratic coalition majority, you should appoint Papen.
 
@@ -587,6 +586,23 @@ There is no path to an obviously workable majority. Since President Hindenburg i
 
 - @new_elections: We will have new elections.
 - @new_grand_coalition: We will attempt to form a Grand Coalition.
+
+@schleicher_appointed
+title: Schleicher appointed Reichskanzler!
+subtitle: Military camarilla has turned against german democracy.
+unavailable-subtitle: [? if schleicher_ousted == 1 : The Red General has wasted his chance. It's Reichstag's turn to act. ?]
+view-if: n_elections <= 1 and (right_coalition < 50 or grand_coalition < 50)
+choose-if: n_elections <= 1 and schleicher_ousted != 1 and grand_coalition < 50 and right_coalition < 50
+
+Seeing Reichstag unable to find a sensible majority after the election, [+ president +] has chosen to appoint prussian minister of war, Kurt von Schleicher, to the post of Reichskanzler.
+
+Extremely unpopular within the parliament, the "Red General" will have to maneuvre his way through german politics or face defeat, should a parliamentary force sufficient to abolish his rule emerge in the following months.
+
+- @schleicher_theres_nothing_we_can_do: For now, the Reichstag has to accept Kaiser's maneuvering.
+
+@schleicher_theres_nothing_we_can_do
+subtitle: Government will be formed by the Prussian Minister of War.
+on-arrival: spd_in_government = 0; workers_spd += 3; unemployed_spd += 3; new_middle_dvlp += 3; old_middle_dvlp += 3; chancellor = "Schleicher"; chancellor_party = "Kaiser's Government"; foreign_minister_party = "Z"; interior_minister_party = "I"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "LVP"; finance_minister_party = "LVP"; agriculture_minister_party = "Z"
 
 
 # - if NSDAP is the largest party and the 
@@ -648,7 +664,7 @@ We have assembled a new coalition under Otto Braun.
 view-if: z_party_leader = "Joos"
 choose-if: president == "Braun"
 unavailable-subtitle: President Hindenburg will not support a minority government led by Joseph Wirth.
-on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 0; spd_toleration = 1; z_relation += 5; foreign_minister_party = "DVP"; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "DVP"; agriculture_minister_party = "Z"; pro_republic -= 2;
+on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 0; spd_toleration = 1; z_relation += 5; foreign_minister_party = "DVP"; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "DVP"; agriculture_minister_party = "Z"; pro_republic -= 2
 
 We have supported a minority government led by the Center Party under Chancellor Joseph Wirth.
 
@@ -813,7 +829,7 @@ go-to: grand_coalition_spd_lead if (radicalization < 6 and largest_party == "SPD
 # if SPD is the largest party and they're not too radical, they will lead; otherwise Zentrum leads
 
 @grand_coalition_z_lead
-go-to: grand_coalition_z_lead_2 if lvp_relation >= 30; grand_coalition_fail if lvp_relation < 30
+go-to: grand_coalition_z_lead_2
 
 There are enough votes to form a majority coalition consisting of the SPD, Center (Z), Bavarian People's (BVP), Liberal (LVP), minority and agrarian parties. Given our rather weak electoral performance, [? if spd_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_spd = 1 : and the vote of no confidence against us, ?] [+ president +] has asked the Center Party to take the lead role in forming a government.
 
