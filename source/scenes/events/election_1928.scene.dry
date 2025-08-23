@@ -855,6 +855,7 @@ If we do not at least "tolerate" the government, there will be new elections in 
 
 
 @new_elections
+title: We will have new elections
 on-arrival: {!
 Q.next_election_month = Q.month + 3;
 Q.next_election_time = Q.time + 3;
