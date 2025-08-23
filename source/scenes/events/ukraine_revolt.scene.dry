@@ -1,0 +1,17 @@
+title: Hetman Skoropadskiy flees Ukraine.
+subtitle: Reichspakt is falling apart...
+view-if: year >= 1937 and month > 7 and month < 10 and ostwall_loyalty <= 0.45
+max-visits: 1
+on-arrival: ostwall_militancy -= 0.1; ostwall_strength -= (1/3*ostwall_strength); ostwall_loyalty -= 0.05; ukraine_revolt = 1
+go-to: petliura_takeover
+
+Shocking news reach us from the east: Ukraine, the largest and most vital of our Oststaats, has just overthrown its pro-german hetman and in a popular revolt.
+
+His authoritarian rule paired with ripples of black monday has led to the general public openly protesting against blatant german control over the country and curtailment of civil liberties. Lackluster response, hindered by most of state apparatus siding with the protesters, led to hetman and his closest associates leaving the country for Berlin.
+
+@petliura_takeover
+title: Petliura takes control
+
+Social democratic party of Ukraine, led by Symon Petliura, has managed to established control over the newly independent country and, facing threat of possible russian invasion, hastily reached out to Vienna for protection.
+
+Although Ukraine is still vehemently opposed to the Russian State, any hopes economic or military cooperation with them are now lost.

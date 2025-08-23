@@ -169,6 +169,10 @@ Q.ostwall_strength = 400;
 Q.ostwall_militancy = 0.05;
 Q.ostwall_loyalty = 0.2;
 Q.kriegsmarine_militancy = 0.05;
+// checks whether Oststaats have revolted against RP
+Q.ukraine_revolt = 0;
+Q.belarus_revolt = 0;
+Q.baltic_revolt = 0;
 
 // The state of the country
 
@@ -247,65 +251,65 @@ Q.sapd_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_spd = 60;
-Q.workers_sp = 20;
-Q.workers_z = 5;
-Q.workers_lvp = 0;
-Q.workers_minority_bloc = 0;
-Q.workers_agrarians = 0;
-Q.workers_dkp = 5;
-Q.workers_dvlp = 0;
-Q.workers_other = 10;
+Q.workers_spd = 40;
+Q.workers_sp = 0;
+Q.workers_z = 7;
+Q.workers_lvp = 4;
+Q.workers_minority_bloc = 8;
+Q.workers_agrarians = 1;
+Q.workers_dkp = 8;
+Q.workers_dvlp = 15;
+Q.workers_other = 6;
 
-Q.old_middle_spd = 5;
+Q.old_middle_spd = 3;
 Q.old_middle_sp = 0;
-Q.old_middle_z = 5;
-Q.old_middle_lvp = 10;
-Q.old_middle_minority_bloc = 25;
+Q.old_middle_z = 12;
+Q.old_middle_lvp = 30;
+Q.old_middle_minority_bloc = 8;
 Q.old_middle_agrarians = 0;
 Q.old_middle_dkp = 25;
-Q.old_middle_dvlp = 10;
-Q.old_middle_other = 10;
+Q.old_middle_dvlp = 15;
+Q.old_middle_other = 5;
 
 Q.new_middle_spd = 5;
-Q.new_middle_sp = 1;
+Q.new_middle_sp = 0;
 Q.new_middle_z = 10;
 Q.new_middle_lvp = 25;
-Q.new_middle_minority_bloc = 25;
+Q.new_middle_minority_bloc = 8;
 Q.new_middle_agrarians = 0;
 Q.new_middle_dkp = 10;
-Q.new_middle_dvlp = 5;
-Q.new_middle_other = 15;
+Q.new_middle_dvlp = 35;
+Q.new_middle_other = 7;
 
-Q.rural_spd = 10;
+Q.rural_spd = 8;
 Q.rural_sp = 0;
 Q.rural_z = 5;
-Q.rural_lvp = 5;
-Q.rural_minority_bloc = 15;
-Q.rural_agrarians = 0;
-Q.rural_dkp = 45;
-Q.rural_dvlp = 5;
-Q.rural_other = 10;
+Q.rural_lvp = 4;
+Q.rural_minority_bloc = 10;
+Q.rural_agrarians = 15;
+Q.rural_dkp = 25;
+Q.rural_dvlp = 9;
+Q.rural_other = 6;
 
 Q.unemployed_spd = 25;
-Q.unemployed_sp = 55;
-Q.unemployed_z = 1;
+Q.unemployed_sp = 0;
+Q.unemployed_z = 3;
 Q.unemployed_lvp = 0;
-Q.unemployed_minority_bloc = 0;
-Q.unemployed_agrarians = 0;
-Q.unemployed_dkp = 5;
-Q.unemployed_dvlp = 15;
-Q.unemployed_other = 9;
+Q.unemployed_minority_bloc = 8;
+Q.unemployed_agrarians = 2;
+Q.unemployed_dkp = 14;
+Q.unemployed_dvlp = 30;
+Q.unemployed_other = 7;
 
 Q.catholics_spd = 15;
-Q.catholics_sp = 2;
+Q.catholics_sp = 0;
 Q.catholics_z = 50;
-Q.catholics_lvp = 0;
-Q.catholics_minority_bloc = 5;
-Q.catholics_agrarians = 0;
-Q.catholics_dkp = 5;
-Q.catholics_dvlp = 0;
-Q.catholics_other = 12;
+Q.catholics_lvp = 3;
+Q.catholics_minority_bloc = 15;
+Q.catholics_agrarians = 3;
+Q.catholics_dkp = 10;
+Q.catholics_dvlp = 6;
+Q.catholics_other = 8;
 
 
 // Current Reichstag composition
@@ -315,7 +319,7 @@ Q.catholics_other = 12;
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
 Q.spd_r = 26;
-Q.sp_r = 9;
+Q.sp_r = 0;
 Q.z_r = 17;
 Q.lvp_r = 6;
 Q.minority_bloc_r = 10;
