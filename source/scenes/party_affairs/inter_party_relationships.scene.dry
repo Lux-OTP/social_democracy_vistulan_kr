@@ -83,7 +83,7 @@ on-arrival: z_relation += 8*(1 - dissent)
 We are currently coalition partners with them, so improving relations comes naturally.
 
 @call_for_democracy
-view-if: n_elections <= 1 and schleicher_ousted != 1
+view-if: n_elections <= 1 and schleicher_ousted != 1 and chancellor = "Schleicher"
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
