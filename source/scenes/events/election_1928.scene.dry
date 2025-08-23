@@ -457,7 +457,6 @@ President Braun faces a dilemma. Is it "democratic" to let democracy be destroye
 
 Alternatively, Braun could use the emergency powers of the presidency. Article 48 has been used by Hindenburg to promulgate anti-democratic and anti-worker policies; can Article 48 be used for good as well as evil?
 
-- @emergency_braun: We will form an emergency government with Braun's support.
 - @new_elections: We will have new elections.
 - @far_right_win: Let the Nazis form their government.
 
@@ -632,7 +631,6 @@ Now, we have a new "Democratic Union", with support of the minor government part
 
 Who should be chancellor?
 
-- @join_bruning: For better or for worse, it must be Heinrich Brüning of the Center.
 - @muller_chancellor_new: Otto Braun for Chancellor?
 
 @muller_chancellor_new
@@ -643,7 +641,6 @@ go-to: ministries
 
 We have assembled a new coalition under Otto Braun.
 
-- @brauns_dilemma
 - @toleration_wirth: We will tolerate a minority government led by Joseph Wirth.
 - @new_elections: There will be new elections.
 
@@ -855,8 +852,6 @@ By refusing to join the grand coalition or tolerating it, we essentially throw t
 
 If we do not at least "tolerate" the government, there will be new elections in a few months. In the meantime, the President and Chancellor may use the emergency powers granted by Article 48 of the constitution to essentially govern by decree. And it is not at all clear that we will do any better in the next election.
 
-- @join_bruning: Join the Brüning coalition.
-- @brauns_dilemma
 - @new_elections: New elections, it is!
 
 
@@ -929,8 +924,7 @@ on-arrival: grand_coalition_failed = 1
 Unfortunately, the DVP and BVP are unwilling to enter into another coalition with the SPD, so the grand coalition is unable to be formed.
 
 - @no_majority: Thus, there is no clear majority.
-- @brauns_dilemma
-- @right_coalition_2: Perhaps a right-wing coalition may form.
+- @right_coalition: Perhaps a right-wing coalition may form.
 - @coalition_menu: What are the other governing arrangements?
 
 
@@ -1036,11 +1030,11 @@ go-to: no_govt_2
 
 @no_govt_2
 on-arrival: reformist_dissent += 25; center_dissent += 10; labor_dissent += 25; neorevisionist_dissent += 25; in_weimar_coalition = 0; in_grand_coalition = 0; chancellor = "Brüning" if chancellor == "Marx"; spd_in_government = 0; grand_coalition_failed = 1
-go-to: right_coalition_post_spd if right_coalition >= 50 and president != "Braun" and year < 1929; new_elections_spd if (right_coalition < 50 or year >= 1929) and president != "Braun"; brauns_dilemma if president == "Braun"
+go-to: right_coalition_post_spd if right_coalition >= 50 and president != "Braun" and year < 1929; new_elections_spd if (right_coalition < 50 or year >= 1929) and president != "Braun"
 
 
 @right_coalition_post_spd
-go-to: right_coalition_2
+go-to: right_coalition
 
 @new_elections_spd
 on-arrival: next_election_time = time+3; next_election_month = month + 3; next_election_year = year; next_election_year = year + 1 if next_election_month > 12; next_election_month = next_election_month - 12 if next_election_month > 12; new_middle_spd -= 5; old_middle_spd -= 5; workers_spd -= 3; catholics_spd -= 3; in_election = 1
