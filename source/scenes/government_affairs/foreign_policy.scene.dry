@@ -6,7 +6,7 @@ on-arrival: month_actions += 1; foreign_policy_timer += 8
 view-if: spd_in_government = 1 and foreign_minister_party = "SPD" and  foreign_policy_timer <= 0
 card-image: img/portraits/BreitscheidRudolf.jpg
 go-to: fp_menu
-#subtitle: International relations and dealing with Versailles.
+#subtitle: Even Master of the World must thread a narrow path.
 
 = Foreign Policy
 
@@ -14,17 +14,18 @@ What should our foreign policy priority be?
 
 @fp_menu
 
+//Oststaats
 - @improve_west
 - @improve_east
+//entente
 - @improve_soviet
+//mitteleuropa
 - @customs_union
 - @negotiate
 - @reduce_reparations
 - @expose
 - @european_union
 - @european_union_2
-- @concordat_negotiate
-- @concordat
 - @support_austria
 - @support_austria_2
 - @root: Do not enact any policies for now.
@@ -32,10 +33,24 @@ What should our foreign policy priority be?
 - @cancel_advisor_action
 
 @improve_west
-title: Improve our relations with the Western Allies.
-on-arrival: west_relation += 2; reparations_negotiation += 1
+title: Improve our relations with the Oststaats.
+choose-if: budget >= 1
+unavailable-subtitle: We don't have enough budget.
 
-The key to peace in Europe is a rapproachment between France and Germany. We are taking steps towards that rapproachment. [? if young_plan_seen == 0 : This is difficult to do when France is occupying a major portion of Germany's territory, but we are working on that part. ?]
+While powerful, *Heer* cannot handle another two front war alone. For that reason we must aid the development of eastern european militaries and strengthen their german-aligned leadership.
+
+- @ostwall_improve_military: Ensure military readiness of the Oststaats.
+- @ostwall_improve_government: Combat growing anti-german sentiment.
+
+@ostwall_improve_military
+on-arrival: ostwall_strength += 50; ostwall_militancy += 0.05; budget -= 1
+
+We make sure that our slavic and baltic allies are as prepared for a new war as we are, providing arms shipments, encouraging german military industrial organizations to increase their local investments and sharing doctrinal advancements with regional high commands. 
+
+@ostwall_improve_government
+on-arrival: ostwall_strength += 10; ostwall_loyalty += 0.05; budget -= 1
+
+We send resources to german-aligned political movements and provide economic aid to struggling eastern industries, as well as expand local security services, ensuring their allegiance to the Reichspakt.
 
 @improve_east
 title: Improve our relations with our eastern neighbors.
@@ -44,75 +59,95 @@ on-arrival: east_relation += 2;
 We also aim to improve relations with our eastern neighbors, Poland and Czechoslovakia, who are righfully terrified of German aggression. Hopefully we can convince them of our peaceful intentions.
 
 @improve_soviet
-title: Improve our relations with the Soviet Union.
-subtitle: We could also broach the question of the KPD...
+title: Improve our relations with the Entente.
 
-The Soviet Union also suffered from the international order created by the Treaty of Versailles; they have been participating in our secret rearmament program. The Treaty of Rapallo in 1922 affirmed our friendly relations.
+The Entente massively suffered from the international order created by the Treaty of Versailles; they have long been plotting revenge for what they see as ruining european order. However, in the face of common syndicalist threat it'd be wise to mend our relations.
 
-The Soviets are asking for economic and developmental assistance. They are still a poor country on the whole, and are desperately trying to catch up to the western powers. There is a chance that our anti-communist coalition partners would be upset, but we could assuage them by asking the Soviets for secret assistance in training and equiping the Reichswehr.
+The exiles are asking for economic and developmental assistance. They are a shadow of their former strength, and are desperately trying to remain relevant. We could use them to relieve pressure off of our western flank in case of a new conflict.
 
-- @soviet_economic_aid_yes_mil: Provide aid, in exchange for Reichswehr assistance.
-- @soviet_economic_aid_yes: Provide aid, in exchange for only good relations.
-- @soviet_economic_aid_no: Don't provide aid.
+- @soviet_economic_aid_yes_mil: Provide aid, in exchange for cooperation in the colonies.
+- @soviet_economic_aid_yes: Provide aid, in exchange for naval assistance.
+- @soviet_economic_aid_no: Offer renegotiating the Treaty of Versailles in exchange for military obligations.
 
 @soviet_economic_aid_yes_mil
+view-if: west_relation >= 1
 choose-if: budget >= 1
 subtitle: -1 budget
-on-arrival: budget -= 1; soviet_relation += 1; reichswehr_militancy += 0.2; reichswehr_loyalty += 0.05; foreign_goal_completed += 1
+on-arrival: budget -= 1; reichswehr_strength += 100; west_relation += 1; foreign_goal_completed += 1
 
-The Soviets are pleased that we have sent them aid, and have agreed to help train our military. The Reichswehr appreciates our support.
+The Entente is pleased that we have sent them aid, and in return agrees to assist our colonial management while we're handling our continental matters.
 
 @soviet_economic_aid_yes
+view-if: west_relation >= 1
 choose-if: budget >= 1
 subtitle: -1 budget
-on-arrival: budget -= 1; soviet_relation += 2; coalition_dissent += 1; foreign_goal_completed += 1
+on-arrival: budget -= 1; ; kriegsmarine_militancy += 0.05; west_relation += 1; foreign_goal_completed += 1
 
-The Soviets are pleased that we have sent them aid, and have not asked for anything specific in exchange. Our coalition partners are less pleased.
-
-- @kpd: Ask if Moscow could help repair our relations with the KPD.
-- @wittorf: Do the Soviets know about the Wittorf Affair? Do they know that we know?
-- @root: Do not mention the KPD.
+The Entente is pleased that we have sent them aid, and agrees to share shipbuilding and naval tactics expertise.
 
 @soviet_economic_aid_no
 
-The Soviets are slightly upset, but they seemed to expect this answer.
+French and british people are still furious for what they see as a humiliating treaty, making any attempts at reconciliation futile for as long as we don't settle this issue. If any cooperation is to be had, we must make some concessions.
 
+- @halifax_buildup: Allow for minor concessions.
+- @halifax_sign: We can formulate a treaty normalising Entente-Reichspakt relations.
 
-@kpd
-on-arrival: kpd_relation += 8*(1-dissent); communist_coalition += 1 if kpd_foreign_seen == 0; kpd_foreign_seen = 1
+@halifax_buildup
+view-if: west_relation <= 1
+on-arrival: west_relation += 1; reichswehr_loyalty - 0.05; old_middle_spd -= 3; new_middle_spd -= 3
 
-We also mention the KPD in our conversations with the Soviet ambassador. They claim that the KPD is entirely independent of the Soviet government, and that the conflict is Thälmann's doing. But, soon after our conversation we notice a slight improvement in attitudes from the KPD.
+We renegotiate minor points of the treaty of Versailles to ease Entente tensions, showing our old foes we're willing to cooperate. Some of our countrymen decry this as selling out the hard won victory in the Weltkrieg.
 
-@wittorf
-view-if: wittorf_secret = 1 and ((year = 1929 and month < 6) or year = 1928) and wittorf_soviet_union = 0
-unavailable-subtitle: It is impossible that Stalin and the Comintern could be moved on their policy.
-on-arrival: wittorf_soviet_union = 1; kpd_relation += 6*(1-dissent); kpd_foreign_seen = 1
-max-visits: 1
+@halifax_sign
+view-if: west_relation > 2
+unavailable-subtitle: Our political position doesn't allow for such a move
+choose-if: in_weimar_coalition == 1 or in_spd_majority == 1
+on-arrival: west_relation += 2; new_middle_spd -= 5; old_middle_spd -= 5; workers_spd -= 3; unemployed_spd -= 3; jungturken_dissent += 5; coalition_dissent += 1
 
-Of course Stalin and the various leaders of the Comintern know about the Wittorf Affair, but they do not seem to know that we know as well. The Comintern was planning to build a narrative around the affair that absolves Thälmann, but perhaps now they will be less inclined to defend him.
+We approach Entente leadership with the final proposition to completely reformulate the Treaty of Versailles, turning it from an act of german supremacy into a groundwork for european cooperation. Unfortunately, this requires us to touch on the question of Elsass-Lothringen.
 
+The negotiations are tense, but in the end both sides reach a satisfying conclusion: both sides will work together to abolish syndicalist rule in Europe, and upon succeeding rightful british and french governments will be reinstated in their mainlands with german aid.
+
+In return, France will drop its claims to the disputed border territories, while Germany will respect the rights of ethnic minorities in its western territories.
+
+[? if year < 1938: Majority of Germans still see the Third Internationale as weak, unstable countries which can't hope to threaten german hegemony. As such our move is seen as a sign of weakness and lack of touch of socialist politicians. ?]
 
 @customs_union
-title: Form a customs union with Austria?
-subtitle: This will likely incur the wrath of France.
-unavailable-subtitle: This is superseded by the European Union.
-choose-if: eu = 0
-view-if: black_thursday_seen = 1 and customs_union = 0
+title: Administrating Mitteleuropa.
+view-if: black_thursday_seen = 1 and mitteleuropa < 3
 
-The right has long desired closer ties with Austria, with the eventual goal of the merger of the two German-speaking countries. A customs union with Austria is the first step towards this goal. Additionally, many believe that a union with Austria would improve our current economic circumstances.
+Our hegemony over Europe doesn't limit itself to military might: Mitteleuropa, the economic union encompassing our continent from Dublin to Istanbul and from Madrid to Helsinki is the key to economic prosperity of the Empire. With the Black Monday wrecking havoc among european markets, many participants have limited their participation in our customs union in order to salvage their faltering economies.
 
-However, the Allies, especially France, are likely to object. This agreement would break the terms of the Versailles Treaty, and could lead to economic sanctions, further hurting our economy.
+We must try and turn this tendency around, for the sooner we rebuild the international cooperation to the 1935 levels, the quicker all of Europe will recover.
 
-- @customs_union_2: Yes, do it!
-- @fp_menu: No, we should do something else.
+- @mitteleuropa_1: Urge national governments of the union to limit protectionist practices.
+- @mitteleuropa_2: Encourage international investments and push for rapid infrastructural integration.
+- @mitteleuropa_3: Call for turning Mitteleuropa into an autonomous, pluralist international institution.
 
-@customs_union_2
-on-arrival: banking_crisis_timer = 2; customs_union = 1; west_relation -= 2; east_relation -= 2; z_relation += 6; dvp_relation += 6; coalition_dissent -= 1 if coalition_dissent > 0; coup_progress -= 1
-max-visits: 1
+@mitteleuropa_1
+# TODO add rewards for utilizing mitteleuropa
+on-arrival: mitteleuropa += 1; lvp_relation += 5*(1-dissent); minority_bloc_relation += 3*(1-dissent); agrarians_relation -= 3; staatspolitiker_dissent -= 5; labor_dissent -= 5
+view-if: mitteleuropa == 0
 
-We have formed a customs union with Austria! The right-wing parties are praising us for this unexpected turn of events.
+As the leaders of Mitteleuropa, it's our duty to maintain economic stability of the entire union. We can't achieve it without cooperation from the other member states.
 
-Immediately, France and other neighboring countries lodge their protests. The longer-term response is yet to be seen.
+We rail against raising tariffs and urge our partners to bail out faultering banks and industries. Many resist this motion, many ignore it, but the chaos on international markets appears to be slowing down.
+
+Our efforts are widely appreciated, however agrarian parties object to increased competition from the east. 
+
+@mitteleuropa_2
+# TODO on-arrival
+view-if: mitteleuropa == 1
+on-arrival: mitteleuropa += 1; lvp_relation += 5*(1-dissent); minority_bloc_relation += 3*(1-dissent); agrarians_relation -= 3; staatspolitiker_dissent -= 5; labor_dissent -= 5
+
+WIP we encourage massive infrastructural projects connecting member states and advocate for further lowering restrictions on international trade
+
+@mitteleuropa_3
+# TODO on-arrival
+view-if: mitteleuropa == 2
+on-arrival: mitteleuropa += 1; lvp_relation += 5*(1-dissent); minority_bloc_relation += 3*(1-dissent); agrarians_relation -= 3; staatspolitiker_dissent -= 5; labor_dissent -= 5
+
+WIP in order to fully utilize the potential of Mitteleuropa, we must give it unprecedented prerogatives, allowing it to coordinate economic processes of the entire continent without relying on our actions
 
 
 @negotiate
@@ -163,11 +198,11 @@ achievement: reichskonkordat
 We have successfully signed a Concordat between Germany and the Roman Catholic Church! This treaty defines a formal relationship between the Church and the German state, guaranteeing freedom of worship for Catholics, and the right of the church to appoint their own clergy. Catholics in Germany are pleased, as are their representatives in the Center Party.
 
 @support_austria
-title: Diplomatically support Austrian democracy against the Dollfuß dictatorship.
-view-if: austrian_parliament_seen = 1 and austrian_civil_war_seen = 0
+title: Bolster ties with Austria.
+view-if: austrian_civil_war_seen = 0
 on-arrival: sdapo_strength += 1; left_dissent -= 3; center_dissent -= 3
 
-We provide verbal backing to Austrian democracy, wage a war of words against Austrofascism, and promulgate additional trade sanctions. Time will tell if it will be enough.
+We improve our relations with the government in Vienna
 
 @support_austria_2
 title: Provide material support to Austrian democracy against the Dollfuß dictatorship.

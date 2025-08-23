@@ -1,7 +1,7 @@
-title: Suspension of the Austrian parliament
+title: Austrian Election
 new-page: true
-subtitle: Our southern neighbor is sliding into dictatorship.
-view-if: year = 1933 and (month = 3 or month = 4) and ((spd_in_government and foreign_minister_party = "SPD") or (austria_relation >= 1))
+subtitle: Our southern neighbor is torn between two opposites.
+view-if: year = 1936 and month >= 3
 max-visits: 1
 on-arrival: austrian_parliament_seen = 1
 face-image: img/Dollfuss.jpg
@@ -9,46 +9,44 @@ tags: event
 
 # Must control foreign ministry or have made contact with Austrian socialists.
 
-= Suspension of the Austrian Parliament
+= Austrian 1936 election
 
-Due to a controversial proposal regarding a railroad strike in the Austrian National Council, all three presidents of the National Council resigned, leaving it without any presiding officers. This is a constitutional crisis. Austrian chancellor Engelbert Dollfuß has taken advantage of this crisis by suspending the parliament and ruling by emergency decree, forming an "Austrofascist" government. Dollfuß consolidates his power by persecuting his political opponents, especially our fellow Social Democrats in the SDAPÖ (Social Democratic Worker's Party of Austria).
+Weakened by the infamous *Creditanstalt* crisis and now faced with Black Monday, Austria is now facing a fateful election which might determine the very existence of her empire.
 
 Is there anything we could do?
 
-# - use EU to sanction Austria (will prevent civil war and restore democracy)
-# - apply diplomatic pressure to Austria (without EU)
-# - fund the Schutzbund
-# after this, supporting Austrians will raise sdapo_strength; if sdapo_strength >= 2, they'll enter a long civil war; if sdapo_strength >= 5, they'll win.
+# - voice support for SDAPO in a show of international Social Democratic unity, but don't use resources 
+# - if we control foreign ministry, coordinate european social democratic parties in a show of unity, slightly hurts relations
+# - send resources to SDAPO 
 
-- @eu_sanctions: Call upon the European Union to sanction Austria, unless the National Council is restored.
-- @diplomatic_pressure: Apply diplomatic pressure to Austria to restore the National Council.
+- @eu_sanctions: Engage in limited shows of support for SDAPÖ, but don't take any radical steps.
+- @diplomatic_pressure: Call for .
 - @fund_schutzbund: Support the SDAPÖ's underground organizing.
 - @nothing: Nothing can be done.
 
 @eu_sanctions
-view-if: eu = 1
-on-arrival: sdapo_strength += 3; sdapo_strength += 1 if customs_union; eu_austria = 1
 
-The European Union is a largely untested body, and from the beginning contained members that are at best quasi-democratic. Most of its members are more concerned by power politics than democratic values. However, as its founder, Germany holds a special influence in the EU, and we manage to persuade the other members to join in the pressure against Austrofascism.
+We limit ourselves to calls to support austrian Social Democrats and sending some of our more prominent party members to advocate for their victory.
 
-The Dollfuß regime does not give in, but it is weakened and isolated.
+If our efforts have any impact, it goes unnoticed. Ultimately, german politicians don't hold much sway over austrian voters.
 
 @diplomatic_pressure
-view-if: foreign_minister_party = "SPD"
-on-arrival: sdapo_strength += 1; sdapo_strength += 2 if customs_union
+choose-if: foreign_minister_party = "SPD"
+unavailable-subtitle: We don't control the foreign ministry.
+on-arrival: sdapo_strength += 1; z_relation -= 4; lvp_relation -= 4; minority_bloc_relation -= 4
 
-We still have much economic influence in Austria, and the threat of sanctions.
+We reach out to Social Democrats of Mitteleuropa in order to form a united international front supporting SDAPÖ and criticizing conservative party's handling of national economic affairs.
 
-The Dollfuß regime does not give in, but it is somewhat weakened.
+This move is controversial domestically, but seems to gain some support for our austrian comrades.
 
 @fund_schutzbund
-on-arrival: resources -= 1; sdapo_strength += 1; sdapo_strength += 1 if customs_union
+on-arrival: resources -= 1; sdapo_strength += 1
 subtitle: -1 resource
 choose-if: resources >= 1
 
-It is somewhat of a breach of diplomatic protocol for the SPD to so directly interfere in another country's affairs, supporting the Austrian social democrats.
+We share some of our funds with austrian social democrats, funding their electoral campaign.
 
-The Dollfuß regime does not give in, but its opponents have an added advantage. That may not be enough when dealing with the total force of the fascist state.
+Hopefully we'll see a return on our investment.
 
 @nothing
 

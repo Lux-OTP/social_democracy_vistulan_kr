@@ -1,4 +1,4 @@
-title: The Iron Front
+title: The Democratic Front
 new-page: true
 is-card: true
 view-if: iron_front_formed == 1 and iron_front_timer = 0
@@ -7,16 +7,16 @@ card-image: img/iron_front.png
 frequency: 200
 tags: party_affairs, antifascism
 
-= The Iron Front
+= The Democratic Front
 
-The Iron Front is our new antifascist coordination front, consisting of the SPD, the trade unions, and the Reichsbanner. How should we use the Iron Front?
+The Democratic Front is our new anti-parliamentarian coordination front, consisting of the SPD, the trade unions, and the Democratic Union. How should we use the Democratic Front?
 
-[? if workers_spd < 45 or workers_spd < workers_nsdap or workers_spd < workers_kpd : Unfortunately, the Iron Front's effectiveness is dragged down by the SPD's unpopularity, as the SPD is no longer the dominant party among the workers. Many Reichsbanner members have left, and many workers are not interested. ?]
+[? if workers_spd < 45 or workers_spd < workers_dvlp or workers_spd < workers_sp : Unfortunately, the Democratic Front's effectiveness is dragged down by the SPD's unpopularity, as the SPD is no longer the dominant party among the workers. Many Reichsbanner members have left, and many workers are not interested. ?]
 
 - @defense: Rally for defense against the fascists with the Reichsbanner.
-- @pacifism: Rally for pacifism, against nationalism and war.
-- @republic: Rally to save the democratic republic against dictatorship.
-- @wtb: Rally for economic change and the WTB-Plan.
+- @pacifism: Rally for unity against western syndicalists and russian svobodniks.
+- @republic: Rally to save the existing democratic institutions from dictatorship.
+- @wtb: Rally for economic change and the TB-Plan.
 - @antisemitism
 - @easy_discard
 
@@ -25,20 +25,20 @@ subtitle: -[+ rb_militarization_cost +] resources
 choose-if: resources >= rb_militarization_cost
 on-arrival: resources -= rb_militarization_cost; rb_strength += 50; rb_militancy += 0.05; z_relation -= 5 if historical_mode
 
-The Iron Front rallies for the militant defense of the republic against the fascist paramilitaries, strengthening the Reichsbanner.
+The Democratic Front rallies for the militant defense of the republic against the fascist paramilitaries, strengthening the Reichsbanner.
 
 [? if historical_mode : The Center Party decries the militarization of the Reichsbanner and Iron Front, and its members are leaving the republican organization. ?]
 
 
 @pacifism
-on-arrival: pacifism += 1; nationalism -= 5 if pacifism >= 3; workers_spd += 5*(1-dissent) if pacifism >= 4; unemployed_spd += 4*(1-dissent) if pacifism >= 4; new_middle_spd += 4*(1-dissent) if pacifism >= 4
+on-arrival: pacifism -= 1; workers_spd += 5*(1-dissent) if pacifism <= 5; new_middle_spd += 4*(1-dissent) if pacifism <= 5; new_middle_spd += 4*(1-dissent) if pacifism <= 5
 
-The Iron Front rallies against nationalism and war.
+The Democratic Front rallies to defend the Empire from russian authoritarianism and syndicalist revolution, while promoting patriotism over nationalism.
 
 @republic
 on-arrival: pro_republic += 5*(1-dissent); democratization += 1; workers_spd += 5*(1-dissent) if democratization >= 4; unemployed_spd += 4*(1-dissent) if democratization >= 4; new_middle_spd += 4*(1-dissent) if democratization >= 4
 
-The Iron Front rallies in defense of the democratic republic and against dictatorship.
+The Democratic Front rallies in defense of the parliamentary institutions and against dictatorship.
 
 @wtb
 choose-if: return_to_normalcy = 0
@@ -46,12 +46,12 @@ unavailable-subtitle: The economic crisis is largely over now, and the public is
 view-if: wtb_adopted == 1
 on-arrival: workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); new_middle_spd += 5*(1-dissent); old_middle_spd += 3*(1-dissent); rural_spd += 3*(1-dissent);
 
-The WTB-Plan is the rallying point for the entire SPD and its affiliated organizations, including the Iron Front.
+The TB-Plan is the rallying point for the entire SPD and its affiliated organizations, including the Democratic Front.
 
 @antisemitism
 title: Rally against antisemitism and in defense of Jewish Germans.
 view-if: confronting_antisemitism > 1
-on-arrival: nationalism -= 4*(1-dissent); pro_republic += 3*(1-dissent); confronting_antisemitism += 1; workers_nsdap -= 4*(1-dissent); unemployed_nsdap -= 4*(1-dissent);
+on-arrival: nationalism -= 4*(1-dissent); pro_republic += 3*(1-dissent); confronting_antisemitism += 1; workers_dvlp -= 4*(1-dissent) if kwg_research < 1; workers_dvlp -= 6*(1-dissent) if kwg_research >= 1 ; unemployed_dvlp -= 4*(1-dissent) if kwg_research < 1; unemployed_dvlp -= 6*(1-dissent) if kwg_research >= 1; new_middle_dvlp -= 2*(1-dissent) if kwg_research >= 1
 
 # TODO
-The Nazis and other far-right political movements are increasingly turning their hatred against the Jewish community of Germany. The Iron Front rallies in defense of individual Jews and the broader community against violence.
+The Vaterlandists (change that I beg you) and other far-right political movements are increasingly turning their hatred against the Jewish community of Germany. The Democratic Front rallies in defense of individual Jews and the broader community against violence. [? if kwg_research >= 1: Outstanding work performed by the Kaiser Wilhelm Society helps discredit the far-right's accusations. ?]

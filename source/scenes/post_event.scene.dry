@@ -75,6 +75,11 @@ if (Q.unemployed <= 1) {
     Q.unemployed = 1;
 }
 
+//pacifism caps out at 10
+if (Q.pacifism > 10) {
+    Q.pacifism = 10;
+}
+
 // re-calculate dissent.
 var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.neorevisionist_strength;
 

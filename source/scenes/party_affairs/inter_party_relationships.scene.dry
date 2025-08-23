@@ -15,8 +15,8 @@ The SPD cannot govern by itself yet. Because we do not have an electoral majorit
 - @liberals: Strengthen our bonds with the Liberal People's Party.
 - @center: Strengthen our bonds with Zentrum, center-right pro-democratic party.
 - @minority_and_agrarians: Reach out to Minority Bloc and Agrarians, moderately influential in rural and border areas.
-- @kpd: Work towards improving relations with the Socialist Party.
-- @call_for_democracy: Rally democratic parties to form a ruling coalition and abolish Schleicher's government.
+# - @kpd: Work towards improving relations with the Socialist Party.
+- @call_for_democracy: Rally democratic parties to abolish Schleicher's government and form a ruling coalition .
 - @spd_alone: The SPD can stand alone for now.
 - @easy_discard
 
@@ -102,7 +102,7 @@ The LVP has been one of our closest allies through the course of the Republic.
 Growing opposition against the german democracy makes it easier to reach common ground between our parties.
 
 @minority_and_agrarians
-on_arrival: minority_bloc_relation += 5*(1 - dissent); agrarians_relation += 5*(1 - dissent)
+on-arrival: minority_bloc_relation += 5*(1 - dissent); agrarians_relation += 5*(1 - dissent)
 
 The 
 
