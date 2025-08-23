@@ -101,8 +101,8 @@ if (Q.sp_r >= Q.spd_r && Q.sp_r >= Q.dvlp_r) {
 // coalitions
 // march coalition
 Q.weimar_coalition = Q.spd_r + Q.lvp_r + Q.z_r - 3;
-// democratic union
-Q.grand_coalition = Q.spd_r + Q.lvp_r + Q.z_r + Q.minority_bloc_r + Q.agrarians_r + Q.other_r;
+// democratic union, add Q.agrarians_r once implemented
+Q.grand_coalition = Q.spd_r + Q.lvp_r + Q.z_r + Q.minority_bloc_r + Q.other_r;
 Q.bourgeois_coalition = Q.lvp_r + Q.z_r + Q.dkp_r + Q.other_r;
 Q.center_right_coalition = Q.z_r + Q.lvp_r + Q.minority_bloc_r + Q.other_r + Q.dkp_r;
 // only if Z relations are too low
@@ -580,12 +580,12 @@ choose-if: n_elections <= 1 and schleicher_ousted != 1 and grand_coalition < 50 
 
 Seeing Reichstag unable to find a sensible majority after the election, [+ president +] has chosen to appoint prussian minister of war, Kurt von Schleicher, to the post of Reichskanzler.
 
-Extremely unpopular within the parliament, the "Red General" will have to maneuvre his way through german politics or face defeat, should a parliamentary force sufficient to abolish his rule emerge in the following months.
+Extremely unpopular within the parliament, the Prussian Minister of War will have to maneuvre his way through german politics or face defeat, should a parliamentary force sufficient to abolish his rule emerge in the following months.
 
-- @schleicher_theres_nothing_we_can_do: For now, the Reichstag has to accept Kaiser's maneuvering.
+- @schleicher_theres_nothing_we_can_do: The Reichstag is powerless.
 
 @schleicher_theres_nothing_we_can_do
-subtitle: Government will be formed by the Prussian Minister of War.
+subtitle: Government is formed by the "Red General".
 on-arrival: spd_in_government = 0; workers_spd += 3; unemployed_spd += 3; new_middle_dvlp += 3; old_middle_dvlp += 3; chancellor = "Schleicher"; chancellor_party = "Kaiser's Government"; foreign_minister_party = "Z"; interior_minister_party = "I"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "LVP"; finance_minister_party = "LVP"; agriculture_minister_party = "Z"
 
 

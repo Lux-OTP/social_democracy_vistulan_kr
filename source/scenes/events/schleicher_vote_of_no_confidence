@@ -1,0 +1,17 @@
+title: We can call for a no-confidence vote against Schleicher!
+subtitle: A majority can finally be found in the Reichstag...
+new-page: true
+view-if: schleicher_ousted == 0 and n_elections > 0 and chancellor == "Schleicher" and z_relation >= 40 and lvp_relation >= 40 and minority_bloc_relation >= 40 and agrarians_relation >= 40 and neo_weimar_coalition >= 50
+max-visits: 1
+
+Having convinced a vast array of parties to cooperate with us in facing the regime of [+ chancellor +], we are finally able to call for a vote of no confidence against the Red General.
+
+If our allies stand by their words, we'll succeed and see german democracy saved from stratocracy.
+
+- @schleicher_vonc_succeed: The vote passes.
+
+@schleicher_vonc_succeed
+go-to: election_1928.coalition_menu
+on-arrival: schleicher_ousted = 1; 
+
+Majority of the Reichstag has voted in favor of the motion, leaving us with the task of forming a new government.
