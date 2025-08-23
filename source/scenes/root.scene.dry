@@ -168,7 +168,7 @@ Q.reichswehr_loyalty = 0.2;
 Q.ostwall_strength = 400;
 Q.ostwall_militancy = 0.05;
 Q.ostwall_loyalty = 0.2;
-Q.kriegsmarine_militancy = 0.05:
+Q.kriegsmarine_militancy = 0.05;
 
 // The state of the country
 
