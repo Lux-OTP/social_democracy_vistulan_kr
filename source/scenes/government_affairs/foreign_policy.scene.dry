@@ -81,7 +81,7 @@ The Entente is pleased that we have sent them aid, and in return agrees to assis
 view-if: west_relation >= 1
 choose-if: budget >= 1
 subtitle: -1 budget
-on-arrival: budget -= 1; ; kriegsmarine_militancy += 0.05; west_relation += 1; foreign_goal_completed += 1
+on-arrival: budget -= 1; kriegsmarine_militancy += 0.05; west_relation += 1; foreign_goal_completed += 1
 
 The Entente is pleased that we have sent them aid, and agrees to share shipbuilding and naval tactics expertise.
 

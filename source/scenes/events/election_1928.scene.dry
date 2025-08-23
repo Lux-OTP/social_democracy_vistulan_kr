@@ -838,7 +838,7 @@ We have accepted a Zentrum-led Democratic Union. Hopefully we'll manage to secur
 [+ chancellor +] welcomes us into his new cabinet. Now, we have our pick of ministries.
 
 @reject_Z_democratic_union
-on_arrival: z_relation -= 5 and lvp_relation -= 5 and minority_bloc_relation -= 5 and agrarians_relation -= 5; pro_republic -= 5
+on-arrival: z_relation -= 5 and lvp_relation -= 5 and minority_bloc_relation -= 5 and agrarians_relation -= 5; pro_republic -= 5
 
 We refuse to form a government under a non-socialist chancellor. This act of disunity, although not unexpected, still shocks the public and our coalition allies.
 
