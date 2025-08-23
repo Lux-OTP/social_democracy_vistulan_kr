@@ -94,7 +94,7 @@ French and british people are still furious for what they see as a humiliating t
 
 @halifax_buildup
 view-if: west_relation <= 1
-on-arrival: west_relation += 1; reichswehr_loyalty - 0.05; old_middle_spd -= 3; new_middle_spd -= 3
+on-arrival: west_relation += 1; reichswehr_loyalty -= 0.05; old_middle_spd -= 3; new_middle_spd -= 3
 
 We renegotiate minor points of the treaty of Versailles to ease Entente tensions, showing our old foes we're willing to cooperate. Some of our countrymen decry this as selling out the hard won victory in the Weltkrieg.
 
