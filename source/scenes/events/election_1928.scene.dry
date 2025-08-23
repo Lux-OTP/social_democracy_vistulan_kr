@@ -336,22 +336,6 @@ There are some potential coalition arrangements.
 # TODO: black-brown coalition
 
 
-@schleicher_appointed
-title: Schleicher appointed Reichskanzler!
-subtitle: Military camarilla has turned against german democracy.
-unavailable-subtitle: [? if schleicher_ousted == 1 : The Red General has wasted his chance. It's Reichstag's turn to act. ?]
-view-if: n_elections <= 1 and (right_coalition < 50 or grand_coalition < 50)
-choose-if: n_elections <= 1 and schleicher_ousted != 1 and grand_coalition < 50 and right_coalition < 50
-
-Seeing Reichstag unable to find a sensible majority after the election, [+ president +] has chosen to appoint prussian minister of war, Kurt von Schleicher, to the post of Reichskanzler.
-
-Extremely unpopular within the parliament, the "Red General" will have to maneuvre his way through german politics or face defeat, should a parliamentary force sufficient to abolish his rule emerge in the following months.
-
-- @schleicher_theres_nothing_we_can_do: For now, the Reichstag has to accept Kaiser's maneuvering.
-
-@schleicher_theres_nothing_we_can_do
-subtitle: Government will be formed by the Prussian Minister of War.
-
 @popular_front_coalition
 title: A new "Popular Front" coalition?
 subtitle: SPD + KPD + Z + LVP  [? if sapd_formed: + SAPD ?]([+ popular_front_coalition +]%)
