@@ -102,7 +102,7 @@ if (Q.sp_r >= Q.spd_r && Q.sp_r >= Q.dvlp_r) {
 // march coalition
 Q.weimar_coalition = Q.spd_r + Q.lvp_r + Q.z_r - 3;
 // democratic union, add Q.agrarians_r once implemented
-Q.grand_coalition = Q.spd_r + Q.lvp_r + Q.z_r + Q.minority_bloc_r + Q.other_r;
+Q.grand_coalition = Q.spd_r + Q.lvp_r + Q.z_r + Q.minority_bloc_r;
 Q.bourgeois_coalition = Q.lvp_r + Q.z_r + Q.dkp_r + Q.other_r;
 Q.center_right_coalition = Q.z_r + Q.lvp_r + Q.minority_bloc_r + Q.other_r + Q.dkp_r;
 // only if Z relations are too low
