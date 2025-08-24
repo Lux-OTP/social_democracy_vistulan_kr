@@ -807,7 +807,7 @@ Rudolf Breitscheid has been appointed chancellor.
 title: We can form a Democratic Union.
 view-if: grand_coalition >= 50 and grand_coalition_fail != 1
 choose-if: z_relation >= 40 and lvp_relation >= 40 and minorit_bloc_relation >= 40 and agrarians_relation >= 40
-unavailable-subtitle: We don't have sufficient relations with [+ if z_relation < 40 : Center, +] [+ if lvp_relation < 40 : LVP, +] [+ if minorit_bloc_relation < 40 : Minority Bloc, +] [+ if agrarians_relation < 40 : Agrarians, +] making it impossible to form a government!
+unavailable-subtitle: We don't have sufficient relations with [? if z_relation < 40 : Center, ?] [? if lvp_relation < 40 : LVP, ?] [? if minorit_bloc_relation < 40 : Minority Bloc, ?] [? if agrarians_relation < 40 : Agrarians, ?] making it impossible to form a government!
 subtitle: SPD + Z + BVP + LVP + Minority Bloc + Agrarians ([+ grand_coalition +]%)
 on-arrival: in_grand_coalition = 1; in_popular_front = 0; in_left_front = 0
 # SPD won't be granted chancellorship should they be too radical
