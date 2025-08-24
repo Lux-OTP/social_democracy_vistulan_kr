@@ -106,7 +106,7 @@ Q.grand_coalition = Q.spd_r + Q.lvp_r + Q.z_r + Q.minority_bloc_r;
 Q.bourgeois_coalition = Q.lvp_r + Q.z_r + Q.dkp_r + Q.other_r;
 Q.center_right_coalition = Q.z_r + Q.lvp_r + Q.minority_bloc_r + Q.other_r + Q.dkp_r;
 // only if Z relations are too low
-Q.right_coalition = Q.z_r + Q.dvlp_r + Q.other_r + Q.dkp_r;
+Q.right_coalition = Q.z_r + Q.dvlp_r + Q.dkp_r;
 // schwarz-weiss-rot
 Q.far_right_coalition = Q.dkp_r + Q.dvlp_r;
 Q.left_coalition = Q.spd_r + Q.sp_r + Q.sapd_r;
