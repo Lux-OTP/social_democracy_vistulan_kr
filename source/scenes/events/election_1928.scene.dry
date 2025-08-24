@@ -335,23 +335,6 @@ There are some potential coalition arrangements.
 
 # TODO: black-brown coalition
 
-@schleicher_appointed
-title: Schleicher appointed Reichskanzler!
-subtitle: Military camarilla has turned against german democracy.
-unavailable-subtitle: [? if schleicher_ousted == 1 : The Red General has wasted his chance. It's Reichstag's turn to act. ?]
-view-if: n_elections <= 1 and (right_coalition < 50 or grand_coalition < 50)
-choose-if: n_elections <= 1 and schleicher_ousted != 1 and grand_coalition < 50 and right_coalition < 50
-
-Seeing Reichstag unable to find a sensible majority after the election, [+ president +] has chosen to appoint prussian minister of war, Kurt von Schleicher, to the post of Reichskanzler.
-
-Extremely unpopular within the parliament, the Prussian Minister of War will have to maneuvre his way through german politics or face defeat, should a parliamentary force sufficient to abolish his rule emerge in the following months.
-
-- @schleicher_theres_nothing_we_can_do: The Reichstag is powerless.
-
-@schleicher_theres_nothing_we_can_do
-subtitle: Government is formed by the "Red General".
-on-arrival: spd_in_government = 0; workers_spd += 3; unemployed_spd += 3; new_middle_dvlp += 3; old_middle_dvlp += 3; chancellor = "Schleicher"; chancellor_party = "Kaiser's Government"; foreign_minister_party = "Z"; interior_minister_party = "I"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "LVP"; finance_minister_party = "LVP"; agriculture_minister_party = "Z"
-
 
 @popular_front_coalition
 title: A new "Popular Front" coalition?
@@ -574,11 +557,29 @@ title: There is no clear governing majority.
 view-if: weimar_coalition < 50 and grand_coalition < 50 and far_right_coalition < 50 and right_coalition < 50 and n_elections != 0
 choose-if: president != "Kaiser WIlhelm II" or no_majority_elections <= 3
 on-arrival: no_majority_elections += 1
-go-to: no_majority_spd if chancellor_party = "SPD" or chancellor == "Marx"
+go-to: no_majority_spd if chancellor_party = "SPD" or chancellor == "Marx" and n_elections != 0; @schleicher_appointed if n_elections == 0
 
 # TODO: if there is an anti-democratic coalition majority, you should appoint Papen.
 
 # either new elections, or Hindenburg appoints either Brüning, Papen, Schleicher, or Hitler.
+
+@schleicher_appointed
+title: Schleicher appointed Reichskanzler!
+subtitle: Military camarilla has turned against german democracy.
+unavailable-subtitle: [? if schleicher_ousted == 1 : The Red General has wasted his chance. It's Reichstag's turn to act. ?]
+view-if: n_elections <= 1 and right_coalition < 50
+choose-if: n_elections <= 1 and schleicher_ousted != 1 and grand_coalition < 50 and right_coalition < 50
+
+Seeing Reichstag unable to find a sensible majority after the election, [+ president +] has chosen to appoint prussian minister of war, Kurt von Schleicher, to the post of Reichskanzler.
+
+Extremely unpopular within the parliament, the Prussian Minister of War will have to maneuvre his way through german politics, or face defeat should a parliamentary force sufficient to abolish his rule emerge in the following months.
+
+- @schleicher_theres_nothing_we_can_do: The Reichstag is powerless.
+
+@schleicher_theres_nothing_we_can_do
+subtitle: Government is formed by the "Red General".
+on-arrival: spd_in_government = 0; workers_spd += 3; unemployed_spd += 3; new_middle_dvlp += 3; old_middle_dvlp += 3; chancellor = "Schleicher"; chancellor_party = "Kaiser's Government"; foreign_minister_party = "Z"; interior_minister_party = "I"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "LVP"; finance_minister_party = "LVP"; agriculture_minister_party = "Z"
+
 
 @no_majority_spd
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
@@ -805,6 +806,8 @@ Rudolf Breitscheid has been appointed chancellor.
 @grand_coalition
 title: We can form a Democratic Union.
 view-if: grand_coalition >= 50 and grand_coalition_fail != 1
+choose-if: z_relation >= 40 and lvp_relation >= 40 and minorit_bloc_relation >= 40 and agrarians_relation >= 40
+unavailable-subtitle: We don't have sufficient relations with [+ if z_relation < 40: Center, +] [+ if lvp_relation < 40: LVP, +] [+ if minorit_bloc_relation < 40: Minority Bloc, +] [+ if agrarians_relation < 40: Agrarians, +] making it impossible to form a government!
 subtitle: SPD + Z + BVP + LVP + Minority Bloc + Agrarians ([+ grand_coalition +]%)
 on-arrival: in_grand_coalition = 1; in_popular_front = 0; in_left_front = 0
 # SPD won't be granted chancellorship should they be too radical
