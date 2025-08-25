@@ -321,7 +321,7 @@ Right-wing Coalition (Z + BVP + Minority Bloc + Others + DkP): [+ right_coalitio
 There are some potential coalition arrangements.
 
 @first_election_menu
-go-to: coalition_menu if (right_coalition >= 50 and z_relation < 30) or (grand_coalition >= 50 and z_relation >= 40 and lvp_relation >= 40 and minority_bloc_relation >= 40 and agrarians_relation >= 40); schleicher_appointed if (right_coalition < 50 or z_relation >= 30) and (grand_coalition < 50 or z_relation < 40 or lvp_relation < 40 or minority_bloc_relation < 40 or agrarians_relation < 40) 
+go-to: coalition_menu if (right_coalition >= 50 and z_relation < 30) or (grand_coalition >= 50 and z_relation >= 40 and lvp_relation >= 40 and minority_bloc_relation >= 40 and agrarians_relation >= 40); schleicher_appointed if (right_coalition < 50 or z_relation >= 30) and (grand_coalition < 50 and (z_relation < 40 or lvp_relation < 40 or minority_bloc_relation < 40 or agrarians_relation < 40)) 
 
 @coalition_menu
 
@@ -342,8 +342,6 @@ go-to: coalition_menu if (right_coalition >= 50 and z_relation < 30) or (grand_c
 title: Schleicher appointed Reichskanzler!
 subtitle: Military camarilla has turned against german democracy.
 unavailable-subtitle: [? if schleicher_ousted == 1 : The Red General has wasted his chance. It's Reichstag's turn to act. ?]
-view-if: n_elections <= 1 and right_coalition < 50
-choose-if: n_elections <= 1 and schleicher_ousted != 1 and right_coalition < 50
 
 Seeing Reichstag unable to find a sensible majority after the election, [+ president +] has chosen to appoint prussian minister of war, Kurt von Schleicher, to the post of Reichskanzler.
 
