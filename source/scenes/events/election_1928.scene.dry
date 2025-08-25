@@ -190,7 +190,7 @@ data = [
         "id": "sp",
         "legend": "SP",
         "name": "SP",
-        "seats": Math.round(Q.sp_r*5),
+        "seats": Math.round(Q.sp_r*4.45),
     }
 ];
 if (Q.sapd_formed && Q.sapd_r) {
@@ -198,7 +198,7 @@ if (Q.sapd_formed && Q.sapd_r) {
             "id": "sapd",
             "legend": "SAPD",
             "name": "SAPD",
-            "seats": Math.round(Q.sapd_r*5),
+            "seats": Math.round(Q.sapd_r*4.45),
             });
 }
 data = data.concat([
@@ -206,55 +206,55 @@ data = data.concat([
         "id": "spd",
         "legend": "SPD",
         "name": "SPD",
-        "seats": Math.round(Q.spd_r*5),
+        "seats": Math.round(Q.spd_r*4.45),
     },
     {
         "id": "lvp",
         "legend": "LVP",
         "name": "LVP",
-        "seats": Math.round(Q.lvp_r*5),
+        "seats": Math.round(Q.lvp_r*4.45),
     },
     {
         "id": "z",
         "legend": "Center",
         "name": "Center",
-        "seats": Math.round((Q.z_r - 3)*5),
+        "seats": Math.round((Q.z_r - 3)*4.45),
     },
     {
         "id": "bvp",
         "legend": "BVP",
         "name": "BVP",
-        "seats": Math.round(3*5),
+        "seats": Math.round(3*4.45),
     },
     {
         "id": "minority_bloc",
         "legend": "Minority Bloc",
         "name": "Minority Bloc",
-        "seats": Math.round(Q.minority_bloc_r*5),
+        "seats": Math.round(Q.minority_bloc_r*4.45),
     },
     {
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": Math.round(Q.other_r*5),
+        "seats": Math.round(Q.other_r*4.45),
     },
     {
         "id": "dkp",
         "legend": "DkP",
         "name": "DkP",
-        "seats": Math.round(Q.dkp_r*5),
+        "seats": Math.round(Q.dkp_r*4.45),
     },
     {
         "id": "dvlp",
         "legend": "DVLP",
         "name": "DVLP",
-        "seats": Math.round(Q.dvlp_r*5),
+        "seats": Math.round(Q.dvlp_r*4.45),
     },
         {
         "id": "agrarians",
         "legend": "Agrarians",
         "name": "Agrarians",
-        "seats": Math.round(Q.agrarians_r*5),
+        "seats": Math.round(Q.agrarians_r*4.45),
     },
 ]);
 

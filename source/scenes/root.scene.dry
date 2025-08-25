@@ -20,7 +20,7 @@ go-to: start_menu_2
 on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
-// game start at june 1935, 5 years before 2WK
+// game start on may 1935, 5 years before 2WK
 Q.time = 1;
 Q.year = 1935;
 Q.month = 5;
@@ -318,15 +318,15 @@ Q.catholics_other = 8;
 // note: the Z figures also include the BVP (Bavarian people's party)
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
-Q.spd_r = 26;
-Q.sp_r = 0;
-Q.z_r = 17;
-Q.lvp_r = 6;
-Q.minority_bloc_r = 10;
-Q.agrarians = 0;
-Q.dkp_r = 20;
-Q.dvlp_r = 3;
-Q.other_r = 9;
+Q.spd_r = 24.71;
+Q.sp_r = 0.67;
+Q.z_r = 22.69;
+Q.lvp_r = 19.1;
+Q.minority_bloc_r = 4.26;
+Q.agrarians = 2.24;
+Q.dkp_r = 11.23;
+Q.dvlp_r = 12.13;
+Q.other_r = 1.79;
 
 // diff from prev
 Q.old_spd_r = 26;
