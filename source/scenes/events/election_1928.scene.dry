@@ -275,7 +275,7 @@ if (window && d3) {
     d3.select("#reichstag").datum(data).call(parliament);
 }
 !}
-go-to: coalition_menu
+go-to: coalition_menu if n_elections != 0; first_election_menu if n_elections == 1
 
 = Election results
 
@@ -320,9 +320,11 @@ Right-wing Coalition (Z + BVP + Minority Bloc + Others + DkP): [+ right_coalitio
 
 There are some potential coalition arrangements.
 
+@first_election_menu
+go-to: coalition_menu if (right_coalition >= 50 and z_relation < 30) or (grand_coalition >= 50 and z_relation >= 40 and lvp_relation >= 40 and minority_bloc_relation >= 40 and agrarians_relation >= 40); schleicher_appointed if (right_coalition < 50 or z_relation >= 30) and (grand_coalition < 50 or z_relation < 40 or lvp_relation < 40 or minority_bloc_relation < 40 or agrarians_relation < 40) 
+
 @coalition_menu
 
-- @schleicher_appointed
 - @spd_majority
 - @weimar_coalition
 - @grand_coalition
@@ -548,7 +550,7 @@ In response to the KPD's entrance into the government, the right-wing immediatel
 
 @right_coalition
 title: Refuse to form a government, so that a right-wing coalition may be formed.
-subtitle: Z + BVP + DkP + DVLP + Others ([+ right_coalition +]%)
+subtitle: Z + BVP + DkP + DVLP ([+ right_coalition +]%)
 unavailable-subtitle: Center is not interested in a coalition with the far-right.
 view-if: right_coalition >= 50 and n_elections != 0
 choose-if: z_relation < 30
@@ -598,7 +600,7 @@ There is no path to an obviously workable majority. Since President Hindenburg i
 @new_grand_coalition
 title: We can form a "Democratic Union".
 subtitle: SPD + Z + BVP + LVP + Minority Bloc + Agrarians + Others ([+ neo_weimar_coalition +]%)
-view-if: neo_weimar_coalition >= 50 and grand_coalition_fail == 1 and n_elections != 0
+view-if: neo_weimar_coalition >= 50 and (grand_coalition_fail == 1 or n_elections > 1)
 choose-if: z_relation >= 40 and lvp_relation >= 40 and minority_bloc_relation >= 40 and agrarians_relation >= 40
 unavailable-subtitle: SPD + Z + BVP + LVP + Minority Bloc + Agrarians + Others ([+ neo_weimar_coalition +]%) - [? if z_relation < 40 or lvp_relation < 40 or minority_bloc_relation < 40 or agrarians_relation < 40 : We do not have suffiecient relations with all potential coalition members. ?]
 
@@ -807,7 +809,7 @@ Rudolf Breitscheid has been appointed chancellor.
 
 @grand_coalition
 title: We can form a Democratic Union.
-view-if: grand_coalition >= 50 and grand_coalition_fail != 1
+view-if: grand_coalition >= 50 and grand_coalition_fail != 1 and (n_elections == 1 or chancellor == "Schleicher")
 choose-if: z_relation >= 40 and lvp_relation >= 40 and minorit_bloc_relation >= 40 and agrarians_relation >= 40
 unavailable-subtitle: We don't have sufficient relations with [? if z_relation < 40 : Center, ?] [? if lvp_relation < 40 : LVP, ?] [? if minorit_bloc_relation < 40 : Minority Bloc, ?] [? if agrarians_relation < 40 : Agrarians, ?] making it impossible to form a government!
 subtitle: SPD + Z + BVP + LVP + Minority Bloc + Agrarians ([+ grand_coalition +]%)
