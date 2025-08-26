@@ -1,6 +1,6 @@
 title: Center Party Conference
 subtitle: The Center Party chooses their new leader...
-view-if: year = 1935 and month = 8 # and z_party_leader = "Marx"
+view-if: year = 1935 and month = 8
 max-visits: 1
 tags: event
 new-page: true
@@ -18,7 +18,7 @@ The consensus candidate on the center is Adam Stegerwald, Schleicher-aligned tra
 - @joos_campaign: We must hold a campaign in support of Ulitzka as party chair.
 
 @kaas
-choose-if: z_relation >= 30 and z_relation < 62
+choose-if: z_relation >= 30 and (z_relation < 62 or resources < 1)
 on-arrival: z_party_leader = "stegerwald"; z_relation -= 5
 
 Adam Stegerwald has been elected as the party chairman. Hostility shown to the Center Party by parties of the "permanent opposition" during von Dirksen's time as the chancellor has led them to resent both ends of the political spectrum.
@@ -31,7 +31,6 @@ In a shocking turn of events, Center Party has elected Fritz Schäffer as the pa
 
 @joos_campaign
 choose-if: z_relation >= 62 and resources >= 1
-view-if: z_relation < 65
 unavailable-subtitle: [? if z_relation <= 62 : Our relations are not good enough. ?] [? if resources < 1 : We do not have enough resources. ?]
 subtitle: -1 resource. Ulitzka is likely to be friendlier to us than Stegerwald or Schäffer.
 on-arrival: resources -= 1; z_party_leader = "Ulitzka"; catholics_spd += 5; workers_z += 3
