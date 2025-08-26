@@ -1,6 +1,6 @@
 title: Center Party Conference
 subtitle: The Center Party chooses their new leader...
-view-if: year = 1928 and month = 12 and z_party_leader = "Marx"
+view-if: year = 1935 and month = 8 # and z_party_leader = "Marx"
 max-visits: 1
 tags: event
 new-page: true
@@ -11,30 +11,29 @@ new-page: true
 
 Wilhelm Marx, former Center Party chancellor and presidential candidate, has chosen to resign from leadership of the Center Party. Now, the party holds a conference to replace him.
 
-The consensus candidate on the right is Ludwig Kaas, a Catholic priest who represents the party's traditionalists. On the other hand, there is Joseph Joos, a leader of the Catholic trade unions, who has been more supportive of cooperation with the SPD than most of the Center Party.
+The consensus candidate on the center is Adam Stegerwald, Schleicher-aligned trade unionist from Rhineland. On the left, there is Carl Ulitzka, a progressive prelate from Silesia, who has been more supportive of cooperation with the SPD than most of the Center Party. Finally on the right is Fritz Schäffer, an authoritatian conservative from Bavaria, open to cooperation with the Schweiz-Weiß-Rot bloc.
 
-- @kaas: The Center Party elects Ludwig Kaas as the party chair.
-- @joos: Influence the Center Party to select Joseph Joos as the party chair.
-- @joos_campaign: We must hold a campaign in support of Joseph Joos as party chair.
+- @kaas: The Center Party elects Stegerwald as the party chair.
+- @joos: The Center Party elects Schäffer as the party chair.
+- @joos_campaign: We must hold a campaign in support of Ulitzka as party chair.
 
 @kaas
-on-arrival: z_party_leader = "Kaas"; z_relation -= 5
+choose-if: z_relation >= 30 and z_relation < 62
+on-arrival: z_party_leader = "stegerwald"; z_relation -= 5
 
-Ludwig Kaas has been selected as the chairman of the Center Party. He seems to represent a rightward turn from Marx, and will preside over a Center Party less inclined to compromise with the left.
+Adam Stegerwald has been elected as the party chairman. Hostility shown to the Center Party by parties of the "permanent opposition" during von Dirksen's time as the chancellor has led them to resent both ends of the political spectrum.
 
 @joos
-unavailable-subtitle: Our relations are not good enough.
-subtitle: Joos is likely to be friendlier to us than Kaas.
-choose-if: z_relation >= 70
-on-arrival: z_party_leader = "Joos"; catholics_spd += 5; workers_z += 3
+choose-if: z_relation < 30
+on-arrival: z_party_leader = "schaffer"; z_relation -= 10; catholics_dkp += 2; catholics_dvlp += 2; workers_z -= 3
 
-With our grassroots connections, we have been able to influence the Center delegates to support Joseph Joos as the new Center chairman. He has long been a friend of the SPD, and will be more inclined to collaborate with us compared to Kaas. He also increases the appeal of the Center Party to the working class.
+In a shocking turn of events, Center Party has elected Fritz Schäffer as the party chairman. His hardline conservatism and opposition to the SPD will make further cooperation with the party difficult, if not impossible. His election brings center-right voters closer to the Schweiz-Weiß-Rot coalition, and causes controversy among catholic workers.
 
 @joos_campaign
-choose-if: z_relation >= 62 and resources >= 1 
-view-if: z_relation < 70
+choose-if: z_relation >= 62 and resources >= 1
+view-if: z_relation < 65
 unavailable-subtitle: [? if z_relation <= 62 : Our relations are not good enough. ?] [? if resources < 1 : We do not have enough resources. ?]
-subtitle: -1 resource. Joos is likely to be friendlier to us than Kaas.
-on-arrival: resources -= 1; z_party_leader = "Joos"; catholics_spd += 5; workers_z += 3
+subtitle: -1 resource. Ulitzka is likely to be friendlier to us than Stegerwald or Schäffer.
+on-arrival: resources -= 1; z_party_leader = "Ulitzka"; catholics_spd += 5; workers_z += 3
 
-With our grassroots connections as well as a professional campaign, we have been able to influence the Center delegates to support Joseph Joos as the new Center chairman. He has long been a friend of the SPD, and will be more inclined to collaborate with us compared to Kaas. He also increases the appeal of the Center Party to the working class.
+With our grassroots connections as well as a professional campaign, we have been able to influence the Center delegates to support Carl Ulitzka as the new Center chairman. He will be more inclined to collaborate with us compared to other candidates. He also increases the appeal of the Center Party to the working class.
