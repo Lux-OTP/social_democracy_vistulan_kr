@@ -312,7 +312,7 @@ Democratic Union (SPD + Z + BVP + LVP + Minority Bloc): [+ grand_coalition +]%
 
 Bourgeois Coalition (Z + BVP + LVP + DkP + Others): [+ bourgeois_coalition +]%
 
-Right-wing Coalition (Z + BVP + Minority Bloc + Others + DkP): [+ right_coalition +]%
+Right-wing Coalition (Z + BVP + DkP + DVLP): [+ right_coalition +]%
 
 [? if anti_democratic_coalition >= 50 : Together, the anti-democratic SP, DkP, and DVLP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
 
