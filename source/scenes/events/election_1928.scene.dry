@@ -321,7 +321,7 @@ Right-wing Coalition (Z + BVP + Minority Bloc + Others + DkP): [+ right_coalitio
 There are some potential coalition arrangements.
 
 @first_election_menu
-go-to: coalition_menu if far_right_coalition >= 50 or (grand_coalition >= 50 and z_relation >= 40 and lvp_relation >= 40 and minority_bloc_relation >= 40 and agrarians_relation >= 40); schleicher_appointed if (far_right_coalition < 50 or z_relation >= 30) and (grand_coalition < 50 or z_relation < 40 or lvp_relation < 40 or minority_bloc_relation < 40 or agrarians_relation < 40)) 
+go-to: coalition_menu if far_right_coalition >= 50 or (grand_coalition >= 50 and z_relation >= 40 and lvp_relation >= 40 and minority_bloc_relation >= 40 and agrarians_relation >= 40); schleicher_appointed if far_right_coalition < 50 and (grand_coalition < 50 or z_relation < 40 or lvp_relation < 40 or minority_bloc_relation < 40 or agrarians_relation < 40)) 
 
 @coalition_menu
 
