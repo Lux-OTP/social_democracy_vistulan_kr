@@ -341,9 +341,9 @@ title: Schleicher appointed Reichskanzler!
 subtitle: Military camarilla has turned against german democracy.
 unavailable-subtitle: [? if schleicher_ousted == 1 : The Red General has wasted his chance. It's Reichstag's turn to act. ?]
 
-With Reichstag unable to find a sensible majority after the election, [+ president +] has chosen to appoint prussian minister of war, Kurt von Schleicher, to the post of Reichskanzler.
+With Reichstag unable to find a sensible majority after the election, [+ president +] has chosen to appoint Prussian Minister of War, Kurt von Schleicher, to the post of Reichskanzler.
 
-Extremely unpopular within the parliament, the Prussian Minister of War will have to maneuvre his way through german politics, or face defeat should a parliamentary force sufficient to abolish his rule emerge in the following months.
+Extremely unpopular within the parliament, Schleicher will have to maneuvre his way through german politics, or face defeat should a parliamentary force sufficient to abolish his rule emerge in the following months.
 
 - @schleicher_theres_nothing_we_can_do: The Reichstag is powerless.
 
