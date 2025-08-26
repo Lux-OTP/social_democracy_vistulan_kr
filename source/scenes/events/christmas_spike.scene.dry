@@ -1,5 +1,6 @@
 title: Christmas Spike
 subtitle: Berlin stock exchange reports a price spike 
+new-page: false
 on-arrival: {!
 
 Q.economic_growth += 1.5;
