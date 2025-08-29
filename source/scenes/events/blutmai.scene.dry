@@ -5,7 +5,7 @@ tags: event
 view-if: year = 1929 and month = 5
 max-visits: 1
 face-image: img/redfront.jpg
-on-arrival: ruhrkampf = 1; ruhrkampf_intensity = 10; ruhrkampf_strength = 100
+on-arrival: ruhrkampf = 1; rfb_militancy = 0.25; ruhrkampf_strength = 100
 
 = Ruhrkampf
 
@@ -21,7 +21,7 @@ What are we to do? On one hand, workers' cause is our own, and turning our back 
 - @ruhr_join: Worker's struggle can only be won in the factories and on the streets. 
 
 @ruhr_crackdown
-subtitle: This will be viewed as betrayal of the working class.
+subtitle: This will be viewed as betrayal by the working class.
 unavailable-subtitle: Nobody in the party supports this.
 choose-if: radicalization < 4
 on-arrival: sp_relation -= 25; lvp_relation -= 5; workers_spd -= 5; unemployed_spd -= 5; workers_sp += 5; unemployed_sp += 5; neorevisionist_dissent += 20; labor_dissent += 45; center_dissent += 40; jungturken_dissent += 60
@@ -36,13 +36,15 @@ Our party will attempt to mediate between the reactionary establishment and agit
 
 
 @ruhr_support
-on-arrival: workers_kpd += 5; unemployed_kpd += 5; kpd_relation += 10; rfb_strength += 50; z_relation -= 3; dvp_relation -= 3; coalition_dissent += 1; rfb_militancy += 0.1
+on-arrival: workers_sp += 5; unemployed_sp += 5; sp_relation += 15; rfb_strength += 25; z_relation -= 3; dvp_relation -= 3; coalition_dissent += 1; rfb_militancy -= 0.05
 
-We have took it upon ourselves to represent the striking workers in the Reichstag. Naturally, the far-right staunchly opposed our actions, calling for reinstatement of anti-socialist laws. 
+We have took it upon ourselves to represent the striking workers in the Reichstag. Naturally, the far-right staunchly opposed our actions, calling for reinstatement of anti-socialist laws.
+
+With our public show of support, many of our supporters previously reluctant on joining the strike have now decided to participate. Their presence seems to have a moderating influence among the ranks of the workers.
 
 @ruhr_join
-choose-if: radicalization >= 7 and (jungturken_strength >= 40 or labor_strength >= 45)
+choose-if: radicalization >= 7 and (jungturken_strength >= 60 or labor_strength >= 75)
 unavailable-subtitle: Majority of the party sees this as too radical. 
-on-arrival: kpd_relation += 15; workers_kpd += 5; unemployed_kpd += 5; workers_spd += 5; unemployed_spd += 5; new_middle_spd -= 5; old_middle_spd -= 5; z_relation -= 10; dvp_relation -= 10; coalition_dissent += 2; communist_coalition += 2; rfb_strength += 100; rfb_militancy += 0.1; sa_strength += 50; sh_strength += 50
+on-arrival: kpd_relation += 15; workers_kpd += 5; unemployed_kpd += 5; workers_spd += 5; unemployed_spd += 5; new_middle_spd -= 5; old_middle_spd -= 5; z_relation -= 10; dvp_relation -= 10; coalition_dissent = 4; communist_coalition += 2; rfb_strength += 100; rfb_militancy += 0.15
 
 It is difficult to persuade the Communists to let us march with them, given the histories of their party and ours. However, they eventually relent. The display of proletarian unity inspires the workers and terrifies the bourgeoisie and middle class. [? if in_grand_coalition : Our coalition partners in the government are outraged at our display with the communists, and are threatening to break up the government. ?] The far-right paramilitaries increase their recruitment to counter us.

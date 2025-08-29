@@ -275,7 +275,7 @@ if (window && d3) {
     d3.select("#reichstag").datum(data).call(parliament);
 }
 !}
-go-to: coalition_menu if n_elections != 1 or schleicher_ousted == 1; first_election_menu if n_elections == 1 and schleicher_ousted == 0
+go-to: coalition_menu if schleicher_ousted == 1; first_election_menu if schleicher_ousted == 0
 
 = Election results
 
@@ -349,7 +349,7 @@ Extremely unpopular within the parliament, Schleicher will have to maneuvre his 
 
 @schleicher_theres_nothing_we_can_do
 subtitle: Government is formed by the "Red General".
-on-arrival: spd_in_government = 0; workers_spd += 3; unemployed_spd += 3; new_middle_dvlp += 3; old_middle_dvlp += 3; chancellor = "Schleicher"; chancellor_party = "Kaiser's Government"; foreign_minister_party = "Z"; interior_minister_party = "I"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "LVP"; finance_minister_party = "LVP"; agriculture_minister_party = "Z"
+on-arrival: spd_in_government = 0; workers_spd += 3; unemployed_spd += 3; new_middle_dvlp += 3; old_middle_dvlp += 3; chancellor = "Schleicher"; chancellor_party = "Kaiser's Government"; foreign_minister_party = "Z"; interior_minister_party = "I"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "LVP"; finance_minister_party = "LVP"; agriculture_minister_party = "Z"; dealing_with_toleration_timer = 1
 
 
 @popular_front_coalition

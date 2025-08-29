@@ -133,6 +133,7 @@ Q.heer_research = 0;
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)
 // Reichsbanner, stahlhelm, SA, rotfrontkämpferbund
+// RFB will be used as the ruhrkampf forces for now
 Q.rb_strength = 2000;
 Q.rb_militancy = 0.01;
 Q.women_in_rb = 0;
@@ -149,8 +150,6 @@ Q.rfb_strength = 130;
 Q.rfb_militancy = 0.5;
 Q.rfb_banned = 0;
 Q.rfb_banned_prussia = 0;
-Q.ruhrkampf_intensity = 0;
-Q.ruhrkampf_strength = 0;
 Q.ruhrkampf_agreement = 0;
 
 Q.interior_police_strength = 50;

@@ -1,83 +1,57 @@
-title: Dealing with Toleration
+title: Dealing with Schleicher
 new-page: true
 is-card: true
 card-image: img/portraits/BrüningHeinrich.jpg
-view-if: dealing_with_toleration_timer = 0 and spd_toleration and chancellor_party == "Z"
+view-if: dealing_with_toleration_timer == 0 and chancellor == "Schleicher"
 on-arrival: dealing_with_toleration_timer += 6; month_actions += 1
 tags: govt_affairs
 #subtitle: Despite not being in government, we can still provide support.
 
-= Dealing with Toleration
+= Dealing with Schleicher
 
-We are currently acting as external support to the government of Chancellor [+ chancellor +]. How should we use our position?
+We are currently the strongest force opposing the government of Chancellor [+ chancellor +]. How should we use our position?
 
 - @break_toleration
 - @urge_against_austerity
 - @improve_relations
-- @new_grand_coalition
-- @stay_course: Stay the course, for stability's sake.
 - @easy_discard
 
 @break_toleration
 view-if: not constructive_vonc
-title: End the toleration agreement with a vote of no confidence!
+title: End the Red General's rule with a vote of no confidence!
+unavailable-subtitle: We don't have sufficient support in the Reichstag.
+choose_if: z_relation >= 40 and lvp_relation >= 40 and minorit_bloc_relation >= 40 and agrarians_relation >= 40
 
-Are we sure about this? A vote of no confidence would trigger new elections, and potentially an increased vote-share for the extremist parties.
+Are we sure about this? A vote of no confidence could trigger new elections should we fail to find a majority, and as a result - potentially increase vote-share for the conservative parties.
 
-- @vonc: Yes, end this arrangement!
-- @stay_course: No, we should stay the course.
+- @vonc: Yes, end this antiparliamentarian farce!
+- @stay_course: No, we can't take the risk just yet.
 
 @vonc
-on-arrival: spd_in_government = 0; spd_toleration = 0; in_grand_coalition = 0; chancellor = "Brüning"; chancellor_party = "Z"; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_toleration = 0; jungturken_strength += 8; pro_republic -= 5; new_middle_spd -= 3; rural_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; staatspolitiker_dissent += 5; jungturken_dissent -= 5
+on-arrival: spd_in_government = 0; spd_toleration = 0; in_grand_coalition = 0; schleicher_ousted = 1
+go-to: election_1928.coalition_menu
 
-We have called for a vote of no confidence, and have brought down this government. Chancellor [+ chancellor +] currently rules as acting chancellor.
-
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+We have called for a vote of no confidence, and have brought down this government. Unless we can present a workable majority to [+ president +], new election will have to be called.
 
 @urge_against_austerity
-title: Urge the coalition against austerity politics, and to increase social spending.
-choose-if: budget >= 1
-unavailable-subtitle: This can only happen with a budget surplus.
-go-to: urge_success if dvp_relation >= 30 and z_relation >= 40; urge_failure if dvp_relation < 30 or z_relation < 40
+title: Urge the chancellor to engage in talks with the striking Ruhr workers.
+view-if: ruhrkampf == 1
+choose-if: jungturken_strength <= 70 or (staatspolitiker_strength >= 40 and labor_strength >= 40)
+unavailable-subtitle: The left wing of our party opposes any talks with the chancellor.
+go-to: urge_success if radicalization <= 6; urge_failure if radicalization > 6
 
 @urge_success
-on-arrival: welfare += 1; budget -= 1; workers_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent); z_relation -= 3; dvp_relation -= 3; staatspolitiker_dissent -= 5; center_dissent -= 5; labor_dissent -= 5;
+on-arrival: rfb_militancy -= 0.05; ruhrkampf_agreement += 1; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); jungturken_dissent -= 5; staatspolitiker_dissent -= 5; center_dissent -= 5; labor_dissent -= 5; z_relation += 5*(1-dissent); lvp_relation += 5*(1-dissent); minorit_bloc_relation += 5*(1-dissent); agrarians_relation += 5*(1-dissent)
 
-We have successfully urged the coalition parties to increase social spending! Unfortunately, the center-right parties increasingly see us as a nuisance, and might not wish to continue these negotiations.
+We have successfully negotiated concessions for the workers striking in the Ruhr! This has slightly cooled the atmosphere of the demonstrations, showing 
 
 @urge_failure
-on-arrival: z_relation -= 3; dvp_relation -= 3
+on-arrival: jungturken_strength += 5; labor_dissent += 5
 
-Unfortunately, our negotiations have met with failure. The center-right parties increasingly see us as a nuisance, and might not wish to continue these negotiations.
-
+Unfortunately, our negotiations have met with failure. The Schleicher cabinet sees us as merely a "different shade of syndicalist red" and doesn't want to listen to us.
 
 @improve_relations
-title: Improve relations with the parties of the coalition.
-on-arrival: z_relation += 5*(1-dissent); dvp_relation += 4*(1-dissent); jungturken_dissent += 5;
+title: Improve relations with the parties of the opposition.
+on-arrival: z_relation += 5*(1-dissent); lvp_relation += 5*(1-dissent); agrarians_relation += 5*(1-dissent); minorit_bloc_relation += 5*(1-dissent)
 
-We have increased our level of contact and discussions with the parties of the coalition, primarily the Center Party and DVP.
-
-Our attempts to reach out to the center-right are met with disdain by leftists within our party.
-
-
-
-
-@new_grand_coalition
-title: Can we join the government in a new grand coalition?
-view-if: neo_weimar_coalition >= 50
-choose-if: z_relation >= 50 and dvp_relation >= 30 and resources >= 2
-subtitle: We will need 2 resources to smooth out the process of forming the coalition.
-unavailable-subtitle: [? if z_relation < 50 : We do not have adequate relations with the Center Party. ?][? if dvp_relation < 30 : We do not have adequate relations with the DVP. ?] [? if resources < 2 : We do not have enough resources. ?]
-on-arrival: resources -= 2; spd_in_government = 1; in_grand_coalition = 1; spd_toleration = 0; jungturken_dissent += 6; staatspolitiker_strength += 5; leverage = 20 if leverage >= 20
-achievement: constitutional_coalition
-
-Our negotiations have succeeded, and the Center Party and DVP have agreed to form a new coalition government with us!
-
-We are now part of a "constitutional coalition" government that includes all parties except the extremists of the KPD, DNVP, and NSDAP. [+ chancellor +] will remain as chancellor. Leftists in our party are skeptical of this arrangement.
-
-
-
-
-@stay_course
-
-We will stay the course of toleration, for the sake of stability.
+We have increased our level of contact and discussions with the parties of the opposition, urging them to cooperate against chancellor Schleicher.
