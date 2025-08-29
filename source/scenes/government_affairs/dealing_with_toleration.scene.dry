@@ -31,7 +31,7 @@ Are we sure about this? A vote of no confidence could trigger new elections shou
 on-arrival: spd_in_government = 0; spd_toleration = 0; in_grand_coalition = 0; schleicher_ousted = 1
 go-to: election_1928.coalition_menu
 
-We have called for a vote of no confidence, and have brought down this government. Unless we can present a workable majority to [+ president +], new election will have to be called.
+We have called for a vote of no confidence, and brought down this government. Unless we can present a workable majority to [+ president +], new election will have to be called.
 
 @stay_course
 
