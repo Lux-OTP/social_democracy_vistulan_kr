@@ -33,6 +33,10 @@ go-to: election_1928.coalition_menu
 
 We have called for a vote of no confidence, and have brought down this government. Unless we can present a workable majority to [+ president +], new election will have to be called.
 
+@stay_course
+
+Whether it's because we don't want to join the government in the current state of affairs, or we don't have enough support in the parliament to fully succeed, we decide that we can't make such a fateful decision just yet.
+
 @urge_against_austerity
 title: Urge the chancellor to engage in talks with the striking Ruhr workers.
 view-if: ruhrkampf == 1
