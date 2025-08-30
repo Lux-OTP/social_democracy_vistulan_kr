@@ -1,13 +1,34 @@
-title: Economic Sanctions
-subtitle: Our military buildup has caused sanctions from France and other countries.
+title: Waning influence in Russia
+subtitle: The russian Vozhd is meddling in our affairs.
 new-page: true
-on-arrival: workers_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 4; rural_nsdap += 3; unemployed += 3; workers_spd -= 4 if spd_in_government; new_middle_spd -= 5 if spd_in_government; old_middle_spd -= 5 if spd_in_government; rural_spd -= 4 if spd_in_government; economic_growth -= 1; nationalism += 5; pacifism -= 1
+on-arrival: economic_growth -= 0.5
 tags: event
-view-if: reichswehr_strength > 140
-max-visits: 1
+view-if: month == 6 and (year == 1936 or year == 1938)
+max-visits: 2
 
-= Economic Sanctions
+= Waning influence in Russia
 
-In response to our military rearmament in contravention of the Versailles Treaty, the Western Allies have imposed economic sanctions on Germany. The costs of the sanctions are largely borne by the proletariat; the people are facing increasing poverty.
+In response to economic turmoil caused in the Reichspakt by the Black Monday, Boris Savinkov, current [? if year == 1936: president?][? if year == 1937 or year == 1938: leader?] of Russia has tasked his administration with tackling the issue of german economic influence in Russia. Across the country, factories and infrastructure are being nationalized for symbolic compensation, worsening the already difficult situation of the German economy.
+
+While we can't send our troops to handle the situation like during the fallout of Weltkrieg, something has to be done to address this blatant defiance of our hegemony.
 
 # options: 
+
+- @russia_nothing_we_can_do: It's the government's problem.
+- @compensate: Compensate our investors and shareholders
+- @send_demands
+- @mitteleuropa_sanctions
+
+@russia_nothing_we_can_do
+view-if: spd_in_government == 0
+on-arrival: economic_growth -= 1.5; ostwall_strength -= 25; ostwall_loyalty -= 0.05
+
+[+ chancellor +]'s government answers by urging Mitteleuropa to impose an embargo on Russia. While this measure succeeds in weakening russian economy, it doesn't help to ease the impact this crisis has on our economy. Additionally, most of the burden of the sanctions falls on our eastern european allies.
+
+@compensate
+view-if: spd_in_government == 1
+subtitle: -1 budget
+choose-if: budget >= 1
+on-arrival: budget -= 1; inflation += 0.2; economic_growth -= 1; new_middle_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent); workers_spd -= 3; unemployed_spd -= 3; jungturken_dissent += 5; center_dissent += 5
+
+We provide compensation
