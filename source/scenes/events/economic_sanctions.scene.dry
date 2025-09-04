@@ -1,9 +1,9 @@
 title: Waning influence in Russia
-subtitle: The russian Vozhd is meddling in our affairs.
+subtitle: The russian government is meddling in our affairs.
 new-page: true
-on-arrival: economic_growth -= 0.5
+on-arrival: economic_growth -= 0.5; russia_sanctions_seen = 1
 tags: event
-view-if: month == 6 and (year == 1936 or year == 1938)
+view-if: ((month == 8  and year == 1936) or (month == 6 and year == 1938)) and russia_sanctions_seen == 0 and sp_in_government == 1
 max-visits: 2
 
 = Waning influence in Russia
@@ -12,18 +12,20 @@ In response to economic turmoil caused in the Reichspakt by the Black Monday, Bo
 
 While we can't send our troops to handle the situation like during the fallout of Weltkrieg, something has to be done to address this blatant defiance of our hegemony.
 
-# options: 
+-@options: Is there anything we can do to address this crisis?  
+
+@options
 
 - @russia_nothing_we_can_do: It's the government's problem.
-- @compensate: Compensate our investors and shareholders
-- @send_demands
-- @mitteleuropa_sanctions
+- @compensate: Compensate our investors and shareholders.
+- @send_demands: We will threaten to use force in defence of our businesses.
+- @mitteleuropa_sanctions: Call on Mitteleuropa to impose sanctions on Russia.
 
 @russia_nothing_we_can_do
 view-if: spd_in_government == 0
-on-arrival: economic_growth -= 1.5; ostwall_strength -= 25; ostwall_loyalty -= 0.05
+on-arrival: economic_growth -= 1.5; ostwall_strength -= 25; ostwall_loyalty -= 0.05; sa_militancy -= 0.10; sa_strength -= 50
 
-[+ chancellor +]'s government answers by urging Mitteleuropa to impose an embargo on Russia. While this measure succeeds in weakening russian economy, it doesn't help to ease the impact this crisis has on our economy. Additionally, most of the burden of the sanctions falls on our eastern european allies.
+[+ chancellor +]'s government answers by urging Mitteleuropa to impose an embargo on Russia. While this measure succeeds in weakening the russian economy, it doesn't help to ease the impact this crisis has on our economy. Additionally, most of the burden of the sanctions falls on our eastern european allies.
 
 @compensate
 view-if: spd_in_government == 1
@@ -31,4 +33,20 @@ subtitle: -1 budget
 choose-if: budget >= 1
 on-arrival: budget -= 1; inflation += 0.2; economic_growth -= 1; new_middle_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent); workers_spd -= 3; unemployed_spd -= 3; jungturken_dissent += 5; center_dissent += 5
 
-We provide compensation
+We provide compensation to the affected german entrepreneurs. However, the effect this action has on our economy is negligible, and many people see this as an admission of defeat and careless spending in the time of crisis.
+
+@send_demands
+view-if: spd_in_government == 1
+
+We can threaten the Russians with using the Heer to enforce economic concessions we enjoy in their country. Our threats are nothing more than empty words however, as our army is still by no means ready for war and would likely outright refuse to prepare any offensive operations against Russia. This is a dangerous move which can easily backfire should our opponents see through our bluff.
+
+-@send_demands_2
+-@options: Actually, we should reconsider...
+
+@send_demands_2
+on-arrival: defense_strength = reichswehr_militancy*reichswehr_strength; defense_strength += ostwall_militancy*ostwall_strength; enemy_strength = sa_strength*sa_militancy + (sh_strength*sh_militancy)*0.2;
+go-to: send_demands_victory if (defense_strength*0.6) > enemy_strength; send_demands_defeat if (0.6*defense_strength) <= enemy_strength
+
+@send_demands_defeat
+title: Russian [? if year == 1936: Republic?][? if year == 1937 or year == 1938: State?] stands firm.
+on-arrival: sa_strength += 50; reichswehr_loyalty -= 0.05; ostwall_loyalty -= 0.05; economic_growth -= 1.5; 

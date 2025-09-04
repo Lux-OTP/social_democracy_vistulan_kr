@@ -133,7 +133,10 @@ Q.heer_research = 0;
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)
 // Reichsbanner, stahlhelm, SA, rotfrontkämpferbund
-// RFB will be used as the ruhrkampf forces for now
+// RFB will be used as the ruhrkampf forces
+// SA will be the Moscow Accords
+// SH will be the 3I
+// should add Entente, might just make it something diff tho idk
 Q.rb_strength = 2000;
 Q.rb_militancy = 0.01;
 Q.women_in_rb = 0;
@@ -151,6 +154,7 @@ Q.rfb_militancy = 0.5;
 Q.rfb_banned = 0;
 Q.rfb_banned_prussia = 0;
 Q.ruhrkampf_agreement = 0;
+Q.russia_sanctions_seen = 0;
 
 Q.interior_police_strength = 50;
 Q.interior_police_militancy = 1;
