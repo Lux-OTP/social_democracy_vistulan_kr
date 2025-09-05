@@ -47,7 +47,7 @@ view-if: spd_in_government == 1
 
 We can threaten the Russians with using the Heer to enforce economic concessions we enjoy in their country. Our threats are nothing more than empty words however, as our army is still by no means ready for war and would likely outright refuse to prepare any offensive operations against Russia. This is a dangerous move which can easily backfire should our opponents see through our bluff.
 
-- @send_demands_2
+- @send_demands_2: We can't show any weakness.
 - @options: Actually, we should reconsider...
 
 @send_demands_2
