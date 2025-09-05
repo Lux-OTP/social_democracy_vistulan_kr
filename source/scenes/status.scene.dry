@@ -120,7 +120,7 @@ if (Q.sa_strength) {
 }
 !}
 
-= Paramilitaries
+= Enemies of the Kaiserreich
 
 {!<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD.">Reichsbanner</span>!} Strength: [+ rb_strength_2 +] thousand
 
@@ -128,25 +128,33 @@ Reichsbanner Militarization: [+ rb_militancy : militancy +]
 
 {!<span class="tooltip-text" title="Ruhrkampf is a mass strike movement raging in the Ruhr region, caused by economic and political unrest.">Ruhrkampf</span>!} Strikers: [+ rfb_strength_2 +] thousand
 
-Ruhrkampf Agitation: [+ rfb_militancy : militancy +]
+Ruhrkampf agitation: [+ rfb_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the DNVP.">Stahlhelm</span>!} Strength: [+ sh_strength_2 +] thousand
+{!<span class="tooltip-text" title="Third Internationale is an international body coordinating syndicalist efforts for a revolutionary overthrow of the german hegemony.">Third Internationale</span>!} Strength: [+ sh_strength_2 +] thousand soldiers
 
-Stahlhelm Militarization: [+ sh_militancy : militancy +]
+Third Internationale preparedness: [+ sh_militancy : militancy +]
 
-{!<span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary.">SA</span>!} Strength: [+ sa_strength_2 +] thousand
+{!<span class="tooltip-text" title="Russia seeks to restore its imperial dominance over Eastern Europe, lost in the fire of war and revolution.">Russian Army</span>!} Strength: [+ sa_strength_2 +] thousand soldiers
 
-SA Militarization: [+ sa_militancy : militancy +]
+Russian preparedness: [+ sa_militancy : militancy +]
 
-= Official military/paramilitaries
+= German-aligned Forces
 
-Reichswehr: [+ reichswehr_strength +] thousand troops.
+Heer: [+ reichswehr_strength +] thousand troops.
 
-Reichswehr Loyalty: [+ reichswehr_loyalty : loyalty +]
+Heer preparedness: [+ reichswehr_militancy : militancy +].
+
+Heer loyalty: [+ reichswehr_loyalty : loyalty +]
 
 Prussian police: [+ prussian_police_strength +] thousand members.
 
 Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
+
+Ostwall: [+ ostwall_strength +] thousand troops.
+
+Ostwall preparedness: [+ ostwall_militancy : militancy +].
+
+Ostwall loyalty: [+ ostwall_loyalty : loyalty +]
 
 [? if spd_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
 

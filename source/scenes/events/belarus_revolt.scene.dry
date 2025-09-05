@@ -1,6 +1,6 @@
 title: Belarus breaks free.
 subtitle: Reichspakt is falling apart...
-view-if: year >= 1938 and month >= 2 and month < 5 and ostwall_loyalty <= 0.55
+view-if: ostwall_loyalty < 0.20
 max-visits: 1
 on-arrival: ostwall_militancy -= 0.1; ostwall_strength -= (1/3*ostwall_strength); ostwall_loyalty -= 0.05; belarus_revolt = 1
 go-to: belarus_independent

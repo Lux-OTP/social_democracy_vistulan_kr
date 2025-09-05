@@ -1,6 +1,6 @@
 title: Hetman Skoropadskiy flees Ukraine.
-subtitle: Reichspakt is falling apart...
-view-if: year >= 1937 and month > 7 and month < 10 and ostwall_loyalty <= 0.45
+subtitle: Is the german world order ending?
+view-if: ostwall_loyalty <= 0.30
 max-visits: 1
 on-arrival: ostwall_militancy -= 0.1; ostwall_strength -= (1/3*ostwall_strength); ostwall_loyalty -= 0.05; ukraine_revolt = 1
 go-to: petliura_takeover
