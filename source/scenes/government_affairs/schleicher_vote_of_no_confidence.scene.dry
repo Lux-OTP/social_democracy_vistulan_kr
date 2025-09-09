@@ -1,8 +1,9 @@
 title: No-confidence Vote
-is-card: true
 new-page: true
-tags: govt_affairs
+is-card: true
 view-if: neo_weimar_coalition >= 50 and spd_in_government == 0
+tags: govt_affairs
+card-image: img/portraits/BraunOtto.jpg
 max-visits: 1
 
 couldn't think of something good to write 
@@ -24,6 +25,6 @@ go-to: election_1928.coalition_menu
 title: The motion fails!
 on-arrival: staatspolitiker_strength -= 5; jungturken_strength += 5; jungturken_dissent += 5
 
-Our vote fails, and chancellor [+ chancellor +] remains in his post. Some of our members decry this failure as a sign of corruption of german democracy by conservatism and nationalism.
+Our vote fails, and chancellor [+ chancellor +] remains in his post. Some of our members decry this as a sign of corruption of german democracy by conservatism and nationalism.
 
 Due to our failure, some speculate that the SPD might not be in "permanent opposition" purely by choice.
