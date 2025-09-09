@@ -41,22 +41,14 @@ if (Q.spd_in_government && Q.chancellor_party == "SPD") {
     Q.total_power += Q.loyal_reichswehr_power/4;
 }
 Q.rfb_power = Q.rfb_strength*Q.rfb_militancy;
-if (Q.kpd_relation >= 60) {
-    Q.total_power += Q.rfb_power;
-} else if (Q.kpd_relation >= 45) {
-    Q.total_power += Q.rfb_power*0.5;
-}
+Q.total_power += Q.rfb_power;
 // general strike strength
 // maximum (given 25 labor strength) is 400
 // use normalized workers_spd instead of labor_strength?
-Q.normalized_workers_spd = 100*Q.workers_spd/(Q.workers_spd + Q.workers_kpd + Q.workers_nsdap + Q.workers_other + Q.workers_dnvp + Q.workers_z);
-Q.normalized_workers_kpd = 100*Q.workers_kpd/(Q.workers_spd + Q.workers_kpd + Q.workers_nsdap + Q.workers_other + Q.workers_dnvp + Q.workers_z);
+Q.normalized_workers_spd = 100*Q.workers_spd/(Q.workers_spd + Q.workers_sp + Q.workers_dvlp + Q.workers_other + Q.workers_dkp + Q.workers_z);
+Q.normalized_workers_sp = 100*Q.workers_kpd/(Q.workers_spd + Q.workers_sp + Q.workers_dvlp + Q.workers_other + Q.workers_dkp + Q.workers_z);
 Q.normalized_workers_total = Q.normalized_workers_spd;
-if (Q.kpd_relation >= 60) {
-    Q.normalized_workers_total += Q.normalized_workers_kpd;
-} else if (Q.kpd_relation >= 45) {
-    Q.normalized_workers_total += Q.normalized_workers_kpd*0.5;
-}
+Q.normalized_workers_total += Q.normalized_workers_sp;
 Q.total_power += (2 - Q.labor_dissent/100)*Q.normalized_workers_total*(2 - Q.unemployed/100)*2.5;
 console.log("Supporter strength:", Q.total_power);
 
@@ -184,7 +176,7 @@ While we might want to call for foreign assistance, the foreign powers see the "
 
 @long_war_intervention
 
-- @west_aid: Perhaps we can receive aid from the Western powers, France and Britain.
+- @west_aid: Perhaps we can receive aid from the Western syndicalist powers, France and Britain.
 - @soviet_aid: Perhaps we can receive aid from the Soviet Union.
 - @east_aid: Perhaps our eastern neighbors, Poland and Czechoslovakia, can help us. If they know anything, they do not want fascists coming to power in Germany.
 - @game_over: Game over.

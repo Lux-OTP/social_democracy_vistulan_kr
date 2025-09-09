@@ -6,7 +6,6 @@ on-arrival: month_actions += 1; foreign_policy_timer += 8
 view-if: spd_in_government = 1 and foreign_minister_party = "SPD" and  foreign_policy_timer <= 0
 card-image: img/portraits/BreitscheidRudolf.jpg
 go-to: fp_menu
-#subtitle: Even Master of the World must thread a narrow path.
 
 = Foreign Policy
 
@@ -23,8 +22,6 @@ What should our foreign policy priority be?
 - @expose
 - @european_union
 - @european_union_2
-- @support_austria
-- @support_austria_2
 - @root: Do not enact any policies for now.
 - @easy_discard
 - @cancel_advisor_action
@@ -123,7 +120,7 @@ We must try and turn this tendency around, for the sooner we rebuild the interna
 
 @mitteleuropa_1
 # TODO add rewards for utilizing mitteleuropa
-on-arrival: mitteleuropa += 1; lvp_relation += 5*(1-dissent); minority_bloc_relation += 3*(1-dissent); agrarians_relation -= 3; staatspolitiker_dissent -= 5; labor_dissent -= 5
+on-arrival: mitteleuropa += 1; lvp_relation += 5*(1-dissent); minority_bloc_relation += 3*(1-dissent); agrarians_relation -= 3; economic_growth += 0.2
 view-if: mitteleuropa == 0
 
 As the leaders of Mitteleuropa, it's our duty to maintain economic stability of the entire union. We can't achieve it without cooperation from the other member states.
@@ -133,16 +130,14 @@ We rail against raising tariffs and urge our partners to bail out faultering ban
 Our efforts are widely appreciated, however agrarian parties object to increased competition from the east. 
 
 @mitteleuropa_2
-# TODO on-arrival
 view-if: mitteleuropa == 1
-on-arrival: mitteleuropa += 1; lvp_relation += 5*(1-dissent); minority_bloc_relation += 3*(1-dissent); agrarians_relation -= 3; staatspolitiker_dissent -= 5; labor_dissent -= 5
+on-arrival: mitteleuropa += 1; lvp_relation += 5*(1-dissent); minority_bloc_relation += 3*(1-dissent); agrarians_relation -= 3; staatspolitiker_dissent -= 5; labor_dissent -= 5; economic_growth += 1
 
 WIP we encourage massive infrastructural projects connecting member states and advocate for further lowering restrictions on international trade
 
 @mitteleuropa_3
-# TODO on-arrival
 view-if: mitteleuropa == 2
-on-arrival: mitteleuropa += 1; lvp_relation += 5*(1-dissent); minority_bloc_relation += 3*(1-dissent); agrarians_relation -= 3; staatspolitiker_dissent -= 5; labor_dissent -= 5
+on-arrival: mitteleuropa += 1; lvp_relation += 5*(1-dissent); minority_bloc_relation += 3*(1-dissent); agrarians_relation -= 3; economic_growth += 1; budget += 1; new_middle_spd += 3*(1-dissent); workers_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent)
 
 WIP in order to fully utilize the potential of Mitteleuropa, we must give it unprecedented prerogatives, allowing it to coordinate economic processes of the entire continent without relying on our actions
 
@@ -193,22 +188,6 @@ on-arrival: reichskonkordat = 1; z_relation += 15*(1-dissent); catholics_spd += 
 achievement: reichskonkordat
 
 We have successfully signed a Concordat between Germany and the Roman Catholic Church! This treaty defines a formal relationship between the Church and the German state, guaranteeing freedom of worship for Catholics, and the right of the church to appoint their own clergy. Catholics in Germany are pleased, as are their representatives in the Center Party.
-
-@support_austria
-title: Bolster ties with Austria.
-view-if: austrian_civil_war_seen = 0
-on-arrival: sdapo_strength += 1; jungturken_dissent -= 3; center_dissent -= 3
-
-We improve our relations with the government in Vienna
-
-@support_austria_2
-title: Provide material support to Austrian democracy against the Dollfuß dictatorship.
-subtitle: -1 budget
-choose-if: budget >= 1
-view-if: austrian_parliament_seen = 1 and austrian_civil_war_seen = 0
-on-arrival: budget -= 1; sdapo_strength += 3; jungturken_dissent -= 6; center_dissent -= 6
-
-In public, we provide verbal backing to Austrian democracy, wage a war of words against Austrofascism, and promulgate additional trade sanctions. Privately, we provide financial and various forms of "support" to our comrades in Austria in their struggle against dictatorship.
 
 @european_union
 title: Take steps to form a "European Union".
