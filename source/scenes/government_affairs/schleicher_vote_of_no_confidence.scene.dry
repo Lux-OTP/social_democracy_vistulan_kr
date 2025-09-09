@@ -12,7 +12,7 @@ couldn't think of something good to write
 - @easy_discard
 
 @start_the_vonc
-go-to: vonc_success if chancellor == "von Dirksen" or (z_relation >= 40 and lvp_relation >= 40 and weimar_coalition >= 50) or (z_relation >= 40 and lvp_relation >= 40 and minority_bloc_relation >= 40 and agrarians_relation >= 40 and grand_coalition >= 50); vonc_failure if (weimar_coalition < 50 or z_relation < 40 or lvp_relation < 40) or (grand_coalition < 50 and (agrarians_relation < 40 or minority_bloc_relation < 40))
+go-to: vonc_success if chancellor == "von Dirksen" or (z_relation >= 40 and lvp_relation >= 40 and weimar_coalition >= 50) or (z_relation >= 40 and lvp_relation >= 40 and minority_bloc_relation >= 40 and agrarians_relation >= 40 and grand_coalition >= 50); vonc_failure if chancellor != "von Dirksen" and (weimar_coalition < 50 or z_relation < 40 or lvp_relation < 40) or (grand_coalition < 50 and (agrarians_relation < 40 or minority_bloc_relation < 40))
 
 @vonc_success
 title: The motion passes!
