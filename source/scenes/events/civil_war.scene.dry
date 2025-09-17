@@ -79,7 +79,7 @@ go-to: war_menu
 
 = The Array of Forces
 
-Our enemies are the nationalist Stahlhelm, with [+ sh_strength +] thousand troops, and the Nazi SA, with [+ sa_strength +] thousand troops. The loyalties of the Reichswehr, with its [+ reichswehr_strength +] thousand regular soldiers, and Prussian police, with [+ prussian_police_strength +] thousand members, are unclear.
+Our enemies is the nationalist Brunswick Front, with [+ bf_strength +] thousand troops. The loyalties of the Reichswehr, with its [+ reichswehr_strength +] thousand regular soldiers, and Prussian police, with [+ prussian_police_strength +] thousand members, are unclear.
 
 [? if chancellor_party == "KPD" or president == "Thälmann" : The KPD's paramilitary, the RFB, is leading the battle, and we are their co-combatants. ?]
 
