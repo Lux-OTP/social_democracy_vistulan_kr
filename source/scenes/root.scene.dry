@@ -133,6 +133,7 @@ Q.heer_research = 0;
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)
 // Reichsbanner, stahlhelm, SA, rotfrontkämpferbund
+// RB will be used for RAVB (ruhr defense association)
 // RFB will be used as the ruhrkampf forces
 // SA will be the Moscow Accords
 // SH will be the 3I
@@ -177,7 +178,6 @@ Q.kriegsmarine_militancy = 0.05;
 // checks whether Oststaats have revolted against RP
 Q.ukraine_revolt = 0;
 Q.belarus_revolt = 0;
-Q.baltic_revolt = 0;
 
 // The state of the country
 
