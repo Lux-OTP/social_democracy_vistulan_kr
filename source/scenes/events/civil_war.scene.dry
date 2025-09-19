@@ -19,7 +19,7 @@ if (Q.dissent < 0) {
 
 Q.civil_war_seen = 1;
 
-// our allies
+// our allies (if radical enough, syndicalists and socialists, if too radical, cut to heer)
 Q.total_power = 0;
 // TODO:  lower reichsbanner strength if the party's popularity is very low.
 Q.rb_power = Q.rb_strength*Q.rb_militancy;
@@ -52,12 +52,10 @@ Q.normalized_workers_total += Q.normalized_workers_sp;
 Q.total_power += (2 - Q.labor_dissent/100)*Q.normalized_workers_total*(2 - Q.unemployed/100)*2.5;
 console.log("Supporter strength:", Q.total_power);
 
-// our enemies
+// our enemies (Brunswick + disloyal Heer)
 Q.enemy_power = 0;
-Q.sa_power = Q.sa_strength*Q.sa_militancy;
-Q.enemy_power += Q.sa_power;
-Q.sh_power = Q.sh_strength*Q.sh_militancy;
-Q.enemy_power += Q.sh_power;
+Q.bf_power = Q.bf_strength*Q.bf_militancy;
+Q.enemy_power += Q.bf_power;
 Q.hostile_reichswehr_power = Q.reichswehr_strength*Q.reichswehr_militancy*(1-Q.reichswehr_loyalty);
 Q.enemy_power += Q.hostile_reichswehr_power;
 console.log("Enemy strength:", Q.enemy_power);
@@ -79,7 +77,7 @@ go-to: war_menu
 
 = The Array of Forces
 
-Our enemies is the nationalist Brunswick Front, with [+ bf_strength +] thousand troops. The loyalties of the Reichswehr, with its [+ reichswehr_strength +] thousand regular soldiers, and Prussian police, with [+ prussian_police_strength +] thousand members, are unclear.
+Our enemies is the nationalist Brunswick Front, with [+ bf_strength +] thousand troops. The loyalties of the Heer, with its [+ reichswehr_strength +] thousand regular soldiers, and Prussian police, with [+ prussian_police_strength +] thousand members, are unclear.
 
 [? if chancellor_party == "KPD" or president == "Thälmann" : The KPD's paramilitary, the RFB, is leading the battle, and we are their co-combatants. ?]
 
@@ -93,8 +91,8 @@ What else do we have?
 
 @war_menu
 
-- @rw_help: Appeal to the Reichswehr to stand down.
-- @kpd_help: Call for support from the Communists.
+- @rw_help: Appeal to the Heer to stand down.
+- @kpd_help: Call for support from the Socialists.
 - @general_strike: Call a general strike!
 - @loyal_police: Call up the loyal portions of the police.
 - @war_outcome: Now, the battle...
@@ -108,20 +106,20 @@ We have urged the Reichswehr to stand down, to avoid killing their countrymen. [
 
 @kpd_help
 max-visits: 1
-view-if: chancellor_party != "KPD" and president != "Thälmann" 
+view-if: chancellor_party != "SP" and president != "Thälmann" 
 go-to: war_menu
 on-arrival: war_choices += 1
 
 There are [+ rfb_strength +] thousand fighters with the Communist RFB, in addition to the workers who support the KPD.
 
-[? if kpd_relation >= 60 : The KPD is entirely on our side, owing to our good relations.. ?][? if kpd_relation < 60 and kpd_relation >= 45 : Most of the KPD is on our side, due to their good relations with us. ?][? if kpd_relation < 45 : The KPD does not support us. ?]
+[? if sp_relation >= 60 : The SP is entirely on our side, owing to our good relations.. ?][? if sp_relation < 60 and sp_relation >= 45 : Most of the KPD is on our side, due to their good relations with us. ?][? if sp_relation < 45 : The SP does not support us. ?]
 
 @general_strike
 max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1
 
-A general strike stopped the Kapp Putsch in 1920, and it can stop fascism today. [? if normalized_workers_total > 70 : The workers are largely united with us. ?][? if normalized_workers_total >= 50 and normalized_workers_total <= 70 : There is some dissent within labor, but a majority of workers support the general strike. ?][? if normalized_workers_total > 30 and normalized_workers_total < 50 : However, there is substantial dissent within labor, and less than half support the general strike. ?][? if normalized_workers_total <= 30 : However, labor is deeply divided, and most workers do not heed the call to strike. ?]
+A general strike is considered an unthinkable option in german politics, however it may stop the far-right from coming into power. [? if normalized_workers_total > 70 : The workers are largely united with us. ?][? if normalized_workers_total >= 50 and normalized_workers_total <= 70 : There is some dissent within labor, but a majority of workers support the general strike. ?][? if normalized_workers_total > 30 and normalized_workers_total < 50 : However, there is substantial dissent within labor, and less than half support the general strike. ?][? if normalized_workers_total <= 30 : However, labor is deeply divided, and most workers do not heed the call to strike. ?]
 
 
 @loyal_police
