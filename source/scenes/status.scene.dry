@@ -120,15 +120,23 @@ if (Q.sa_strength) {
 }
 !}
 
+= Paramilitary forces
+
+[? if ravb_formed == 0 and ruhrkampf == 0 and harzburg_front_seen == 0 : No paramilitary forces are operating in the Empire at the moment. ?]
+
+[? if ravb_formed == 1 : {!<span class="tooltip-text" title="The Ruhrarbeiterverteidigungsbund is a leftist organization for defending striking Ruhr workers, mostly affiliated with the SPD.">Ruhrarbeiterverteidigungsbund</span>!} Strength: [+ rb_strength_2 +] thousand ?]
+
+[? if ravb_formed == 1 : Ruhrarbeiterverteidigungsbund militarization: [+ rb_militancy : militancy +] ?]
+
+[? if ruhrkampf == 1 : {!<span class="tooltip-text" title="Ruhrkampf is a mass strike movement raging in the Ruhr region, caused by economic and political unrest.">Ruhrkampf</span>!} Strikers: [+ rfb_strength_2 +] thousand ?]
+
+[? if ruhrkampf == 1 : Ruhrkampf agitation: [+ rfb_militancy : militancy +] ?]
+
+[? if harzburg_front_seen == 1 : {!<span class="tooltip-text" title="Brunswick Front is a right wing paramilitary organization focused on combatting the perceived internal enemies of the german state, centered around the DVLP.">Brunswick Front</span>!} Strikers: [+ bf_strength +] thousand ?]
+
+[? if harzburg_front_seen == 1 : Brunswick Front militarization : [+ bf_militancy : militancy +] ?]
+
 = Enemies of the Kaiserreich
-
-{!<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD.">Reichsbanner</span>!} Strength: [+ rb_strength_2 +] thousand
-
-Reichsbanner Militarization: [+ rb_militancy : militancy +]
-
-{!<span class="tooltip-text" title="Ruhrkampf is a mass strike movement raging in the Ruhr region, caused by economic and political unrest.">Ruhrkampf</span>!} Strikers: [+ rfb_strength_2 +] thousand
-
-Ruhrkampf agitation: [+ rfb_militancy : militancy +]
 
 {!<span class="tooltip-text" title="Third Internationale is an international body coordinating syndicalist efforts for a revolutionary overthrow of the german hegemony.">Third Internationale</span>!} Strength: [+ sh_strength_2 +] thousand soldiers
 
@@ -203,4 +211,4 @@ Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, 
 
 Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, SP: [+ catholics_sp_display +]%, LVP: [+ catholics_lvp_display +]%, Minority Bloc: [+ catholics_minority_bloc_display +]%; Agrarians: [+ catholics_agrarians_display +]%; DkP: [+ catholics_dkp_display +]%, DVLP: [+ catholics_dvlp_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
-Support for the Republic: [+ pro_republic_disp +]%
+Support for Democracy: [+ pro_republic_disp +]%

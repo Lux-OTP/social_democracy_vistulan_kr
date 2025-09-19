@@ -138,6 +138,7 @@ Q.heer_research = 0;
 // SA will be the Moscow Accords
 // SH will be the 3I
 // should add Entente, might just make it something diff tho idk
+Q.ravb_formed
 Q.rb_strength = 2000;
 Q.rb_militancy = 0.01;
 Q.women_in_rb = 0;

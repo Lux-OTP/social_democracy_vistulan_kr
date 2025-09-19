@@ -20,7 +20,7 @@ Many members of our party, mostly on the left wing, are calling for the SPD to l
 - @easy_discard
 
 @form_ravb
-on-arrival: rb_strength = 10; rb_militancy = 0.10; jungturken_dissent -= 5; staatspolitiker_dissent += 5; staatspolitiker_strength -= 5; center_dissent += 5; sp_relation += 5; lvp_relation -= 5; z_relation -= 5; pacifism -= 1; coalition_dissent += 1 if spd_in_government == 1 and in_emergency_government == 0 and in_spd_majority == 0; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); new_middle_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3
+on-arrival: rb_strength = 10; rb_militancy = 0.10; jungturken_dissent -= 5; staatspolitiker_dissent += 5; staatspolitiker_strength -= 5; center_dissent += 5; sp_relation += 5; lvp_relation -= 5; z_relation -= 5; pacifism -= 1; coalition_dissent += 1 if spd_in_government == 1 and in_emergency_government == 0 and in_spd_majority == 0; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); new_middle_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; ravb_formed = 1
 
 We form the Ruhrarbeiterverteidigungsbund, or RAVB, an organization aiming to coordinate resistance against increasingly violent police actions.
 
