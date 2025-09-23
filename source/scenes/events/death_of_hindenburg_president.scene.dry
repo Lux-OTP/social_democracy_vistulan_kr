@@ -18,7 +18,7 @@ Q.reichswehr_power = Q.reichswehr_militancy*Q.reichswehr_strength;
 Q.germany_power += Q.reichswehr_power;
 // ostwall fighting strength
 Q.ostwall_power = Q.ostwall_militancy*Q.ostwall_strength;
-if (Q.ostwall_loyalty < 31) {
+if (Q.ostwall_loyalty < 0.31) {
     Q.ostwall_power *= Q.ostwall_loyalty;
 }
 if (Q.ukraine_revolt == 1) {
@@ -35,6 +35,13 @@ Q.invaders_power += Q.internationale_power;
 Q.moscow_power = Q.sa_militancy*Q.sa_strength;
 Q.invaders_power += Q.moscow_power;
 
+if (Q.germany_power > Q.invaders_power*1.6) {
+    Q.german_victory = 1;
+} else if (Q.germany_power_power/Q.invaders_power >= 1.1) {
+    Q.long_weltkrieg = 1;
+} else {
+    Q.weltkrieg_total_defeat = 1;
+}
 !}
 
 
@@ -53,3 +60,58 @@ Political and economic matters give way to draft announcements and mobilization 
 // If war preparations are moderately advanced, Germany will lose in the beginning; Hohenzollerns will flee and a German Republic/DVLP's German Reich will be established
 // If war preparations are very advanced, Germany will destroy its opponents in a series of swift offensives
 
+@weltkrieg_menu
+
+- @mobilize_oststaats: Order our eastern allies to stall the russian onslaught.
+- @entente_help: Call upon the Entente to join the war.
+- @approach_austria: Reach out to Austria.
+- @weltkrieg_outcome: Now, the war...
+
+@mobilize_oststaats
+max-visits: 1
+go-to: weltkrieg_menu
+on-arrival: weltkrieg_choices += 1
+
+We order Oststaats to delay the russian advance until Heer mobilizes enough men. Their armies will have to hold out long enough for our forces to defeat the western syndicalist powers. Hopefully they will buy us enough time.
+
+[? if ukraine_revolt and not belarus_revolt : Unfortunately, fractures created in the Reichspakt in the aftermath of the Black Monday are hindering our resistance. ?]
+
+[? if ukraine_revolt and belarus_revolt : With the key states of our alliance network lost to our negligent foreign policy, there's little hope for the russian attack to encounter any serious opposition. ?]
+
+@entente_help
+max-visits: 1
+go-to: weltkrieg_menu
+on-arrival: weltkrieg_choices += 1
+
+We call upon the Entente to enter the war against the Third Internationale. However, regardless of their actions, remnants of the British Empire and the war-torn United States won't be able to seriously impact syndicalist war effort by the time our fate is decided.
+
+@approach_austria
+max-visits: 1
+go-to: weltkrieg_menu
+on-arrival: weltkrieg_choices += 1
+
+We call upon Austria to aid us in this conflict just as we did 26 years ago. Knowing their fate will be decided on the battlefield regardless if they appear on it or not, our danubian brothers in arms oblige without hesitation.
+
+@war_outcome
+view-if: war_choices >= 2
+go-to: weltkrieg_defeat if weltkrieg_total_defeat = 1; weltkrieg_long_war if long_weltkrieg = 1; kaiserreich_victory if german_victory = 1
+
+@weltkrieg_defeat
+
+= Berlin on fire
+
+Our forces are no match for those of the syndicalist and narodniks. Heer and allied armies are quickly overpowered by the forces of the Third Internationale and Moscow Accords. The fight is bloody and cruel, but it all ends quickly. Kaiser and his family flee the country, as the russian sword and thorns dominate Berlin's landscape from atop the Reichstag's ruins.
+
+Germany is divided among the invaders, who seem to be preparing for another war, this time among each other. Soon, german soil will become a battlefield once more.
+
+Our resistance will be recorded in the history books, and in the future, our names will be honored. But for now, all is lost.
+
+- @game_over: Game over.
+
+@weltkrieg_long_war
+
+- @game_over: Game over.
+
+@kaiserreich_victory
+
+- @game_over: Game over.
