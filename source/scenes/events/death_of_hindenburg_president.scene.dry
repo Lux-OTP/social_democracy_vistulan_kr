@@ -92,7 +92,7 @@ on-arrival: weltkrieg_choices += 1
 
 We call upon Austria to aid us in this conflict just as we did 26 years ago. Knowing their fate will be decided on the battlefield regardless if they appear on it or not, our danubian brothers in arms oblige without hesitation.
 
-@war_outcome
+@weltkrieg_outcome
 view-if: war_choices >= 2
 go-to: weltkrieg_defeat if weltkrieg_total_defeat = 1; weltkrieg_long_war if long_weltkrieg = 1; kaiserreich_victory if german_victory = 1
 
@@ -110,8 +110,24 @@ Our resistance will be recorded in the history books, and in the future, our nam
 
 @weltkrieg_long_war
 
+= Hohenzollerns flee the country!
+
+Both sides are unwilling to go down without a fight and refuse to yield. The war devolves into battles of attrition, with massive armored operations supported by unprecedented artillery and aerial devastation wreaking havoc among soldiers of both sides. Month by month, Reichspakt armies are steadily pushed back on the eastern front by the seemingly endless russian onslaught, while our offensives in the west bring no concrete results. With victory seeming anything but possible and faith in victory waning every week, kaiser Wilhelm flees Germany for Mittelafrika, hoping to avoid persecution by the soon-to-be victors.
+
+In response to this shameful display, [? if spd_in_government : SPD ?][? if not spd_in_government : DVLP ?] installs an interim president to lead the country for the duration of war.
+
+As russian tanks overrun Minsk and Kiev, german cities in the east are being prepared for the looming threat of invasion. It seems our two decades of hegemony have passed.
+
+- @d_day: Entente finally enters the stage.
+
+@d_day
+
+Our desperate resistance wasn't in vain at the end of the day. News of an Entente invasion of the British Isles and photos of the Union Jack waving over devastated Manchester mark a turning point in the Second Weltkrieg. With the so-called D-Day diverting british troops from the western front, reinvigorated Heer launches its final offensive into France. As Paris falls into german hands once more, the Third Internationale  declares unconditional surrender. Although it takes many more months and lives, Russia and her allies soon follow. 
+
 - @game_over: Game over.
 
 @kaiserreich_victory
+
+Thanks to extensive preparations and throughtout reforms, syndicalist and russian troops prove no match for the elite Heer units. Our foes quickly fall, and the safety of Kaiserreich 
 
 - @game_over: Game over.
