@@ -122,12 +122,13 @@ As russian tanks overrun Minsk and Kiev, german cities in the east are being pre
 
 @d_day
 
-Our desperate resistance wasn't in vain at the end of the day. News of an Entente invasion of the British Isles and photos of the Union Jack waving over devastated Manchester mark a turning point in the Second Weltkrieg. With the so-called D-Day diverting british troops from the western front, reinvigorated Heer launches its final offensive into France. As Paris falls into german hands once more, the Third Internationale  declares unconditional surrender. Although it takes many more months and lives, Russia and her allies soon follow. 
+Our desperate resistance wasn't in vain at the end of the day. News of an Entente invasion of the British Isles and photos of the Union Jack waving over devastated Manchester mark a turning point in the Second Weltkrieg. With the so-called D-Day diverting british troops from the western front, reinvigorated Heer launches its final offensive into France. As Paris falls into german hands once more, the Third Internationale  declares unconditional surrender. Although it takes many more months and lives, Russians and their allies soon follow. 
 
 - @game_over: Game over.
 
 @kaiserreich_victory
+achievement: weltkrieg_won
 
-Thanks to extensive preparations and throughtout reforms, syndicalist and russian troops prove no match for the elite Heer units. Our foes quickly fall, and the safety of Kaiserreich 
+Thanks to extensive preparations and throughtout reforms conducted by our military, syndicalist and russian troops prove no match for the elite Heer units. Our foes quickly fall, and Germany seems to have secured its position of the master of the world.
 
 - @game_over: Game over.
