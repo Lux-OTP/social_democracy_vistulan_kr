@@ -1,7 +1,7 @@
 title: Treaty of Copenhagen
 new-page: true
 subtitle: An international treaty for peace
-view-if: year = 1938 and (month = 8 or month = 9)
+view-if: year = 1938 and month >= 8
 max-visits: 1
 on-arrival: kellogg_briand_seen = 1; kellogg_briand_signed = 1 if foreign_minister_party != "SPD"
 tags: event
@@ -18,7 +18,7 @@ An international treaty has been negotiated which promises deescalation of franc
 @sign_treaty
 view-if: foreign_minister_party != "SPD"
 
-Who would want to start another horrible war anyways?
+German foreign minister [idk who yet bruh] decides to approach his syndicalist counterparts and discuss the possible detente. Negotiations proceed smoothly, and eventually a treaty is formulated and signed. Perhaps the future of Europe isn't as grim as we ought to believe?
 
 @spd_sign_treaty
 view_if: foreign_minister_party == "SPD"
