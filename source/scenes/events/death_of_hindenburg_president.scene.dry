@@ -1,7 +1,7 @@
 title: The Second Weltkrieg
 subtitle: Kaiserreich's last stand
 new-page: true
-view-if: (year = 1940 and month >= 8 and kellogg_briand_signed == 1) or (year = 1940 and month >= 3 and kellogg_briand_signed != 1)
+view-if: (year == 1940 and month >= 8 and kellogg_briand_signed == 1) or (year == 1940 and month >= 3 and kellogg_briand_signed != 1)
 on-arrival: {!
 Q.ostwall_strength = Math.round(Q.rb_strength);
 Q.sh_strength = Math.round(Q.sh_strength);
