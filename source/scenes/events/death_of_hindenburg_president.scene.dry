@@ -2,6 +2,7 @@ title: The Second Weltkrieg
 subtitle: Kaiserreich's last stand
 new-page: true
 tags: event
+max-visits: 1
 view-if: (year == 1940 and month >= 8 and kellogg_briand_signed == 1) or (year == 1940 and month >= 3 and kellogg_briand_signed != 1)
 on-arrival: {!
 Q.ostwall_strength = Math.round(Q.rb_strength);
@@ -57,9 +58,11 @@ Imperial armed forces, despite the stagnation of past years, have anticipated th
 
 Political and economic matters give way to draft announcements and mobilization decrees. Although many expect the conflict to be a prolonged, years-long struggle, in the end it's the preparations made by us and our allies in the years before war which will determine the fate of Reichspakt in the coming years.
 
-// If war preparations aren't advanced enough, Germany will be defeated within months 
-// If war preparations are moderately advanced, Germany will lose in the beginning; Hohenzollerns will flee and a German Republic/DVLP's German Reich will be established
-// If war preparations are very advanced, Germany will destroy its opponents in a series of swift offensives
+# If war preparations aren't advanced enough, Germany will be defeated within months 
+# If war preparations are moderately advanced, Germany will lose in the beginning; Hohenzollerns will flee and a German Republic/DVLP's German Reich will be established
+# If war preparations are very advanced, Germany will destroy its opponents in a series of swift offensives
+
+- @weltkrieg_menu: What else can be done?
 
 @weltkrieg_menu
 
