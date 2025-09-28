@@ -1,6 +1,6 @@
-title: Nazi March in Altona
+title: Clashes in Berlin.
 new-page: true
-subtitle: An SA demonstration, with the potential for violence
+subtitle: Brunswick Front and Defense 
 tags: event
 view-if: year == 1932 and month == 6 and sa_banned == 0 and spd_prussia == 1
 max-visits: 1

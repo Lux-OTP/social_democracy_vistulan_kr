@@ -2,7 +2,7 @@ title: Ruhrkampf
 new-page: true
 subtitle: Black Monday is tearing Germany apart...
 tags: event
-view-if: year = 1929 and month = 5
+view-if: year = 1929 and month >= 5
 max-visits: 1
 face-image: img/redfront.jpg
 on-arrival: ruhrkampf = 1; rfb_militancy = 0.25; ruhrkampf_strength = 100

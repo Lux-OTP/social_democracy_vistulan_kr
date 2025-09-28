@@ -1,4 +1,4 @@
-title: 1934
+title: 1940
 subtitle: A new year
 new-page: true
 tags: event
@@ -14,7 +14,7 @@ if (Q.unemployed >= 20) {
 
 = 1934
 
-A new year begins. [? if works_program = 0 : The economic depression seems to have bottomed out, but there is still much suffering. It is not too late to launch an economic rescue program. ?][? if works_program >= 1 and unemployment >= 15 : We have begun to launch a public works program, but the economy is still troubled. The recovery has begun, but more must be done. ?][? if works_program >= 1 and unemployment < 15 : Our public works program has successfully guided us through the worst of the crisis. The economy is improving, and finally people have optimism for the future. ?]
+A new year begins.  The geopolitical atmosphere is tense, to say the least. [? if kellogg_briand_signed = 0 : With relations between Paris and Berlin deteriorating by the week, threat of war appears as close as ever to materializing. Naturally, should we find ourselves attacked by them, we can be certain of a russian offensive to follow suit. ?][? if kellogg_briand_signed == 1 : Our illusion of control over the rising Russian State is now all but shattered, and their narodnik leadership is all too eager to remind us of this fact by their intensifying military exercises conducted on the Reichspakt's eastern frontier. ?]
 
 [? if return_to_normalcy: With the return to normalcy, the political landscape in Germany is shifting. Liberalism is making a return among the middle classes, and the radical parties of the right are declining. ?]
 

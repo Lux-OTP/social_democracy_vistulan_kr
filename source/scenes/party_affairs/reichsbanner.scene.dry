@@ -1,4 +1,4 @@
-title: Reichsbanner
+title: Ruhrarbeiterverteidigungsbund
 new-page: true
 is-card: true
 tags: party_affairs
@@ -10,9 +10,9 @@ max-visits: 5
 
 = Reichsbanner
 
-The *Reichsbanner Schwarz-Rot-Gold* is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the SPD, Center, and [+ ddp_name +], but by far the largest component is with the SPD.
+The *Ruhrarbeiterverteidigungsbund* is a mass organization for the defense of the Ruhr workers against the police and far-right extremists who threaten their protests. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the leftist parties - the SPD and SP, but by far the largest component is with the SPD.
 
-[? if workers_spd < 46 or workers_spd < workers_nsdap or workers_spd < workers_kpd : The Reichsbanner is having a more difficult time recruiting, as the SPD is no longer the dominant party among the workers. Many of its members have left. ?]
+[? if workers_spd < 46 or workers_spd < (workers_dvlp + workers_dkp) or workers_spd < workers_sp : The Reichsbanner is having a more difficult time recruiting, as the SPD is no longer the dominant party among the workers. Many of its members have left. ?]
 
 - @militant: Fund more military-style training and equipment for the Reichsbanner.
 - @militant_2: Use our existing resources to support more training for the Reichsbanner.
@@ -51,13 +51,13 @@ The Reichsbanner is already serving the purpose it needs to serve. There is no r
 
 @cut_rb
 subtitle: +1 resources
-on-arrival: resources += 1; rb_strength -= 100; rb_militancy -= 0.05; jungturken_strength -= 2; jungturken_dissent -= 2; spd_militancy -= 0.05; workers_kpd += 2; unemployed_kpd += 2
+on-arrival: resources += 1; rb_strength -= 100; rb_militancy -= 0.05; jungturken_strength -= 2; jungturken_dissent -= 2; spd_militancy -= 0.05; workers_sp += 2; unemployed_sp += 2
 
-Cutting resources to the Reichsbanner causes a drop in the membership, and leads some would-be members to join the Communists instead.
+Cutting resources to the RAVB causes a drop in the membership, and leads some of the members to support the Socialist Party rather than the SPD.
 
 
 @women_rb
-title: Allow women to join the Reichsbanner.
+title: Allow women to join the RAVB.
 subtitle: -1 resources - This might cause a backlash from existing members.
 choose-if: resources > 0
 view-if: womens_rights >= 4 and sender_advisor == 1 and iron_front_formed == 1
@@ -66,7 +66,7 @@ go-to: homosexual if trans_rights or repealed_175 or reformed_183
 max-visits: 1
 achievement: women_reichsbanner
 
-The suggestion to allow women into the Reichsbanner is ridiculed by most, except for Toni Sender. But this is an exceptional time, and we need anyone who is willing to join. Thus, we organize specialized units for women, [? if homosexual_rights > 0: and even some covert units for transsexuals and inverts ?].
+The suggestion to allow women into the organization is ridiculed by most, except for Toni Sender. But this is an exceptional time, and women have already participated in the strikes. Thus, we organize specialized units for women, [? if homosexual_rights > 0: and even some covert units for transsexuals and inverts ?].
 
 After allowing women to join, the number of comrades who leave is more than balanced out by the number of radicalized women and others who join. However, many of our departed members were veterans, and many of the new members have no experience with military-style training.
 
