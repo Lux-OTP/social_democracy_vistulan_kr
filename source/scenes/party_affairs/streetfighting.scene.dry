@@ -8,14 +8,14 @@ tags: party_affairs; antifascism
 
 = Streetfighting
 
-Battles rage on the streets between the striking workers [? if ravb_formed : organized in the RAVB ?] and the german police from Ruhr and beyond [? if harzburg_front_seen : accompanied by the more radical Brunswick Front bands. ?]. Conditions are nearing civil war levels, as dozens of people are killed each month.
+Battles rage on the streets between the striking workers [? if ravb_formed : organized in the RAVB ?] and the german police from Ruhr and beyond [? if harzburg_front_seen : accompanied by the more radical Brunswick Front bands ?]. Conditions are nearing civil war levels, as dozens of people are killed each month.
 
 We must do something to protect the workers against crackdowns.
 
 - @battle: Test our defense units in battle against the reactionaries!
-- @arm_rb: Increase training and armaments for the Reichsbanner.
+- @arm_rb: Increase training and armaments for the Verteidigungsbund.
 - @if_training: Train union members to fight as part of the Iron Front.
-- @prussian_police_training: Use the Prussian police to help train the Reichsbanner.
+- @prussian_police_training: Use the Prussian police to help train the Verteidigungsbund.
 - @peace: Try to avoid all militant confrontations, as much as possible.
 - @truce_rfb: Try to make peace with the RFB.
 - @easy_discard
@@ -23,24 +23,30 @@ We must do something to protect the workers against crackdowns.
 @battle
 view-if: harzburg_front_seen == 1 and (rfb_militancy >= 0.4 or rb_militancy >= 0.3)
 choose-if: radicalization >= 8
-on-arrival: radicalization += 1; Q.street_battle_outcome = (Q.rb_militancy*Q.rb_strength + Q.rfb_militancy*Q.rfb_strength) - (Q.prussian_police_strength + Q.bf_militancy*Q.bf_strength)
+on-arrival: pacifism -= 1; Q.street_battle_outcome = (Q.rb_militancy*Q.rb_strength + Q.rfb_militancy*Q.rfb_strength) - (Q.prussian_police_strength + Q.bf_militancy*Q.bf_strength)
 max-visits: 1
 go-to: street_battle_win if street_battle_outcome >= 0; street_battle_lose if street_battle_outcome < 0
 
 We organize the workers to fight against the reactionaries attempting to crush the strikes [? if ravb_formed : , with RAVB rallying its members to lead the battle. ?]. The outcome remains to be seen.
 
 @street_battle_lose
-on-arrival: bf_strength += 40 if harzburg_front_seen; rfb_strength -= 15; rfb_militancy -= 0.10; rb_strength -= 10 if ravb_formed; rb_militancy -= 0.05 if ravb_formed; workers_dvlp += 3; workers_dkp += 1; unemployed_dvlp += 2; unemployed_dkp += 1
+on-arrival: bf_strength += 40 if harzburg_front_seen; bf_militancy += 0.05 if harzburg_front_seen; rfb_strength -= 15; rfb_militancy -= 0.10; rb_strength -= 10 if ravb_formed; rb_militancy -= 0.05 if ravb_formed; workers_dvlp += 3; workers_dkp += 1; unemployed_dvlp += 2; unemployed_dkp += 1
 
 We have lost the confrontation with the police [? if harzburg_front_seen : and Brunswick Front members. ?] Many of the workers are killed or injured, and the far-right doesn't hesitate to utilize this incident for their syndicalist fearmongering.
 
-Many workers feel disheartened by this loss, and choose to abandon the strike to avoid further bloodshed.
+Many workers feel disheartened by this loss, and choose to abandon the strike to avoid further bloodshed. [? if harzburg_front_seen : Some, disillusioned with the german left, turn to the Brunswick Front. ?]
+
+@street_battle_win
+on-arrival: bf_strength += 20 if harzburg_front_seen; rfb_militancy += 0.05; rfb_strength += 10; rb_strength += 10 if ravb_formed; workers_spd += 2*(1-dissent); unemployed_spd += 2*(1-dissent); workers_sp += 1; unemployed_sp += 1
+go-to: harzburg_front
+
+Our forces overwhelm that of the reactionaries
 
 @arm_rb
 subtitle: -[+ rb_militarization_cost +] resource
 choose-if: resources >= rb_militarization_cost
 unavailable-subtitle: Not enough resources ([+ rb_militarization_cost +] needed).
-on-arrival: resources -= rb_militarization_cost; rb_militancy += 0.06; rb_strength += 50; sa_strength += 50; z_relation -= 5 if historical_mode 
+on-arrival: resources -= rb_militarization_cost; rb_militancy += 0.06; rb_strength += 50; bf_strength += 50; z_relation -= 5 if historical_mode 
 
 We have increased training and purchased more armaments for the RAVB. Hopefully this will help us deter further attacks by the reactionaries.
 

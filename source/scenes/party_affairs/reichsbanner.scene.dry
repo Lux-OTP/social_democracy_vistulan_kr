@@ -10,14 +10,14 @@ max-visits: 5
 
 = Reichsbanner
 
-The *Ruhrarbeiterverteidigungsbund* is a mass organization for the defense of the Ruhr workers against the police and far-right extremists who threaten their protests. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the leftist parties - the SPD and SP, but by far the largest component is with the SPD.
+The *Ruhrarbeiterverteidigungsbund*, or simply Verteidigungsbund, is a mass organization for the defense of the Ruhr workers against the police and far-right extremists who threaten their protests. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the leftist parties - the SPD and SP, but by far the largest component is with the SPD.
 
 [? if workers_spd < 46 or workers_spd < (workers_dvlp + workers_dkp) or workers_spd < workers_sp : The Reichsbanner is having a more difficult time recruiting, as the SPD is no longer the dominant party among the workers. Many of its members have left. ?]
 
-- @militant: Fund more military-style training and equipment for the Reichsbanner.
-- @militant_2: Use our existing resources to support more training for the Reichsbanner.
-- @same: Keep the Reichsbanner as it is.
-- @cut_rb: Cut funding for the Reichsbanner.
+- @militant: Fund more military-style training and equipment for the Verteidigungsbund.
+- @militant_2: Use our existing resources to support more training for the Verteidigungsbund.
+- @same: Keep the Verteidigungsbund as it is.
+- @cut_rb: Cut funding for the Verteidigungsbund.
 - @women_rb
 - @easy_discard
 - @cancel_advisor_action
@@ -28,9 +28,9 @@ The *Ruhrarbeiterverteidigungsbund* is a mass organization for the defense of th
 choose-if: resources >= rb_militarization_cost
 unavailable-subtitle: Not enough resources ([+ rb_militarization_cost +] needed).
 subtitle: -[+ rb_militarization_cost +] resources
-on-arrival: resources -= rb_militarization_cost; rb_investment += 1; rb_strength += 100; rb_militancy += 0.05; jungturken_strength += 2; jungturken_dissent -= 2; staatspolitiker_dissent += 5; spd_militancy += 0.05; workers_spd += 2*(1-dissent); unemployed_spd += 2*(1-dissent); z_relation -= 5 if historical_mode 
+on-arrival: resources -= rb_militarization_cost; rb_investment += 1; rb_strength += 100; rb_militancy += 0.05; jungturken_strength += 2; jungturken_dissent -= 2; staatspolitiker_dissent += 5; workers_spd += 2*(1-dissent); unemployed_spd += 2*(1-dissent); z_relation -= 5 if historical_mode 
 
-Some in our party decry the increasing militarization of the Reichsbanner. They say it is emulating the right-wing nationalists or the communists, and risks alienating our allies in the centrist parties. On the other hand, more left-leaning radicals are being lured to our organizations, away from the communists.
+Some in our party decry the increasing militarization of the RAVB. They say it is playing into the conservative fearmongering, and risks alienating our more moderate supporters across the country. On the other hand, more left-leaning radicals are being lured to our organizations, and workers across Germany are growing more and more supportive of our struggle.
 
 [? if historical_mode : The Center Party decries the militarization of the Reichsbanner, and its members are leaving the republican organization. ?]
 
@@ -44,16 +44,16 @@ As we have already funded resources towards the RAVB, we can invest in building 
 
 @same
 
-The Reichsbanner is already serving the purpose it needs to serve. There is no reason to change what already works.
+The Verteidigungsbund is already serving the purpose it needs to serve. There is no reason to change what already works.
 
 - @return: Continue...
 
 
 @cut_rb
 subtitle: +1 resources
-on-arrival: resources += 1; rb_strength -= 100; rb_militancy -= 0.05; jungturken_strength -= 2; jungturken_dissent -= 2; spd_militancy -= 0.05; workers_sp += 2; unemployed_sp += 2
+on-arrival: resources += 1; rb_strength -= 100; rb_militancy -= 0.05; rfb_strength += 25; jungturken_strength -= 2; jungturken_dissent -= 2; spd_militancy -= 0.05; workers_sp += 2; unemployed_sp += 2
 
-Cutting resources to the RAVB causes a drop in the membership, and leads some of the members to support the Socialist Party rather than the SPD.
+Cutting resources to the Verteidigungsbund causes a drop in the membership, and leads some of the members to support the Socialist Party rather than the SPD.
 
 
 @women_rb
