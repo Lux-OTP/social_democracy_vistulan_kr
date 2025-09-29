@@ -300,7 +300,7 @@ if (Q.month_actions >= 1) {
     }
 
     ////////////////////////// annual support changes
-    if (Q.year == 1929) {
+    if (Q.year == 1936) {
         Q.unemployed += 3/12;
         Q.inflation -= 1/12;
         // increase dvlp vote share
@@ -314,6 +314,8 @@ if (Q.month_actions >= 1) {
         Q.rural_dnvp -= 15/12;
         Q.rural_dvlp += 10/12;
         Q.unemployed_dvlp += 18/12;
+        Q.sa_strength += 125/12;
+        Q.sh_strength += 145/12;
     } else if (Q.year == 1937) {
         Q.rural_dvlp += 3/12;
         Q.rural_dkp += 5/12
@@ -334,17 +336,17 @@ if (Q.month_actions >= 1) {
             Q.workers_other += 5/12;
             Q.workers_kpd += 2/12;
         }
-        Q.sa_strength += 300/12;
-        Q.sh_strength += 500/12;
+        Q.sa_strength += 160/12;
+        Q.sh_strength += 190/12;
         Q.sa_militancy += 0.1/12;
         Q.sh_militancy += 0.1/12;
-    } else if (Q.year == 1931) {
+    } else if (Q.year == 1938) {
         Q.catholics_z += 2/12;
         Q.rural_dvp -= 8/12;
         Q.old_middle_lvp -= 8/12;
         Q.new_middle_lvp -= 8/12;
-        Q.sa_strength += 500/12;
-        Q.sh_strength += 600/12;
+        Q.sa_strength += 315/12;
+        Q.sh_strength += 210/12;
         Q.sa_militancy += 0.1/12;
         Q.sh_militancy += 0.1/12;
         Q.old_middle_dvlp += 10/12;
@@ -384,12 +386,14 @@ if (Q.month_actions >= 1) {
             Q.new_middle_dkp += 2/12;
             Q.rural_dkp += 4/12;
         }
-    } else if (Q.year == 1932) {
+    } else if (Q.year == 1939) {
         Q.old_middle_other -= 7/12;
         Q.rural_other -= 7/12;
         Q.old_middle_dvlp += 7/12;
         Q.rural_dvlp += 7/12;
         Q.unemployed_dvlp += 4/12;
+        Q.sa_strength += 410/12;
+        Q.sh_strength += 135/12;
         if (!Q.works_program) {
             Q.unemployed += 5/12;
             Q.inflation -= 2/12;
@@ -403,7 +407,6 @@ if (Q.month_actions >= 1) {
             Q.unemployed_sp += 4/12;
             Q.workers_dvlp += 3/12;
             Q.workers_sp += 3/12;
-            Q.sa_strength += 200/12;
             Q.new_middle_dnvp += 4/12;
             Q.new_middle_dnvp += 4/12;
             Q.new_middle_dvp -= 4/12;
@@ -423,7 +426,11 @@ if (Q.month_actions >= 1) {
             Q.old_middle_dvlp += 3/12;
             Q.new_middle_dvlp += 2/12;
         }
-    } else if (Q.year >= 1933) {
+    } else if (Q.year >= 1940) {
+        if (Q.year == 1940 and month < 9) {
+            Q.sa_strength += 300/7;
+            Q.sh_strength += 200/7;
+        }
         if (Q.return_to_normalcy) {
             // return to normalcy -> voters return to the base
             if (Q.new_middle_ddp_normalized < 30) {
