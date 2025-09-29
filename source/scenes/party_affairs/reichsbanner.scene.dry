@@ -39,7 +39,7 @@ Some in our party decry the increasing militarization of the Reichsbanner. They 
 view-if: funded_reichsbanner >= 1
 on-arrival: rb_militancy += 0.02; funded_reichsbanner -= 1
 
-As we have already funded resources towards the Reichsbanner, we can invest in building up their militancy.
+As we have already funded resources towards the RAVB, we can invest in building up their militancy.
 
 
 @same

@@ -2,17 +2,17 @@ title: Streetfighting
 new-page: true
 is-card: true
 on-arrival: streetfighting_timer = 6; month_actions += 1; rb_militarization_cost = 2 if rb_militancy > 0.1 else rb_militarization_cost = 1; rb_militarization_cost = 3 if rb_militancy > 0.25; strife += 1
-view-if: year >= 1930 and sa_strength >= 150 and streetfighting_timer == 0 and not return_to_normalcy
+view-if: streetfighting_timer == 0 and ruhrkampf == 1 and rfb_militancy >= 0.20
 card-image: img/blutmai_2.jpg
 tags: party_affairs; antifascism
 
 = Streetfighting
 
-Battles rage on the streets between the Nazi SA, nationalist Stahlhelm, communist Rotfrontkämpferbund (RFB), and our own Reichsbanner. In some parts of the country, conditions are nearing civil war levels, as dozens of people are killed each month.
+Battles rage on the streets between the striking workers [? if ravb_formed : organized in the RAVB ?] and the german police from Ruhr and beyond [? if harzburg_front_seen : accompanied by the more radical Brunswick Front bands. ?]. Conditions are nearing civil war levels, as dozens of people are killed each month.
 
-We must do something to protect the workers against these predations.
+We must do something to protect the workers against crackdowns.
 
-# - @battle: Test our defense units in battle against the fascists!
+- @battle: Test our defense units in battle against the reactionaries!
 - @arm_rb: Increase training and armaments for the Reichsbanner.
 - @if_training: Train union members to fight as part of the Iron Front.
 - @prussian_police_training: Use the Prussian police to help train the Reichsbanner.
@@ -21,11 +21,20 @@ We must do something to protect the workers against these predations.
 - @easy_discard
 
 @battle
-view-if: rb_militancy > 0.1 and rb_militancy < 0.5
-on-arrival: rb_militancy += 0.1; sa_strength += 40; rb_strength -= 100; 
+view-if: harzburg_front_seen == 1 and (rfb_militancy >= 0.4 or rb_militancy >= 0.3)
+choose-if: radicalization >= 8
+on-arrival: radicalization += 1; Q.street_battle_outcome = (Q.rb_militancy*Q.rb_strength + Q.rfb_militancy*Q.rfb_strength) - (Q.prussian_police_strength + Q.bf_militancy*Q.bf_strength)
 max-visits: 1
+go-to: street_battle_win if street_battle_outcome >= 0; street_battle_lose if street_battle_outcome < 0
 
-Many Reichsbanner members are not ready for actual fighting, and thus quit. However, the remainder are toughened as a result. Our confrontations also provide ample recruiting material for the Nazi SA.
+We organize the workers to fight against the reactionaries attempting to crush the strikes [? if ravb_formed : , with RAVB rallying its members to lead the battle. ?]. The outcome remains to be seen.
+
+@street_battle_lose
+on-arrival: bf_strength += 40 if harzburg_front_seen; rfb_strength -= 15; rfb_militancy -= 0.10; rb_strength -= 10 if ravb_formed; rb_militancy -= 0.05 if ravb_formed; workers_dvlp += 3; workers_dkp += 1; unemployed_dvlp += 2; unemployed_dkp += 1
+
+We have lost the confrontation with the police [? if harzburg_front_seen : and Brunswick Front members. ?] Many of the workers are killed or injured, and the far-right doesn't hesitate to utilize this incident for their syndicalist fearmongering.
+
+Many workers feel disheartened by this loss, and choose to abandon the strike to avoid further bloodshed.
 
 @arm_rb
 subtitle: -[+ rb_militarization_cost +] resource
@@ -33,10 +42,7 @@ choose-if: resources >= rb_militarization_cost
 unavailable-subtitle: Not enough resources ([+ rb_militarization_cost +] needed).
 on-arrival: resources -= rb_militarization_cost; rb_militancy += 0.06; rb_strength += 50; sa_strength += 50; z_relation -= 5 if historical_mode 
 
-We have increased training and purchased more armaments for the Reichsbanner.
-
-[? if historical_mode : The Center Party decries the militarization of the Reichsbanner, and its members are leaving the republican organization. ?]
-
+We have increased training and purchased more armaments for the RAVB. Hopefully this will help us deter further attacks by the reactionaries.
 
 @if_training
 view-if: iron_front_formed == 1
