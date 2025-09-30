@@ -23,7 +23,10 @@ We must do something to protect the workers against crackdowns.
 @battle
 view-if: harzburg_front_seen == 1 and (rfb_militancy >= 0.4 or rb_militancy >= 0.3)
 choose-if: radicalization >= 8
-on-arrival: pacifism -= 1; Q.street_battle_outcome = (Q.rb_militancy*Q.rb_strength + Q.rfb_militancy*Q.rfb_strength) - (Q.prussian_police_strength + Q.bf_militancy*Q.bf_strength)
+on-arrival: {!
+Q.pacifism -= 1;
+Q.street_battle_outcome = (Q.rb_militancy*Q.rb_strength + Q.rfb_militancy*Q.rfb_strength) - (Q.prussian_police_strength + Q.bf_militancy*Q.bf_strength);
+!}
 max-visits: 1
 go-to: street_battle_win if street_battle_outcome >= 0; street_battle_lose if street_battle_outcome < 0
 
