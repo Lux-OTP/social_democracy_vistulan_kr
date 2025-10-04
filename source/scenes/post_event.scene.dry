@@ -427,7 +427,7 @@ if (Q.month_actions >= 1) {
             Q.new_middle_dvlp += 2/12;
         }
     } else if (Q.year >= 1940) {
-        if (Q.year == 1940 and month < 9) {
+        if (Q.year == 1940 && month < 9) {
             Q.sa_strength += 300/7;
             Q.sh_strength += 200/7;
         }
