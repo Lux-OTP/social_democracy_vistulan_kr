@@ -1,0 +1,38 @@
+title: Enabling Act
+subtitle: Chancellor Schleicher's coup de grace...
+view-if: year >= 1939 and president = "Kaiser Wilhelm II" and chancellor = "Schleicher" and spd_in_government = 0 and ruhrkampf == 1 and return_to_normalcy == 0 and z_relation < 60 and lvp_relation < 60
+on-arrival: economic_growth += 1; budget -= 1; unemployed -= 3 if unemployed > 10; rural_dnvp += 3; old_middle_dnvp += 3; new_middle_dnvp += 3; workers_dnvp += 3
+new-page: true
+max-visits: 1
+face-image: img/portraits/SchleicherKurt.jpg
+tags: event
+
+= The Enabling Act
+
+Chancellor Kurt von Schleicher has shocked the Reichstag by confronting it with a *Ermächtigungsgesetz* - an Enabling Act, granting him vitrually unchecked power over the german state. Just a few years ago a mere mention of such an idea would have led to an outright riot among the deputies. However, nowadays only the "permanent opposition" of DVLP and SPD seems to be voicing meaningful objections.
+
+Liberals and conservatives alike seem to be done with the two parties' fighting paralyzing the parliament, and thanks to Schleicher's successful efforts in calming the multiple crises raging in Germany he's now widely seen as the nation's savior, and prefer cooperating with him to end the depression and Ruhr strikes.
+
+Regardless of our actions, the bill passes. Many members of our party lose hope and simply leave, while others call for resistance against this autocratic act.
+
+But what can we even do?
+
+- @enabling_act_fight: We will defend our freedom no matter what the cost.
+- @enabling_act_give_up: We will oppose Red General by any constitutional means.
+
+@enabling_act_fight
+
+Do we realize that this means civil war, against the full force of the state?
+
+- @civil_war: Yes.
+- @enabling_act_give_up_2: We are not ready for war. Instead, we will vote against the nazis in the Reichstag.
+
+@enabling_act_give_up_2
+
+Speeches are made. Votes are held. Bullets fly in the streets. Some socialists are killed or jailed. Others flee the country. Few are forced to obey the Schleicher cabinet as "loyal opposition". What can votes even do at this juncture?
+
+The depression slowly fades away, Ruhr strikers gradually lose motivation. Some of the more persistent ones are defeated by the government forces. Civil liberties and democratic institutions are gradually replaced with a police state ran by the chancellor's loyal apparatus. 
+
+Germany is lost.
+
+- @game_over: Game over.

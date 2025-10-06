@@ -9,11 +9,11 @@ max-visits: 1
 
 = Confronting Antisemitism
 
-Antisemitism has long been a latent feature of German society, but since the beginning of the economic depression, it has grown to a horrifying extent. The Nazis are the worst of it, but all the right-wing parties are deeply antisemitic. Regarding the SPD specifically, our right-wing enemies love to deploy their racist rhetoric against our many Jewish comrades, magnifying criticism of any minor transgression, and they call the entire SPD a Jewish party. We are a favorite target of their invectives.
+Antisemitism has long been a latent feature of German society, but since the beginning of the economic depression, it has grown to a horrifying extent. The conservatives are the worst of it, but all the right-wing parties are deeply antisemitic. Regarding the SPD specifically, our right-wing enemies love to deploy their racist rhetoric against our many Jewish comrades, magnifying criticism of any minor transgression, and they call the entire SPD a Jewish party. We are a favorite target of their invectives.
 
-- @socialism_of_fools: Antisemitism is the "socialism of fools". We will defeat them with real socialism.
-- @if: Antisemitism is a crisis. Direct the full force of the Iron Front against antisemitism.
-- @all: All Germans will suffer from fascism, not just the Jews. We do not need a separate policy for them.
+- @socialism_of_fools: Antisemitism largely stems from economic turmoil. We will defeat it by ending the depression.
+- @if: Antisemitism is a crisis. Direct the full force of the Front for the Defence of Democracy against antisemitism.
+- @all: All Germans will suffer from their despotism, not just the Jews. We do not need a separate policy for them.
 
 @socialism_of_fools
 
@@ -22,7 +22,7 @@ The best policy to deal with this sort of irrational, senseless hatred is to ign
 @if
 on-arrival: confronting_antisemitism += 2; bf_strength -= 20; democratization += 1; pacifism += 1; nationalism -= 5*(1-dissent); workers_dvlp -= 4*(1-dissent); workers_dkp -= 2*(1-dissent)
 
-We develop an entire campaign against antisemitism under the auspices of the Iron Front. Hopefully our campaign can sway the workers away from Nazism.
+We develop an entire campaign against antisemitism under the auspices of the Front. Hopefully our campaign can sway the workers away from DVLP.
 
 @all
 
