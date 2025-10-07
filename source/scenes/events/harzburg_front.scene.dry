@@ -11,11 +11,11 @@ max-visits: 1
 The far-right parties - the DVLP and the DkP - have united to form the Brunswick Front, as a force dedicated to the overthrow of the current parliamentary system and defence of state from foreign agents.
 
 - @strategy: We must develop a coherent strategy to combat the Right.
-- @confronting_nazis.iron_front: We must form the Iron Front!
-- @iron_front: The Iron Front will be our answer!
+- @confronting_nazis.iron_front: We must form the Front for the Defence of Democracy!
+- @iron_front: The Front will be our answer!
 
 @strategy
 view-if: nazi_urgency < 3
 on-arrival: nazi_urgency += 1
 
-We do not yet have a coherent strategy for combatting the fascists. We must develop one as soon as possible.
+We do not yet have a coherent strategy for combatting the conservatives. We must develop one as soon as possible.

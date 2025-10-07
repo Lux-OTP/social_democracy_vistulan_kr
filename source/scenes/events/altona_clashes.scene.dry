@@ -1,43 +1,52 @@
-title: Clashes in Berlin.
+title: Essen Confrontation.
 new-page: true
-subtitle: Brunswick Front and Defense 
+subtitle: Tensions are running high in the streets of Ruhr.
 tags: event
-view-if: year == 1932 and month == 6 and sa_banned == 0 and spd_prussia == 1
+view-if: year >= 1937 and rfb_militancy > 0.25 and rfb_strength > 300 and harzburg_front_seen == 1 and hf_militancy > 0.40 
 max-visits: 1
 
-= Nazi March in Altona
+= DVLP orchestrates street battle in Essen
 
-The Nazi SA is planning a march through Altona, a working-class neighborhood of Hamburg known for its high working-class population. Altona is a Communist stronghold, and the planned march will almost certainly lead to violent conflict.
+The Brunswick Front is increasing its presence Essen, heart of the Ruhr worker's strike, known for the most intense fighting between workers and the police. The city is largely regarded as a Socialist stronghold, and the increase in Conservative paramilitary numbers is most certainly indicative of a coming rise in violence.
 
-- @ban_march: Ban the march before it starts.
-- @allow_police: Allow the march, with a heavy police presence.
-- @allow_no_police: Allow the march without a police presence.
+Many of the striking workers await our response as the workers' party.
+
+- @ban_march: Concentrate the RAVB efforts to match the Conservatives.
+- @allow_police: We can't afford an escalation. Deploy additional police to the area.
+- @allow_no_police: Call for restraint among the striking workers.
 
 @ban_march
-choose-if: judicial_reform >= 2
-unavailable-subtitle: The judiciary would not allow us to ban the protest, because of free speech.
-on-arrival: sa_strength -= 10
+view-if: ravb_formed == 1
+choose-if: rfb_militancy >= 0.15
+unavailable-subtitle: The Verteidigungsbund is no match for the gathering Brunswick fighters.
+on-arrival: bf_strength += 10; rb_strength += 10; rfb_strength -= 10; new_middle_dvlp += 3; new_middle_dkp -= 1; old_middle_dvlp += 3; old_middle_dkp -= 1; workers_spd += 2*(1-dissent); staatspolitiker_dissent += 5
 
-We have banned the planned protest. The Nazis appeal the ban in the courts in the name of freedom of speech. Thankfully, the judiciary agrees with us that the Nazis' argument is specious.
+Verteidigungsbund members clash with the Conservatives for a few days, with the police interfering on the side of the latter more often than not. Eventually the fighting dies down without a decisive result.
 
+Naturally, DVLP claims it has won the show of force, and the party's radical message combined with pictures of bloody confrontations circulating the press fuels its popularity, at the expense of the more tame DkP. 
 
 @allow_police
 go-to: allow_police_violence if prussian_police_loyalty <= 0.75; allow_police_no_violence if prussian_police_loyalty > 0.75 
+choose-if: chancellor_party == "SPD" or interior_minister_party == "SPD"
+unavailable-subtitle: We neither control the interior ministry nor can influence its decision.
 
 @allow_police_violence
 on-arrival: strife += 1; sa_strength += 50; kpd_relation -= 8; communist_coalition -= 1
 
-When the march arrives in Altona, they are immediately confronted by an angry crowd of communists and socialists, who throw objects at the Nazis. The police attempt to separate the two groups, to no avail. Gunshots are heard, reportedly from rooftop snipers (whom the police believe are communists). In response, the police fire into the surrounding buildings. Dozens are killed. All turn out to be civilians, and the reported snipers are never found.
+When the Conservatives assemble and meet the strikers in the streets, they are immediately confronted by a battle line of enraged workers. The police attempt to separate the two groups, to no avail. Gunshots are heard, reportedly from rooftop snipers (whom the police believe are socialists). In response, the police fire into the surrounding buildings. Dozens are killed. All turn out to be civilians, and the reported snipers are never found.
 
-This incident has been called "Altona Bloody Sunday" in the media. The Communists assail the incompetence of the police, who are supposedly under our command.
+This incident has been called "Essen Bloody Sunday" in the media. The Socialist Party assails the incompetence of the police, who are supposedly under our command.
 
 @allow_police_no_violence
-on-arrival: sa_strength += 10
+on-arrival: bf_strength -= 10
 
-When the march arrives in Altona, they are immediately confronted by an angry crowd of communists and socialists, who throw objects at the Nazis. The police attempt to separate the two groups, to no avail. Gunshots are heard, reportedly from rooftop snipers. The police manage to keep their cool, the shots stop, and the march disperses without further violence.
+When the Conservatives assemble and meet the strikers in the streets, they are immediately confronted by a battle line of enraged workers. However, despite both sides' determination to begin fighting, the police manage to intervene and keep both formations separated. Gunshots are heard, but miraculously no casualties are reported. Brunswick Front members instigate a few more incidents in the following days, but all are successfully contained for the most part.
 
+Some of the striking workers perceive us as safeguarding the reactionaries, but a majority seems to be relieved the police aren't siding with the Brunswick Front. 
 
 @allow_no_police
-on-arrival: sa_strength += 80; rfb_strength += 50; strife += 1; kpd_relation -= 8; communist_coalition -= 1
+on-arrival: bf_strength += 80; bf_militancy += 0.05; rfb_strength -= 50; rfb_militancy -= 0.05; strife += 1; sp_relation -= 8; communist_coalition -= 1; new_middle_dvlp += 5; old_middle_dvlp += 5; new_middle_dkp += 1; old_middle_dkp += 1; workers_spd -= 3; unemployed_spd -= 3; rb_militancy -= 0.05 if ravb_formed; rb_strength -= 50 if ravb_formed; workers_sp += 2
 
-When the march arrives in Altona, they are immediately confronted by an angry crowd of communists and socialists, who throw objects at the Nazis. Gunshots are heard, reportedly from rooftop snipers. In response, the SA engage the surrounding crowd and fire at the surrounding buildings. Dozens are killed, mostly civilians. The Nazis recruit off their dead martyrs.
+When the Conservatives assemble and meet the strikers in the streets, they are immediately confronted by a battle line of enraged workers. Bloody confrontations last for many days, with Brunswick Front usually taking the upper hand.
+
+The workers are furious at our apathy, while the DVLP proclaims a great victory against the "syndicalist menace", with even some of the more radical DkP members applauding the outcome.
