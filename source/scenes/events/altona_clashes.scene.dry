@@ -2,10 +2,10 @@ title: Essen Confrontation.
 new-page: true
 subtitle: Tensions are running high in the streets of Ruhr.
 tags: event
-view-if: year >= 1937 and rfb_militancy > 0.25 and rfb_strength > 300 and harzburg_front_seen == 1 and hf_militancy > 0.40 
+view-if: year >= 1937 and rfb_militancy > 0.25 and rfb_strength > 300 and harzburg_front_seen == 1 and hf_militancy > 0.40
 max-visits: 1
 
-= DVLP orchestrates street battle in Essen
+= DVLP orchestrates a street fight in Essen
 
 The Brunswick Front is increasing its presence Essen, heart of the Ruhr worker's strike, known for the most intense fighting between workers and the police. The city is largely regarded as a Socialist stronghold, and the increase in Conservative paramilitary numbers is most certainly indicative of a coming rise in violence.
 
@@ -35,7 +35,7 @@ on-arrival: strife += 1; sa_strength += 50; kpd_relation -= 8; communist_coaliti
 
 When the Conservatives assemble and meet the strikers in the streets, they are immediately confronted by a battle line of enraged workers. The police attempt to separate the two groups, to no avail. Gunshots are heard, reportedly from rooftop snipers (whom the police believe are socialists). In response, the police fire into the surrounding buildings. Dozens are killed. All turn out to be civilians, and the reported snipers are never found.
 
-This incident has been called "Essen Bloody Sunday" in the media. The Socialist Party assails the incompetence of the police, who are supposedly under our command.
+This incident has been called "Essen Bloody Sunday" in the media. The Socialist Party assails the incompetence of the police[ if interior_minister_party == "SPD" : , who are supposedly under our command ?].
 
 @allow_police_no_violence
 on-arrival: bf_strength -= 10
@@ -45,8 +45,10 @@ When the Conservatives assemble and meet the strikers in the streets, they are i
 Some of the striking workers perceive us as safeguarding the reactionaries, but a majority seems to be relieved the police aren't siding with the Brunswick Front. 
 
 @allow_no_police
-on-arrival: bf_strength += 80; bf_militancy += 0.05; rfb_strength -= 50; rfb_militancy -= 0.05; strife += 1; sp_relation -= 8; communist_coalition -= 1; new_middle_dvlp += 5; old_middle_dvlp += 5; new_middle_dkp += 1; old_middle_dkp += 1; workers_spd -= 3; unemployed_spd -= 3; rb_militancy -= 0.05 if ravb_formed; rb_strength -= 50 if ravb_formed; workers_sp += 2
+on-arrival: bf_strength += 80; bf_militancy += 0.05; rfb_strength -= 50; rfb_militancy -= 0.05; strife += 1; sp_relation -= 8 if spd_in_government; communist_coalition -= 1 if spd_in_government; new_middle_dvlp += 5; old_middle_dvlp += 5; new_middle_dkp += 1; old_middle_dkp += 1; workers_spd -= 3; unemployed_spd -= 3; rb_militancy -= 0.05 if ravb_formed; rb_strength -= 50 if ravb_formed; workers_sp += 2
 
-When the Conservatives assemble and meet the strikers in the streets, they are immediately confronted by a battle line of enraged workers. Bloody confrontations last for many days, with Brunswick Front usually taking the upper hand.
+When the Conservatives assemble and meet the strikers in the streets, they are immediately confronted by a battle line of enraged workers. Bloody confrontations last for many days, with Brunswick Front usually taking the upper hand before the police, seemingly unwillingly, prevent them from further attacks.
 
 The workers are furious at our apathy, while the DVLP proclaims a great victory against the "syndicalist menace", with even some of the more radical DkP members applauding the outcome.
+
+[? if spd_in_government : The Socialist Party is outraged at our participation in a government allowing such scenes to occur. ?]

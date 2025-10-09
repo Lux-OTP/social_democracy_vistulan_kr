@@ -21,13 +21,13 @@ view-if: foreign_minister_party != "SPD"
 German foreign minister [idk who yet bruh] decides to approach his syndicalist counterparts and discuss the possible detente. Negotiations proceed smoothly, and eventually a treaty is formulated and signed. Perhaps the future of Europe isn't as grim as we ought to believe?
 
 @spd_sign_treaty
-view_if: foreign_minister_party == "SPD"
-on_arrival: jungturken_dissent -= 5; kellogg_briand_signed = 1
+view-if: foreign_minister_party == "SPD"
+on-arrival: jungturken_dissent -= 5; kellogg_briand_signed = 1
 
 As we currently hold the foreign ministry, we sign the treaty without hesitation. The left wing of our party endorses our course of action.
 
 @refuse_treaty
-view_if: foreign_minister_party == "SPD"
-on_arrival: jungturken_dissent += 10; labor_dissent += 5; center_dissent += 5; kellogg_briand_signed = 0
+view-if: foreign_minister_party == "SPD"
+on-arrival: jungturken_dissent += 10; labor_dissent += 5; center_dissent += 5; kellogg_briand_signed = 0
 
 For one reason or another, we refuse to enter any negotiations with syndicalist menace. Many in our party see this as a show of support for a bloody reactionary war against the Commune of France.
