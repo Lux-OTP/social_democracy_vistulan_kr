@@ -318,11 +318,9 @@ Right-wing Coalition (Z + BVP + DkP + DVLP): [+ right_coalition +]%
 
 [? if n_elections == 1 and (far_right_coalition < 50 and (grand_coalition < 50 or z_relation < 40 or lvp_relation < 40 or minority_bloc_relation < 40 or agrarians_relation < 40)) : Neither us nor the conservaties can persuade the reichstag parties to form a coalition.?] [? if n_elections != 1 or (far_right_coalition >= 50 or (grand_coalition >= 50 and z_relation >= 40 and lvp_relation >= 40 and minority_bloc_relation >= 40 and agrarians_relation >= 40)) : There are some potential arrangements.?]
 
-@first_election_menu
-go-to: coalition_menu if far_right_coalition >= 50 or (grand_coalition >= 50 and z_relation >= 40 and lvp_relation >= 40 and minority_bloc_relation >= 40 and agrarians_relation >= 40); schleicher_appointed if far_right_coalition < 50 and (grand_coalition < 50 or z_relation < 40 or lvp_relation < 40 or minority_bloc_relation < 40 or agrarians_relation < 40) 
-
 @coalition_menu
 
+- @appoint_schleicher
 - @spd_majority
 - @weimar_coalition
 - @grand_coalition
@@ -336,21 +334,14 @@ go-to: coalition_menu if far_right_coalition >= 50 or (grand_coalition >= 50 and
 
 # TODO: black-brown coalition
 
-@schleicher_appointed
-title: Schleicher appointed Reichskanzler!
-subtitle: Military camarilla has turned against german democracy.
-unavailable-subtitle: [? if schleicher_ousted == 1 : The Red General has wasted his chance. It's Reichstag's turn to act. ?]
+@appoint_schleicher
+title: Kurt von Schleicher is appointed chancellor.
+subtitle: This is outside our control.
+view-if: schleicher_ousted == 0
+choose-if: grand_coalition < 50 and far_right_coalition <= 50
+on-arrival: pro_republic -= 4; minorit_bloc_relation += 5; lvp_relation += 5; chancellor = "Schleicher"; chancellor_party = "I"; foreign_minister_party = "I"; interior_minister_party = "DkP"; justice_minister_party = "DkP"; labor_minister_party = "I"; reichswehr_minister_party = "I"; economic_minister_party = "LVP"; finance_minister_party = "Z"; agriculture_minister_party = "Agrarians"; schleicher_schemes_timer = 4
 
-With Reichstag unable to find a sensible majority after the election, [+ president +] has chosen to appoint Prussian Minister of War, Kurt von Schleicher, to the post of Reichskanzler.
-
-Extremely unpopular within the parliament, Schleicher will have to maneuvre his way through german politics, or face defeat should a parliamentary force sufficient to abolish his rule emerge in the following months.
-
-- @schleicher_theres_nothing_we_can_do: The Reichstag is powerless.
-
-@schleicher_theres_nothing_we_can_do
-subtitle: Government is formed by the "Red General".
-on-arrival: spd_in_government = 0; workers_spd += 3; unemployed_spd += 3; new_middle_dvlp += 3; old_middle_dvlp += 3; chancellor = "Schleicher"; chancellor_party = "Kaiser's Government"; foreign_minister_party = "Z"; interior_minister_party = "I"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "LVP"; finance_minister_party = "LVP"; agriculture_minister_party = "Z"; dealing_with_toleration_timer = 1
-
+Seeing the Reichstag's inability to form a government, [+ president +] has appointed general Kurt von Schleicher, a powerful figure of the military camarilla, to the post of chancellor as a temporary stabilizing figure in the face of looming political crisis. Despite unfavourable, to put it lightly, outlook on his reign by the Reichstag parties, his non-partisan position, concilliatory stance and relatively open-minded approach might allow him to remain in post for quite a while.
 
 @popular_front_coalition
 title: A new "Popular Front" coalition?

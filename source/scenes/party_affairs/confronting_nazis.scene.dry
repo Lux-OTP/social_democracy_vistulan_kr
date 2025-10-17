@@ -14,7 +14,7 @@ Many in our party are calling for urgent action. The "neorevisionist" faction, l
 
 - @not_a_big_deal: The Nazis' moment will pass. Let's not get too hasty.
 - @economic_crisis
-- @major_crisis: We must do something to confront the Nazis.
+- @major_crisis: We must do something to confront the Conservatives.
 - @iron_front
 
 
@@ -22,7 +22,7 @@ Many in our party are calling for urgent action. The "neorevisionist" faction, l
 on-arrival: nazi_urgency -= 1; jungturken_dissent += 5; neorevisionist_dissent += 15
 view-if: mierendorff_advisor = 0 and leber_advisor = 0 and schumacher_advisor = 0
 
-The Nazis are just another far-right movement that will die of its own contradictions sooner or later; we do not need to build a specific policy to combat them.
+The far-right movement will die of its own contradictions sooner or later; we do not need to build a specific policy to combat them.
 
 @economic_crisis
 title: We must address the economic crisis first.
@@ -33,10 +33,10 @@ go-to: crisis_program
 view-if: nazi_urgency < 5
 on-arrival: nazi_urgency += 1; neorevisionist_dissent -= 5; neorevisionist_strength += 5
 
-The Nazis are one of the foremost threats to the German republic. However, we are still formulating a strategy to confront them, and still trying to build up consensus within our party for action. Check back on this later.
+The Conservatives are one of the foremost threats to german democracy. However, we are still formulating a strategy to confront them, and still trying to build up consensus within our party for action. Check back on this later.
 
 @iron_front
-title: Form the Iron Front!
+title: Form the Front for Defense of Democracy!
 subtitle: The Iron Front consists of the SPD, the trade unions, and the Reichsbanner.
 view-if: nazi_urgency >= 3 and iron_front_formed == 0
 on-arrival: iron_front_formed = 1; radicalization += 1; nazi_urgency += 1; workers_spd += 5*(1-dissent); pro_republic += 5*(1-dissent); jungturken_dissent -= 8; neorevisionist_dissent -= 10; neorevisionist_strength += 5

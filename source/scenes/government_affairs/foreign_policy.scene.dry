@@ -13,9 +13,8 @@ What should our foreign policy priority be?
 
 @fp_menu
 
-- @improve_west
 - @improve_east
-- @improve_soviet
+- @improve_entente
 - @customs_union
 - @negotiate
 - @reduce_reparations
@@ -26,7 +25,7 @@ What should our foreign policy priority be?
 - @easy_discard
 - @cancel_advisor_action
 
-@improve_west
+@improve_east
 title: Improve our relations with the Oststaats.
 choose-if: budget >= 1
 unavailable-subtitle: We don't have enough budget.
@@ -46,13 +45,8 @@ on-arrival: ostwall_strength += 10; ostwall_loyalty += 0.05; budget -= 1
 
 We send resources to german-aligned political movements and provide economic aid to struggling eastern industries, as well as expand local security services, ensuring their allegiance to the Reichspakt.
 
-@improve_east
-title: Improve our relations with our eastern neighbors.
-on-arrival: east_relation += 2;
 
-We also aim to improve relations with our eastern neighbors, Poland and Czechoslovakia, who are righfully terrified of German aggression. Hopefully we can convince them of our peaceful intentions.
-
-@improve_soviet
+@improve_entente
 title: Improve our relations with the Entente.
 
 The Entente massively suffered from the international order created by the Treaty of Versailles; they have long been plotting revenge for what they see as ruining european order. However, in the face of common syndicalist threat it'd be wise to mend our relations.

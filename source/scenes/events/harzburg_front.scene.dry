@@ -3,12 +3,12 @@ subtitle: The right-wing forces unite against the german democracy.
 new-page: true
 on-arrival: harzburg_front_seen = 1; bf_strength = 200; bf_militancy = 0.10; old_middle_dvlp += 3; unemployed_dvlp += 3; rural_dvlp += 3; old_middle_dkp += 3; unemployed_dkp += 3; rural_dkp += 3; nazi_urgency += 1; iron_front_timer = 0
 tags: event
-view-if: (year >= 1937 and month >= 6 and chancellor != "Schleicher" and chancellor != "Papen") or (coup_progress >= 6)
+view-if: (year >= 1937 and month >= 6 and chancellor != "Schleicher") or (coup_progress >= 6)
 max-visits: 1
 
-= The Harzburg Front
+= The Brunswick Front
 
-The far-right parties - the DVLP and the DkP - have united to form the Brunswick Front, as a force dedicated to the overthrow of the current parliamentary system and defence of state from foreign agents.
+The far-right parties - the DVLP and the DkP - have united to form the Brunswick Front, as a force dedicated to the overthrow of the current parliamentary system and defence of state from perceived foreign agents (hinting at the Socialist Party and us).
 
 - @strategy: We must develop a coherent strategy to combat the Right.
 - @confronting_nazis.iron_front: We must form the Front for the Defence of Democracy!
