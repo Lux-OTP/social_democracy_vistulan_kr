@@ -275,7 +275,6 @@ if (window && d3) {
     d3.select("#reichstag").datum(data).call(parliament);
 }
 !}
-go-to: coalition_menu if schleicher_ousted == 1; first_election_menu if schleicher_ousted == 0
 
 = Election results
 
