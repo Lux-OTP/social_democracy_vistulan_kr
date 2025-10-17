@@ -75,4 +75,4 @@ on-arrival: sh_militancy -= 0.05; budget -= 1; sh_strength -= 25 if radio > 2; w
 choose-if: budget >= 1
 view-if: abteilung_3_established
 
-With some additional funds, Abteilung IIIb is able to undertake a large scale sabotage and disruption operation within the Commune of France, disrupting radio communications, spreading misinformation and transmitting anti-syndicalist propaganda. The french exiles in Africa seem pleased by this ordeal as they catch the wind of our actions. [? Covert support provided by our extensive radio network, particularly present in the Ruhr Region, proves useful for the operation. ?]
+With some additional funds, Abteilung IIIb is able to undertake a large scale sabotage and disruption operation within the Commune of France, disrupting radio communications, spreading misinformation and transmitting anti-syndicalist propaganda. The french exiles in Africa seem pleased by this ordeal as they catch the wind of our actions. [? if radio > 2 : Covert support provided by our extensive radio network, particularly present in the Ruhr Region, proves useful for the operation. ?]
