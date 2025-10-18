@@ -3,19 +3,19 @@ subtitle: The right-wing forces unite against the german democracy.
 new-page: true
 on-arrival: harzburg_front_seen = 1; bf_strength = 200; bf_militancy = 0.10; old_middle_dvlp += 3; unemployed_dvlp += 3; rural_dvlp += 3; old_middle_dkp += 3; unemployed_dkp += 3; rural_dkp += 3; nazi_urgency += 1; iron_front_timer = 0
 tags: event
-view-if: (year >= 1937 and month >= 6 and chancellor != "Schleicher") or (coup_progress >= 6)
+view-if: (year >= 1937 and month >= 6 and chancellor != "Schleicher") or (coup_progress >= 6) or rfb_militancy >= 0.40
 max-visits: 1
 
 = The Brunswick Front
 
-The far-right parties - the DVLP and the DkP - have united to form the Brunswick Front, as a force dedicated to the overthrow of the current parliamentary system and defence of state from perceived foreign agents (hinting at the Socialist Party and us).
+The far-right parties - the DVLP and the DkP - have united to form the Brunswick Front, as a force dedicated to the overthrow of the current parliamentary system and defence of state from perceived foreign agents, hinting at us and the Socialist Party in everything but words.
 
 - @strategy: We must develop a coherent strategy to combat the Right.
-- @confronting_nazis.iron_front: We must form the Front for the Defence of Democracy!
-- @iron_front: The Front will be our answer!
+- @confronting_nazis.iron_front: We must form the Front for the Defense of Democracy!
+- @iron_front: The Front for the Defense of Democracy will be our answer!
 
 @strategy
 view-if: nazi_urgency < 3
 on-arrival: nazi_urgency += 1
 
-We do not yet have a coherent strategy for combatting the conservatives. We must develop one as soon as possible.
+We do not yet have a coherent strategy for combatting the Conservatives. We must develop one as soon as possible.

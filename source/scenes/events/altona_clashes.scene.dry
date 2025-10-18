@@ -2,14 +2,14 @@ title: Essen Confrontation.
 new-page: true
 subtitle: Tensions are running high in the streets of Ruhr.
 tags: event
-view-if: year >= 1937 and rfb_militancy > 0.25 and rfb_strength > 300 and harzburg_front_seen == 1 and hf_militancy > 0.40
+view-if: year >= 1937 and rfb_militancy > 0.60 and harzburg_front_seen == 1 and hf_militancy > 0.40
 max-visits: 1
 
 = DVLP orchestrates a street fight in Essen
 
 The Brunswick Front is increasing its presence Essen, heart of the Ruhr worker's strike, known for the most intense fighting between workers and the police. The city is largely regarded as a Socialist stronghold, and the increase in Conservative paramilitary numbers is most certainly indicative of a coming rise in violence.
 
-Many of the striking workers await our response as the workers' party.
+Many of the striking workers await our response as the leading workers' party.
 
 - @ban_march: Concentrate the RAVB efforts to match the Conservatives.
 - @allow_police: We can't afford an escalation. Deploy additional police to the area.

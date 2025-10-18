@@ -14,7 +14,7 @@ if (Q.unemployed >= 20) {
 
 = 1934
 
-A new year begins.  The geopolitical atmosphere is tense, to say the least. [? if kellogg_briand_signed = 0 : With relations between Paris and Berlin deteriorating by the week, threat of war appears as close as ever to materializing. Naturally, should we find ourselves attacked by them, we can be certain of a russian offensive to follow suit. ?][? if kellogg_briand_signed == 1 : Our illusion of control over the rising Russian State is now all but shattered, and their narodnik leadership is all too eager to remind us of this fact by their intensifying military exercises conducted on the Reichspakt's eastern frontier. ?]
+A new year begins.  The geopolitical atmosphere is tense, to say the least. [? if kellogg_briand_signed = 0 : With relations between Paris and Berlin deteriorating by the week, threat of war appears as close as ever to materializing. Naturally, should we find ourselves attacked by them, we can be certain of a russian offensive to follow suit. ?][? if kellogg_briand_signed == 1 : Our illusion of control over the rising Russian State is now all but shattered, and their leadership is all too eager to remind us of this fact by their intensifying military exercises conducted on the Reichspakt's eastern frontier. ?]
 
 [? if return_to_normalcy: With the return to normalcy, the political landscape in Germany is shifting. Liberalism is making a return among the middle classes, and the radical parties of the right are declining. ?]
 

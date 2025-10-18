@@ -22,14 +22,15 @@ What are we to do? On one hand, workers' cause is our own, and turning our back 
 
 @ruhr_crackdown
 subtitle: This will be viewed as betrayal by the working class.
-unavailable-subtitle: Nobody in the party supports this.
-on-arrival: sp_relation -= 25; lvp_relation -= 5; workers_spd -= 5; unemployed_spd -= 5; workers_sp += 5; unemployed_sp += 5; neorevisionist_dissent += 20; labor_dissent += 45; center_dissent += 40; jungturken_dissent += 60; radicalization -= 1
+unavailable-subtitle: Left and center of the party won't allow this.
+choose-if: center_strength < 25 and left_strength < 25
+on-arrival: sp_relation -= 40; lvp_relation -= 5; workers_spd -= 5; unemployed_spd -= 5; workers_sp += 5; unemployed_sp += 5; neorevisionist_dissent += 20; labor_dissent += 45; center_dissent += 40; jungturken_dissent += 60; radicalization -= 1; peoples_party_support += 1
 face-image: img/blutmai.jpg
 
-We decided to support a brutal suppression campaign in the Ruhr. This, of course, sparked outrage among our electorate, party members, and even our left-leaning political allies.
+We decided to support a brutal suppression campaign in the Ruhr. This, of course, sparks outrage among our electorate, party members, and the Socialist Party.
 
 @ruhr_balance
-on-arrival: kpd_relation += 5; workers_kpd += 5; unemployed_kpd += 5
+on-arrival: sp_relation += 5; workers_sp += 5; unemployed_sp += 5
 
 Our party will attempt to mediate between the reactionary establishment and agitated workers. Hopefully, a peaceful solution will allow us to avoid bloodshed.
 
