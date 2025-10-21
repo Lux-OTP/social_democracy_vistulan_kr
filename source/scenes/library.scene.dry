@@ -34,31 +34,23 @@ Germany is divided into a number of states, each of which have their own governm
 @weimar_timeline
 go-to: menu
 
-= Timeline of the SPD and the Republic (until 1928)
+= Timeline of the SPD and the Empire (until 1935)
 
 **1875**: The SPD is formed as a merger of the General German Workers' Association, founded by Ferdinand Lassalle, and the Social Democratic Workers' Party of Germany, led by Wilhelm Liebknecht and August Bebel. Eventually, the SPD grows to become the largest party in the German Empire.
 
 **1914**: The Great War begins. The SPD votes in favor of war credits, with substantial internal dissent. This begins a policy of *Burgfriedenspolitik*, a general peace between all political parties and trade unions.
 
-**1917**: The USPD, a left-wing anti-war split from the SPD, is formed.
+**1917**: The USPD, a left-wing anti-war split from the SPD, is formed. Zentrum, FVP (social liberals) and SPD form the Inter-Faction Committee (IFA), advocating for liberalisation and a swift end to the war. 
 
-**1918**: Following defeats in the war and uprisings by soldiers, sailors, and workers, SPD leader Philip Scheidemann proclaims the German Republic, and Kaiser Wilhelm II abdicates from his throne. An armistice is declared, ending the Great War. Conflict between center-left social democrats and far-left radicals erupts in the streets of Berlin and elsewhere.
+**1918**: Due to prolonged food shortages and war exhaustion, a wave of unrest and following failed socialist uprisings known as September Insurrections rocks the German Empire, leading to clashes between disorganized revolutionaries and recalled frontline soldiers.
 
-**1919**: The Spartacist Uprising, in which communist workers attempt to seize control of government, is launched. The uprising is defeated by the Social Democratic government, now led by President Friedrich Ebert and Chancellor Philipp Scheidemann, with the support of the far-right Freikorps militas. The two key leaders of the uprising, Rosa Luxemburg and Karl Liebknecht, are murdered by the Freikorps. The Treaty of Versailles is signed under great protest from all political factions in Germany, officially ending the Great War. The Weimar Constitution is signed. The first "Weimar Coalition" government is formed, led by the SPD, DDP, and Center (Z) parties.
+**1919**: Germany claims victory in the Weltkrieg, becoming a hegemon on the world stage.
 
-**1920**: The Kapp Putsch, an attempt by reactionary actors within the military to take power, is launched, and is defeated by the workers with a general strike. This is followed by left-wing uprisings in the Ruhr, which are defeated by the Reichswehr and Freikorps. The Weimar Coalition is defeated in the elections, with the right and far left increasing in vote share. Elected governments in this period are very unstable, often only lasting a matter of months. There is a split in the USPD, with the majority faction joining with the KPD and the Soviet Union's Communist International (Comintern) alliance.
+**1920**: A failed attempt at installing a military dictatorship results in resignations of Erich Ludendorff and Paul von Hindenburg, the most influential generals in the german military. A constitutional reform, marking a shift from old Bismarckian Constitution to the new March Constitution, establishing more partisan control over the government. A March Coalition, consisting of Zentrum, FVP and SPD gains power.
 
-**1921**: Communist uprisings in Saxony and Hamburg are defeated. Matthias Erzberger, the Center Party leader who signed the Versailles Treaty, is assassinated.
+**1922**: The SPD adopts the Liegnitz Program as its party platform.
 
-**1922**: The Treaty of Rapallo is signed, which normalized relations with the Soviet Union. Walther Rathenau, the DDP Foreign Minister, is assassinated. The SPD reunites with most of the remaining USPD.
-
-**1923**: Hyperinflation begins, largely due to the economic policy of "passive resistance" against the French occupation of the Ruhr and the Versailles reparations. The currency is rapidly devalued as prices for necessities rise to billions of Reichsmarks. The government launches a *Reichsexekution* against Saxony, which was led by a joint SPD-KPD government. The Nazi "Beer Hall Putsch" is launched in Munich, and fails, with the arrest of Hitler. Eventually, new policies manage to stabilize the currency, and the French occupation ends.
-
-**1924**: Parliamentary elections are held in May and December, the latter leading to the bourgeois-right governments that last until 1928. Hitler is released from prison. The Dawes Plan for the repayment of the Versailles reparations is negotiated, which reduces payments and increases economic growth. Germany begins to enter a period of relative stability, with the end of the hyperinflation crisis. 
-
-**1925**:  President Friedrich Ebert dies, and new presidential elections are held, leading to the narrow election of Paul von Hindenburg in the second round. Hindenburg is a war hero and a right-wing reactionary. The SPD adopts the Heidelberg Program as its party platform. The Locarno Treaties are signed, which confirmed Germany's post-war western borders.
-
-**1926**: A referendum on the expropriation of the princes, supported by the SPD and KPD, fails.
+**1931**: Austrian Creditanstalt Crisis happens when evil ass building says "government is out of money" (if we keepin it a reichsmark, we ass).
 
 @curr_gov
 go-to: cabinet if spd_in_government; menu if not spd_in_government
@@ -204,32 +196,34 @@ Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD
 @parties
 go-to: menu
 
-**SPD** - *Sozialdemokratische Partei Deutschlands* (Social Democratic Party of Germany) - this is us. We are a socialist and democratic party of the working class. We are the heirs of the legacy of Marx and Engels, Lassalle and Bebel. We are the foremost defenders of the Republic. The modern SPD was formed from a merger of the "Majority" SPD, which supported the Great War, and the "Independent" SPD or USPD, which opposed the war.
+**SPD** - *Sozialdemokratische Partei Deutschlands* (Social Democratic Party of Germany) - this is us. We are a socialist and democratic party of the working class. We are the heirs of the legacy of Marx and Engels, Lassalle and Bebel. We are the foremost defenders of democracy. The modern SPD was formed from a merger of the "Majority" SPD, which supported the Great War, and the "Independent" SPD or USPD, which opposed the war.
 
-**Z** - *Zentrumspartei* (Center Party) - a centrist to center-right Catholic party that supports the Republic, and has historically supported many of our labor, welfare, and anti-militarist priorities. They have often been in coalitions with us. They are often associated with the **BVP** (Bavarian People's Party), which represents Catholics in Bavaria. [? if year >= 1930 or chancellor = "Brüning" : They have appeared to take a more conservative turn recently, with the rise of Brüning and the party leader, Ludwig Kaas. ?]
+**Z** - *Zentrumspartei* (Center Party) - a centrist to center-right Catholic party that supports parliamentarianism, and has historically supported many of our labor, welfare, and anti-militarist priorities. They have sometimes been in coalitions with us. In the recent years, we've "tolerated" their minority government led by chancellor Von Dirksen.
 
 Current relations: [+ z_relation : relationships +]
 
 # TODO: replace this with the german state party after 1930
-**DDP** - *Deutsche Demokratische Partei* (German Democratic Party) - a center-left liberal party, popular among the intelligensia and educated middle class. They have often been in coalitions with us. [? if year >= 1930 : They have recently reformed themselves as the German State Party (DStP). ?]
+**LVP** - *Liberale Volkspartei* (Liberal People's Party) - a center to center-left liberal party, popular among the intelligensia and educated middle class. They have often been in coalitions with us.
 
-Current relations: [+ ddp_relation : relationships +]
+Current relations: [+ lvp_relation : relationships +]
 
-**DVP** - *Deutsche Volkspartei* (German People's Party) - a conservative-liberal party, supported by the middle classes and bourgeoisie. We have occasionally been in coalitions.
+**Agrarians** - an array of parties representing rural interests, often pursuing conservative agenda.
 
-Current relations: [+ dvp_relation : relationships +]
+Current relations: [+ agrarians_relation : relationships +]
 
-**DNVP** - *Deutschnationale Volkspartei* (German National People's Party) - a right-wing nationalist-conservative party, with authoritarian, monarchist, and racist elements. It is supported by the former aristocracy, rural landowners, and conservative Lutherans.
+**Minority Bloc** - various regional parties revolving around affairs ethnic minorities, including the Polish Party, the francophile Volksbund and the German-Hanoverian Party.
 
-Current relations: [+ dnvp_relation : relationships +]
+**DkP** - *Deutschnationale Volkspartei* (German National People's Party) - a right-wing nationalist-conservative party, with authoritarian, monarchist, and racist elements. It is supported by the former aristocracy, rural landowners, and conservative Lutherans.
 
-**KPD** - *Kommunistische Partei Deutschlands* (German Communist Party) - a radical left-wing offshoot of the SPD that emerged in the aftermath of the German Revolution of 1918, they follow the path of Moscow, opposing parliamentary democracy in favor of a Soviet-style revolution.
+Current relations: [+ dkp_relation : relationships +]
+
+**SP** - *Sozialistische Partei* (Socialist Party) - a radical left-wing offshoot of the SPD that emerged in the aftermath of the September Insurrections.
 
 Current relations: [+ kpd_relation : relationships +]
 
 [? if sapd_formed: SAPD - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Germany) - a party recently formed in a split from the SPD, the SAPD is essentially an agglomeration of various left-wing splinter groups between the SPD and KPD. ?]
 
-**NSDAP** - *Nationalsozialistische Deutsche Arbeiterpartei* - (National Socialist German Worker's Party, or Nazis) - a far-right nationalist and antisemitic party. Led by Adolf Hitler, they attempted a coup in 1923, and were banned for it, but have since been legalized.
+**DVLP** - *Deutsche Vaterlandspartei* - (German Fatherland Party) - wip.
 
 Current relations: [+ nsdap_relation : relationships +]
 
