@@ -1,6 +1,6 @@
 title: Ruhr strikes increase in violence.
 new-page: true
-view-if: ((year = 1936 and month > 7) or (year >= 1937)) and pro_republic >= 45 and unemployed > 20 and inflation > 5 and ruhrkampf == 1
+view-if: ((year = 1937 and month > 4) or (year >= 1938)) and pro_republic >= 45 and unemployed > 20 and inflation > 5 and ruhrkampf == 1
 max-visits: 1
 on-arrival: rfb_militancy += 0.05; rfb_strength += 25; workers_sp += 3; unemployed_sp += 5; workers_dvlp += 1; unemployed_dvlp += 1 
 tags: event
