@@ -2,7 +2,30 @@ title: Ruhr strikes increase in violence.
 new-page: true
 view-if: ((year = 1936 and month > 7) or (year >= 1937)) and pro_republic >= 45 and unemployed > 20 and inflation > 5 and ruhrkampf == 1
 max-visits: 1
-on-arrival: rfb_militancy += 0.1; rfb_strength += 25; workers_sp += 3; unemployed_sp += 5; workers_dvlp += 1; unemployed_dvlp += 1 
+on-arrival: rfb_militancy += 0.05; rfb_strength += 25; workers_sp += 3; unemployed_sp += 5; workers_dvlp += 1; unemployed_dvlp += 1 
 tags: event
 
 = Ruhr strikes increase in violence
+
+Seeing little to no improvement in their livelihood across the past year, the workers in the streets of Ruhr have grown more and more agitated. Across the past few weeks, numerous police crackdowns were met with hails of rocks, bottles and other projectiles, with a few incidents escalating into open brawls between the two sides.
+
+[? if works_program == 0 : Without a cohesive government response to the economic crisis, we can only expect the situation to escalate further. ?][? if works_program : This puts effectiveness of the implemented works creation program into question. ?]
+
+How should we respond?
+
+- @economic_policy: Adjust our economic policy.
+- @crisis_program: Formulate a plan to get us out of the depression.
+- @rally.wtb: Rally for implementation of our works creation program.
+- @decrease_police: Order the police to abstain from excessive violence.
+- @crackdown: Send more armed police officers in.
+- @support_the_workers: Side with the workers!
+
+
+@decrease_police
+# decrease police loyalty on arrival, reduce police militancy if loyalty is high enough, +coalition dissent
+
+@crackdown
+# decrease SP relation, decrease agitation but reduce worker's and unemployed spd support, flip them to sp and dvlp (dkp?)
+
+@support_the_workers
+# increase strikers numbers, +2 coalition dissent, increase militancy by further 0.05, increase bf strength to answer, if in control of interior ministry apply decrease police effects but more severe penalties and less rewards

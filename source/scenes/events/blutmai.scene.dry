@@ -13,38 +13,35 @@ Tensions have reached breaking point in the Ruhr region. Long disgruntled with a
 
 Many in the country are fearful of a syndicalist takeover and subsequent french invasion, while the striking masses are already preparing for harsh government backlash.
 
-What are we to do? On one hand, workers' cause is our own, and turning our back on their demands will likely spell doom for our party. On the other, we might fuel the far-right's red scare should we allow the strike to spiral out of control.
+Our party is at the crossroads while coming up with a further course of action. On one hand, workers' cause is our own, and turning our back on their demands will likely spell doom for our party. On the other, we might fuel the far-right's red scare should we allow the strike to spiral out of control.
 
-- @ruhr_crackdown: We will denounce the strike as syndicalist fifth column and pursue a government crackdown.
+What will be our initial response?
+
+- @ruhr_crackdown: We will denounce the strike as an attempt at a syndicalist revolution.
 - @ruhr_balance: We will attempt to deescalate tensions and negotiate an agreement satisfying both sides.
-- @ruhr_support: As workers' representatives in the parliament, we'll ensure their voice is heard.
-- @ruhr_join: Worker's struggle can only be won in the factories and on the streets. 
+- @ruhr_join: Proletarian struggle can only be won in the factories and on the streets!
 
 @ruhr_crackdown
-subtitle: This will be viewed as betrayal by the working class.
+subtitle: This will likely be viewed as a betrayal by the working class!
 unavailable-subtitle: Left and center of the party won't allow this.
 choose-if: center_strength < 25 and left_strength < 25
-on-arrival: sp_relation -= 40; lvp_relation -= 5; workers_spd -= 5; unemployed_spd -= 5; workers_sp += 5; unemployed_sp += 5; neorevisionist_dissent += 20; labor_dissent += 45; center_dissent += 40; jungturken_dissent += 60; radicalization -= 1; peoples_party_support += 1
+on-arrival: sp_relation -= 40; lvp_relation += 5; workers_spd -= 5; z_relation += 5; unemployed_spd -= 5; workers_sp += 5; unemployed_sp += 5; neorevisionist_dissent += 15; labor_dissent += 25; center_dissent += 20; jungturken_dissent += 30; radicalization -= 1; peoples_party_support += 1
 face-image: img/blutmai.jpg
 
-We decided to support a brutal suppression campaign in the Ruhr. This, of course, sparks outrage among our electorate, party members, and the Socialist Party.
+We decide to support a brutal suppression campaign in the Ruhr. This, of course, sparks outrage among our electorate, party members, and the Socialist Party.
 
 @ruhr_balance
 on-arrival: sp_relation += 5; workers_sp += 5; unemployed_sp += 5
 
-Our party will attempt to mediate between the reactionary establishment and agitated workers. Hopefully, a peaceful solution will allow us to avoid bloodshed.
-
-
-@ruhr_support
-on-arrival: workers_sp += 5; unemployed_sp += 5; sp_relation += 15; rfb_strength += 25; z_relation -= 3; dvp_relation -= 3; coalition_dissent += 1; rfb_militancy -= 0.05; radicalization += 1
-
-We have took it upon ourselves to represent the striking workers in the Reichstag. Naturally, the far-right staunchly opposed our actions, calling for reinstatement of anti-socialist laws.
-
-With our public show of support, many of our supporters previously reluctant on joining the strike have now decided to participate. Their presence seems to have a moderating influence among the ranks of the workers.
+We recognize the workers' demands as justified and don't denounce the strike directly, but call upon the participants to show restraint and abstain from violence. Furthermore, we advocate for quick government action to put an end to the depression and a peaceful solution acceptable to both sides.
 
 @ruhr_join
-choose-if: jungturken_strength >= 60 or labor_strength >= 75
-unavailable-subtitle: Majority of the party sees this as too radical. 
-on-arrival: kpd_relation += 15; workers_kpd += 5; unemployed_kpd += 5; workers_spd += 5; unemployed_spd += 5; new_middle_spd -= 5; old_middle_spd -= 5; z_relation -= 10; dvp_relation -= 10; coalition_dissent = 4; communist_coalition += 2; rfb_strength += 100; rfb_militancy += 0.15; radicalization += 2
+choose-if: jungturken_strength >= 25 and staatspolitiker_strength < 25
+unavailable-subtitle: [? if jungturken_strength < 25 : The party's left wing isn't influential enough. ?][? if staatspolitiker_strength >= 25 : The *Staatspolitiker* hold enough sway to denouce this approach. ?]
+on-arrival: sp_relation += 15; workers_sp += 5; unemployed_sp += 5; workers_spd += 5; unemployed_spd += 5; new_middle_spd -= 5; old_middle_spd -= 5; z_relation -= 10; lvp_relation -= 10; coalition_dissent = 4; communist_coalition += 2; rfb_strength += 100; rfb_militancy += 0.05; radicalization += 1
 
-It is difficult to persuade the Communists to let us march with them, given the histories of their party and ours. However, they eventually relent. The display of proletarian unity inspires the workers and terrifies the bourgeoisie and middle class. [? if in_grand_coalition : Our coalition partners in the government are outraged at our display with the communists, and are threatening to break up the government. ?] The far-right paramilitaries increase their recruitment to counter us.
+It's a difficult decision for many in the party, given high support for reformism. However, our right-wing members eventually relent, although a deep distate for criticising a democratic system we fought so hard to establish is noticeable.
+
+We denounce the current state of parliamentary politics and blame the bourgeoisie parties for the rising instability. [? if in_grand_coalition : Our coalition partners in the government are outraged at our display and are threatening to break up the government. ?] The far-right immediately decries our party as a vessel for syndicalist agitators.
+
+The Socialist Party is pleasantly surprised, to say the least. They quickly join us in our messaging.
