@@ -1,12 +1,11 @@
-title: Zentrum forms a government with the SWR coalition
-new-page: true 
-subtitle: Future of German socialism appears increasingly grim.
+title: Schleicher ousted by a right wing coalition
+new-page: true
 tags: event
 view-if: chancellor == "Schleicher" and right_coalition >= 50 and ((year >= 1937 and z_relation < 40) or (year >= 1938 and z_relation < 55))
 on-arrival: chancellor = "some reactionary idk"; spd_in_government = 0; chancellor_party = "Z"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_right_coalition = 1
 max-visits: 1
 
-= Schleicher ousted by right wing coalition
+= Schleicher ousted by a right wing coalition
 
 Our old political allies in the Center Party have lost patience with our inability to form a ruling coalition. Combined with chancellor Schleicher's meagre results in dealing with the economic and civil instability, the catholic bastion of democracy has turned to the far-right DkP and DVLP to form a new ruling coalition.
 

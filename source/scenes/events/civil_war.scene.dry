@@ -4,6 +4,8 @@ on-arrival: {!
 Q.rb_strength = Math.round(Q.rb_strength);
 Q.sh_strength = Math.round(Q.sh_strength);
 Q.sa_strength = Math.round(Q.sa_strength);
+Q.rfb_strength = Math.round(Q.rfb_strength);
+Q.bf_strength = Math.round(Q.bf_strength);
 // re-calculate dissent, in case we transitioned from, say, the KPD support that raised reformist dissent.
 var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.neorevisionist_strength;
 var total_dissent = Q.left_strength*Q.left_dissent + Q.center_strength*Q.center_dissent + Q.labor_strength*Q.labor_dissent + Q.reformist_strength*Q.reformist_dissent + Q.neorevisionist_strength*Q.neorevisionist_dissent;
@@ -40,7 +42,8 @@ if (Q.spd_in_government && Q.chancellor_party == "SPD") {
 } else {
     Q.total_power += Q.loyal_reichswehr_power/4;
 }
-Q.rfb_power = Q.rfb_strength*Q.rfb_militancy;
+// striking ruhr workers will only count as 1/4, since they aren't a cohesive fighting force
+Q.rfb_power = Q.rfb_strength*(Q.rfb_militancy/4);
 Q.total_power += Q.rfb_power;
 // general strike strength
 // maximum (given 25 labor strength) is 400
@@ -77,11 +80,11 @@ go-to: war_menu
 
 = The Array of Forces
 
-Our enemies is the nationalist Brunswick Front, with [+ bf_strength +] thousand troops. The loyalties of the Heer, with its [+ reichswehr_strength +] thousand regular soldiers, and Prussian police, with [+ prussian_police_strength +] thousand members, are unclear.
+Our enemies are largely concentrated within the nationalist Brunswick Front, with [+ bf_strength +] thousand troops. The loyalties of the Heer, with its [+ reichswehr_strength +] thousand regular soldiers, and Prussian police, with [+ prussian_police_strength +] thousand members, are unclear.
 
 [? if chancellor_party == "KPD" or president == "Thälmann" : The KPD's paramilitary, the RFB, is leading the battle, and we are their co-combatants. ?]
 
-On our side, we have the Reichsbanner, at [+ rb_strength +] thousand members. [? if dissent > 0.15 and dissent <= 0.25: It is somewhat weakened by dissent within the party, and some members choose not to fight. ?][? if dissent > 0.25 and dissent < 0.5: It is weakened by dissent within the party, and many members choose not to fight. ?][? if dissent >= 0.5: It is heavily weakened by dissent within the party, and a substantial portion of members choose not to fight. ?]
+On our side, we have the Vereidigungsbund, at [+ rb_strength +] thousand members. [? if dissent > 0.15 and dissent <= 0.25: It is somewhat weakened by dissent within the party, and some members choose not to fight. ?][? if dissent > 0.25 and dissent < 0.5: It is weakened by dissent within the party, and many members choose not to fight. ?][? if dissent >= 0.5: It is heavily weakened by dissent within the party, and a substantial portion of members choose not to fight. ?]
 
 [? if rb_militancy < 0.25 : Unfortunately, the Reichsbanner are poorly trained and equipped, and will not be able to stand against our more militarized opponents. ?][? if rb_militancy >= 0.25 and rb_militancy < 0.5 : We have spent some resources training and equipping the Reichsbanner. Let us hope our people can persist. ?][? if rb_militancy >= 0.5 : We have spent quite a great deal of resources on turning the Reichsbanner into a fighting force. Let us hope that they survive. ?]
 
