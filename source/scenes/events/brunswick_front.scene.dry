@@ -3,7 +3,7 @@ subtitle: The right-wing forces unite against the german democracy.
 new-page: true
 on-arrival: harzburg_front_seen = 1; bf_strength = 200; bf_militancy = 0.10; old_middle_dvlp += 3; unemployed_dvlp += 3; rural_dvlp += 3; old_middle_dkp += 3; unemployed_dkp += 3; rural_dkp += 3; nazi_urgency += 1; iron_front_timer = 0
 tags: event
-view-if: (year >= 1937 and month >= 6 and chancellor != "Schleicher") or (coup_progress >= 6) or rfb_militancy >= 0.40
+view-if: (year >= 1937 and month >= 6 and chancellor != "Schleicher") or rfb_militancy >= 0.40
 max-visits: 1
 
 = The Brunswick Front
