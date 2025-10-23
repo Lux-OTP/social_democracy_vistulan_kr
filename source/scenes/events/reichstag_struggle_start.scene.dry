@@ -1,0 +1,10 @@
+title: Struggle for the Reichstag
+view-if: chancellor == "Schleicher"
+on-arrival: reichstag_struggle = 1; zentrum_sch_coop = 3; zentrum_spd_coop = 2; zentrum_swr_coop = 1; lvp_sch_coop = 1; lvp_spd_coop = 3; lvp_swr_coop = 1; agrarians_sch_coop = 3; agrarians_spd_coop = 1; agrarians_swr_coop = 3; minority_sch_coop = 1; minority_spd_coop = 2; minority_swr_coop = 0
+
+= Struggle for the Reichstag
+
+Schleicher has entered a fight for survival of his cabinet, threatened by a vote of no confidence by the first party to gather a majority.
+
+This is a great opportunity both for us and the SWR coalition, since both sides may be able to form a government if given enough time.
+

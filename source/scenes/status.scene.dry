@@ -103,6 +103,15 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if neorevisionism > 0 : Neorevisionist strength: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?]
 
+[? if reichstag_struggle : =  Struggle for Reichstag ?]
+
+[? if reichstag_struggle : **Z** SPD: [+ zentrum_spd_coop : cooperation +], Schleicher: [+ zentrum_sch_coop : cooperation +], SWR: [+ zentrum_swr_coop : cooperation +] ?]
+
+[? if reichstag_struggle : **LVP** SPD: [+ lvp_spd_coop : cooperation +], Schleicher: [+ lvp_sch_coop : cooperation +], SWR: [+ lvp_swr_coop : cooperation +] ?]
+
+[? if reichstag_struggle : **Agrarians** SPD: [+ agrarians_spd_coop : cooperation +], Schleicher: [+ agrarians_sch_coop : cooperation +], SWR: [+ agrarians_swr_coop : cooperation +] ?]
+
+[? if reichstag_struggle : **Minority Bloc** SPD: [+ minority_spd_coop : cooperation +], Schleicher: [+ minority_sch_coop : cooperation +], SWR: [+ minority_swr_coop : cooperation +] ?]
 
 @paramilitaries
 on-arrival: {!

@@ -569,6 +569,21 @@ Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
 
+// setup for reichstag power struggle if Schleicher is appointed chancellor
+Q.reichstag_struggle = 0;
+Q.zentrum_spd_coop = 0;
+Q.zentrum_swr_coop = 0;
+Q.zentrum_sch_coop = 0;
+Q.lvp_spd_coop = 0;
+Q.lvp_swr_coop = 0;
+Q.lvp_sch_coop = 0;
+Q.agrarians_spd_coop = 0;
+Q.agrarians_swr_coop = 0;
+Q.agrarians_sch_coop = 0;
+Q.minority_spd_coop = 0;
+Q.minority_swr_coop = 0;
+Q.minority_sch_coop = 0;
+
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
 Q.muller_advisor = 1; // Hermann Müller

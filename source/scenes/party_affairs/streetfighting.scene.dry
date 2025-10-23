@@ -41,7 +41,7 @@ Many workers feel disheartened by this loss, and choose to abandon the strike to
 
 @street_battle_win
 on-arrival: bf_strength += 20 if harzburg_front_seen; rfb_militancy += 0.05; rfb_strength += 10; rb_strength += 10 if ravb_formed; workers_spd += 2*(1-dissent); unemployed_spd += 2*(1-dissent); workers_sp += 1; unemployed_sp += 1
-go-to: harzburg_front
+go-to: brunswick_front
 
 Our forces overwhelm that of the reactionaries
 

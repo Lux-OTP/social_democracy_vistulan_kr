@@ -1,7 +1,7 @@
 title: Forming the RAVB
 new-page: true
 is-card: true
-view-if: ruhrkampf == 1 and (radicalization >= 7 or (jungturken_strength >= 80 and staatspolitiker_strength < 40)) and spd_in_government == 0 and spd_toleration == 0
+view-if: ruhrkampf == 1 and ((jungturken_strength >= 40 and staatspolitiker_strength < 10) or
 on-arrival: month_actions += 1; rb_militarization_cost = 2 if rb_militancy > 0.1 else rb_militarization_cost = 1; rb_militarization_cost = 3 if rb_militancy > 0.25
 card-image: img/iron_front.png
 frequency: 200
