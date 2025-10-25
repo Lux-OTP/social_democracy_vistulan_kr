@@ -275,6 +275,7 @@ if (window && d3) {
     d3.select("#reichstag").datum(data).call(parliament);
 }
 !}
+go-to: coalition_menu
 
 = Election results
 
@@ -317,7 +318,6 @@ Right-wing Coalition (Z + BVP + DkP + DVLP): [+ right_coalition +]%
 
 [? if n_elections == 1 and (far_right_coalition < 50 and (grand_coalition < 50 or z_relation < 40 or lvp_relation < 40 or minority_bloc_relation < 40 or agrarians_relation < 40)) : Neither us nor the conservaties can persuade the reichstag parties to form a coalition.?] [? if n_elections != 1 or (far_right_coalition >= 50 or (grand_coalition >= 50 and z_relation >= 40 and lvp_relation >= 40 and minority_bloc_relation >= 40 and agrarians_relation >= 40)) : There are some potential arrangements.?]
 
-go-to: coalition_menu
 
 @coalition_menu
 
@@ -339,7 +339,7 @@ go-to: coalition_menu
 title: Kurt von Schleicher is appointed chancellor.
 subtitle: This is outside our control.
 view-if: schleicher_ousted == 0
-choose-if: grand_coalition < 50 or z_relation < 40 or lvp_relation < 40 or agrarians_relation < 40 or minorit_bloc_relation < 40 or far_right_coalition < 50
+choose-if: (grand_coalition < 50 or z_relation < 40 or lvp_relation < 40 or agrarians_relation < 40 or minorit_bloc_relation < 40) and weimar_coalition < 50 and far_right_coalition < 50
 on-arrival: pro_republic -= 4; minorit_bloc_relation += 5; lvp_relation += 5; chancellor = "Schleicher"; chancellor_party = "I"; foreign_minister_party = "I"; interior_minister_party = "DkP"; justice_minister_party = "DkP"; labor_minister_party = "I"; reichswehr_minister_party = "I"; economic_minister_party = "LVP"; finance_minister_party = "Z"; agriculture_minister_party = "Agrarians"; schleicher_schemes_timer = 4
 
 Seeing the Reichstag's inability to form a government, [+ president +] has appointed general Kurt von Schleicher, a powerful figure of the military camarilla, to the post of chancellor as a temporary stabilizing figure in the face of looming political crisis. Despite unfavourable, to put it lightly, outlook on his reign by the Reichstag parties, his non-partisan position, concilliatory stance and relatively open-minded approach might allow him to remain in post for quite a while.
