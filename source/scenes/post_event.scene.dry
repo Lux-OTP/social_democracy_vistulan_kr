@@ -121,8 +121,6 @@ if (Q.month_actions >= 1) {
             Q[timer+'_timer'] -= 1;
         }
     }
-    // reichstag power struggle mechanic
-    
     // append to historical party support records
     var party_support_results = {'date': new Date(Q.year, Q.month - 1)};
     for (var party of Q.parties) {
@@ -190,6 +188,67 @@ if (Q.month_actions >= 1) {
     }
     if (Q.economic_growth >= 12) {
         Q.economic_growth -= 0.3;
+    }
+
+//// Reichstag struggle mechanic
+    if (Q.reichstag_struggle == 1) {
+        if (Q.zentrum_sch_coop < 5) {
+            Q.zentrum_sch_coop += 2;
+        }
+        else if (Q.agrarians_sch_coop < 5) {
+            Q.agrarians_sch_coop += 2;
+        }
+        else if (Q.lvp_sch_coop < 5) {
+            Q.lvp_sch_coop += 2;
+        }
+        else if (Q.minority_sch_coop < 5) {
+            Q.minority_sch_coop += 2;
+        }
+        if (Q.agrarians_swr_coop < 5) {
+            Q.agrarians_swr_coop += 2;
+        }
+        else if (Q.zentrum_swr_coop < 5) {
+            Q.zentrum_swr_coop += 2;
+        }
+        else if (Q.lvp_swr_coop < 5) {
+            Q.lvp_swr_coop += 2;
+        }
+        if (Q.z_relation >= 55) {
+            zentrum_spd_coop += 1;
+        }
+        if (Q.z_relation >= 65) {
+            zentrum_spd_coop += 1;
+        }
+        if (Q.z_relation >= 75) {
+            zentrum_spd_coop += 1;
+        }
+        if (Q.lvp_relation >= 55) {
+            lvp_spd_coop += 1;
+        }
+        if (Q.lvp_relation >= 65) {
+            lvp_spd_coop += 1;
+        }
+        if (Q.lvp_relation >= 75) {
+            lvp_spd_coop += 1;
+        }
+        if (Q.agrarians_relation >= 55) {
+            agrarians_spd_coop += 1;
+        }
+        if (Q.agrarians_relation >= 65) {
+            agrarians_spd_coop += 1;
+        }
+        if (Q.agrarians_relation >= 75) {
+            agrarians_spd_coop += 1;
+        }
+        if (Q.minority_bloc_relation >= 55) {
+            minority_spd_coop += 1;
+        }
+        if (Q.minority_bloc_relation >= 65) {
+            minority_spd_coop += 1;
+        }
+        if (Q.minority_bloc_relation >= 75) {
+            minority_spd_coop += 1;
+        }
     }
 
     //////////////////////////////// Education & Science support/economic changes
