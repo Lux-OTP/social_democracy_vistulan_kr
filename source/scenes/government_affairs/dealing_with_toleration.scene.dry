@@ -51,7 +51,7 @@ go_to: negotiate_with_dirksen_2
 We approach chancellor [+ chancellor +] and offer to support a few of the most tolerable policies proposed by his cabinet, should some of our bills enjoy the government's backing in return. Some of our members decry this move, stating we're better off just letting the disfunctional government erode instead.
 
 @negotiate_with_dirksen_2
-on-arrival: zentrum_pleased = 1; catholics_spd += 3*(1-dissent); workers_z += 2; new_middle_z += 1; center_dissent += 5; labor_dissent -= 3; labor_strength += 3; science_funding -= 0.2
+on-arrival: zentrum_pleased = 1; z_relation += 5; catholics_spd += 3*(1-dissent); workers_z += 2; new_middle_z += 1; center_dissent += 5; labor_dissent -= 3; labor_strength += 3; science_funding -= 0.2
 
 We manage to convince the incumbent chancellor to cooperate. We secure Center's assurances of improvements to workplace safety and legal protections of the workers, in return for granting limited benefits to religious schools.
 
