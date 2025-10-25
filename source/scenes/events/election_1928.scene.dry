@@ -102,7 +102,7 @@ if (Q.sp_r >= Q.spd_r && Q.sp_r >= Q.dvlp_r) {
 // march coalition
 Q.weimar_coalition = Q.spd_r + Q.lvp_r + Q.z_r - 3;
 // democratic union, add Q.agrarians_r once implemented
-Q.grand_coalition = Q.spd_r + Q.lvp_r + Q.z_r + Q.minority_bloc_r;
+Q.grand_coalition = Q.spd_r + Q.lvp_r + Q.z_r + Q.minority_bloc_r + Q.agrarians_r;
 Q.bourgeois_coalition = Q.lvp_r + Q.z_r + Q.dkp_r + Q.other_r;
 Q.center_right_coalition = Q.z_r + Q.lvp_r + Q.minority_bloc_r + Q.other_r + Q.dkp_r;
 // only if Z relations are too low
@@ -337,7 +337,7 @@ Right-wing Coalition (Z + BVP + DkP + DVLP): [+ right_coalition +]%
 title: Kurt von Schleicher is appointed chancellor.
 subtitle: This is outside our control.
 view-if: schleicher_ousted == 0
-choose-if: (grand_coalition < 50 or (z_relation < 40 and lvp_relation < 40 and agrarians_relation < 40 and minorit_bloc_relation < 40)) and far_right_coalition < 50
+choose-if: grand_coalition < 50 or z_relation < 40 or lvp_relation < 40 or agrarians_relation < 40 or minorit_bloc_relation < 40 or far_right_coalition < 50
 on-arrival: pro_republic -= 4; minorit_bloc_relation += 5; lvp_relation += 5; chancellor = "Schleicher"; chancellor_party = "I"; foreign_minister_party = "I"; interior_minister_party = "DkP"; justice_minister_party = "DkP"; labor_minister_party = "I"; reichswehr_minister_party = "I"; economic_minister_party = "LVP"; finance_minister_party = "Z"; agriculture_minister_party = "Agrarians"; schleicher_schemes_timer = 4
 
 Seeing the Reichstag's inability to form a government, [+ president +] has appointed general Kurt von Schleicher, a powerful figure of the military camarilla, to the post of chancellor as a temporary stabilizing figure in the face of looming political crisis. Despite unfavourable, to put it lightly, outlook on his reign by the Reichstag parties, his non-partisan position, concilliatory stance and relatively open-minded approach might allow him to remain in post for quite a while.
