@@ -337,7 +337,7 @@ Right-wing Coalition (Z + BVP + DkP + DVLP): [+ right_coalition +]%
 title: Kurt von Schleicher is appointed chancellor.
 subtitle: This is outside our control.
 view-if: schleicher_ousted == 0
-choose-if: grand_coalition < 50 and far_right_coalition <= 50
+choose-if: grand_coalition < 50 and z_relation < 40 and lvp_relation < 40 and agrarians_relation < 40 and minorit_bloc_relation < 40 and far_right_coalition < 50
 on-arrival: pro_republic -= 4; minorit_bloc_relation += 5; lvp_relation += 5; chancellor = "Schleicher"; chancellor_party = "I"; foreign_minister_party = "I"; interior_minister_party = "DkP"; justice_minister_party = "DkP"; labor_minister_party = "I"; reichswehr_minister_party = "I"; economic_minister_party = "LVP"; finance_minister_party = "Z"; agriculture_minister_party = "Agrarians"; schleicher_schemes_timer = 4
 
 Seeing the Reichstag's inability to form a government, [+ president +] has appointed general Kurt von Schleicher, a powerful figure of the military camarilla, to the post of chancellor as a temporary stabilizing figure in the face of looming political crisis. Despite unfavourable, to put it lightly, outlook on his reign by the Reichstag parties, his non-partisan position, concilliatory stance and relatively open-minded approach might allow him to remain in post for quite a while.
@@ -430,7 +430,7 @@ view-if: far_right_coalition >= 50
 go-to: far_right_win
 priority: 2
 
-There are enough votes for the Conservatives and the DVLP to form a coalition. [+ dvlp_leader +] has made his participation in government contingent on being appointed chancellor. It is up to [+ president +] to decide.
+There are enough votes for the DkP and the DVLP to form a coalition. [+ dvlp_leader +] has made his participation in government contingent on being appointed chancellor. It is up to [+ president +] to decide.
 
 @far_right_win
 on-arrival: chancellor = dvlp_leader; chancellor_party = "DVLP"
@@ -537,8 +537,8 @@ In response to the KPD's entrance into the government, the right-wing immediatel
 @right_coalition
 title: Refuse to form a government, so that a right-wing coalition may be formed.
 subtitle: Z + BVP + DkP + DVLP ([+ right_coalition +]%)
-unavailable-subtitle: Center is not interested in a coalition with the far-right.
-view-if: right_coalition >= 50 and n_elections != 0
+unavailable-subtitle: Center is not interested in a coalition with the far-right right now.
+view-if: right_coalition >= 50
 choose-if: z_relation < 30
 
 There are enough votes for a right-wing coalition of the Center (+ BVP), DkP, DVLP, and minor conservative parties. Atmosphere of rivalry, if not outright hostility, between the SPD and the Center has led to their participation in this anti-socialist government.
@@ -795,7 +795,7 @@ Rudolf Breitscheid has been appointed chancellor.
 
 @grand_coalition
 title: We can form a Democratic Union.
-view-if: grand_coalition >= 50 and grand_coalition_fail != 1 and (n_elections == 1 or chancellor == "Schleicher")
+view-if: grand_coalition >= 50 and grand_coalition_fail != 1
 choose-if: z_relation >= 40 and lvp_relation >= 40 and minorit_bloc_relation >= 40 and agrarians_relation >= 40
 unavailable-subtitle: We don't have sufficient relations with [? if z_relation < 40 : Center, ?] [? if lvp_relation < 40 : LVP, ?] [? if minorit_bloc_relation < 40 : Minority Bloc, ?] [? if agrarians_relation < 40 : Agrarians, ?] making it impossible to form a government!
 subtitle: SPD + Z + BVP + LVP + Minority Bloc + Agrarians ([+ grand_coalition +]%)
