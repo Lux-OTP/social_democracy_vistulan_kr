@@ -1,15 +1,15 @@
-title: Dealing with Schleicher
+title: Permanent opposition
 new-page: true
 is-card: true
 card-image: img/portraits/BrüningHeinrich.jpg
-view-if: dealing_with_toleration_timer == 0 and chancellor == "Schleicher"
+view-if: dealing_with_toleration_timer == 0 and spd_in_government == 0
 on-arrival: dealing_with_toleration_timer += 6; month_actions += 1
 tags: govt_affairs
 #subtitle: Despite not being in government, we can still provide support.
 
 = Dealing with Schleicher
 
-We are currently the strongest force opposing the government of Chancellor [+ chancellor +]. How should we use our position?
+Even though the SPD isn't a part of the ruling coalition, we still hold a sizeable sway within the Reichstag. We may be able to use it in our favour.
 
 - @break_toleration
 - @urge_against_austerity
@@ -17,14 +17,14 @@ We are currently the strongest force opposing the government of Chancellor [+ ch
 - @easy_discard
 
 @break_toleration
-view-if: not constructive_vonc
-title: End the Red General's rule with a vote of no confidence!
+view-if: (not constructive_vonc) and chancellor != "Schleicher" and spd_in_government == 0
+title: End [+ chancellor +]'s government with a vote of no confidence.
 unavailable-subtitle: We don't have sufficient support in the Reichstag.
-choose_if: z_relation >= 40 and lvp_relation >= 40 and minorit_bloc_relation >= 40 and agrarians_relation >= 40
+choose_if: (weimar_coalition > 50 and z_relation >= 40 and lvp_relation >= 40) or (grand_coalition > 50 and z_relation >= 55 and lvp_relation >= 55 and (minorit_bloc_relation >= 55 or agrarians_relation >= 55))
 
-Are we sure about this? A vote of no confidence could trigger new elections should we fail to find a majority, and as a result - potentially increase vote-share for the conservative parties.
+Are we sure about this? A vote of no confidence could trigger new elections should we fail to find a majority, and as a result - allow nationalist parties to increase in vote-share.
 
-- @vonc: Yes, end this antiparliamentarian farce!
+- @vonc: Yes, we will bring down the current bourgeois cabinet.
 - @stay_course: No, we can't take the risk just yet.
 
 @vonc
@@ -40,9 +40,8 @@ Whether it's because we don't want to join the government in the current state o
 @urge_against_austerity
 title: Urge the chancellor to engage in talks with the striking Ruhr workers.
 view-if: ruhrkampf == 1
-choose-if: jungturken_strength <= 70 or (staatspolitiker_strength >= 40 and labor_strength >= 40)
 unavailable-subtitle: The left wing of our party opposes any talks with the chancellor.
-go-to: urge_success if radicalization <= 6; urge_failure if radicalization > 6
+go-to: urge_success
 
 @urge_success
 on-arrival: rfb_militancy -= 0.05; ruhrkampf_agreement += 1; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); jungturken_dissent -= 5; staatspolitiker_dissent -= 5; center_dissent -= 5; labor_dissent -= 5; z_relation += 5*(1-dissent); lvp_relation += 5*(1-dissent); minorit_bloc_relation += 5*(1-dissent); agrarians_relation += 5*(1-dissent)
@@ -55,7 +54,8 @@ on-arrival: jungturken_strength += 5; labor_dissent += 5
 Unfortunately, our negotiations have met with failure. The Schleicher cabinet sees us as merely a "different shade of syndicalist red" and doesn't want to listen to us.
 
 @improve_relations
-title: Improve relations with the parties of the opposition.
+title: Improve relations with the bourgeois parties of the government.
+choose-if: chancellor == "von Dirksen"
 on-arrival: z_relation += 5*(1-dissent); lvp_relation += 5*(1-dissent); agrarians_relation += 5*(1-dissent); minorit_bloc_relation += 5*(1-dissent)
 
-We have increased our level of contact and discussions with the parties of the opposition, urging them to cooperate against chancellor Schleicher.
+

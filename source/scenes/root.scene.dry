@@ -584,6 +584,11 @@ Q.minority_spd_coop = 0;
 Q.minority_swr_coop = 0;
 Q.minority_sch_coop = 0;
 
+Q.agrarians_pleased = 0;
+Q.minority_bloc_pleased = 0;
+Q.zentrum_pleased = 0;
+Q.lvp_pleased = 0;
+
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
 Q.muller_advisor = 1; // Hermann Müller

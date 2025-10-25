@@ -249,6 +249,18 @@ if (Q.month_actions >= 1) {
         if (Q.minority_bloc_relation >= 75) {
             minority_spd_coop += 1;
         }
+        if (Q.agrarians_pleased == 1) {
+            agrarians_spd_coop += 1;
+        }
+        if (Q.zentrum_pleased == 1) {
+            zentrum_spd_coop += 1;
+        }
+        if (Q.lvp_pleased == 1) {
+            lvp_spd_coop += 1;
+        }
+        if (Q.minority_bloc_pleased == 1) {
+            minority_spd_coop += 1;
+        }
     }
 
     //////////////////////////////// Education & Science support/economic changes
