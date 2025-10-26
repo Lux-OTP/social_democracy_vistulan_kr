@@ -38,7 +38,7 @@ We remain apathetic to the crisis. German-owned industries in Russia are no more
 view-if: spd_in_government == 1
 subtitle: -1 budget
 choose-if: budget >= 1
-on-arrival: budget -= 1; inflation += 0.2; economic_growth -= 1; new_middle_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent); workers_spd -= 3; unemployed_spd -= 3; jungturken_dissent += 5; center_dissent += 5
+on-arrival: budget -= 1; inflation += 0.2; economic_growth -= 1; new_middle_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent); workers_spd -= 3; unemployed_spd -= 3; neorevisionist_dissent += 5; center_dissent += 5
 
 We provide compensation to the affected german entrepreneurs. However, the effect this action has on our economy is negligible, and many people see this as an admission of defeat and careless spending in the time of crisis.
 

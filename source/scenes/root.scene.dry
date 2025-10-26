@@ -47,10 +47,10 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['neorevisionist', 'center', 'labor', 'staatspolitiker', 'neoreformist'];
+Q.factions = ['neorevision!ist', 'center', 'labor', 'staatspolitiker', 'neoreformist'];
 // should this be normalized to 100%?
-Q.neorevisionist_strength = 15;
-Q.neorevisionist_dissent = 20;
+Q.neo!revisionist_strength = 15;
+Q.neo!revisionist_dissent = 20;
 Q.center_strength = 30;
 Q.center_dissent = 0;
 Q.labor_strength = 25;
@@ -63,7 +63,7 @@ Q.neoreformist_dissent = 10;
 // secret events...
 Q.unions_independent = 0;
 Q.centrists_resign = 0;
-Q.jungturken_split = 0;
+Q.neorevisionist_split = 0;
 Q.staatspolitiker_resigned = 0;
 
 // have we discovered neorevisionism?

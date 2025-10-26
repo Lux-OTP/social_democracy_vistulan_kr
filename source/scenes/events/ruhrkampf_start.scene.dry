@@ -25,7 +25,7 @@ What will be our initial response?
 subtitle: This will likely be viewed as a betrayal by the working class!
 unavailable-subtitle: Left and center of the party won't allow this.
 choose-if: center_strength < 25 and left_strength < 25
-on-arrival: sp_relation -= 40; lvp_relation += 5; workers_spd -= 5; z_relation += 5; unemployed_spd -= 5; workers_sp += 5; unemployed_sp += 5; neorevisionist_dissent += 15; labor_dissent += 25; center_dissent += 20; jungturken_dissent += 30; radicalization -= 1; peoples_party_support += 1
+on-arrival: sp_relation -= 40; lvp_relation += 5; workers_spd -= 5; z_relation += 5; unemployed_spd -= 5; workers_sp += 5; unemployed_sp += 5; neorevisionist_dissent += 15; labor_dissent += 25; center_dissent += 20; neorevisionist_dissent += 30; radicalization -= 1; peoples_party_support += 1
 face-image: img/blutmai.jpg
 
 We decide to support a brutal suppression campaign in the Ruhr. This, of course, sparks outrage among our electorate, party members, and the Socialist Party.
@@ -36,8 +36,8 @@ on-arrival: sp_relation += 5; workers_sp += 5; unemployed_sp += 5
 We recognize the workers' demands as justified and don't denounce the strike directly, but call upon the participants to show restraint and abstain from violence. Furthermore, we advocate for quick government action to put an end to the depression and a peaceful solution acceptable to both sides.
 
 @ruhr_join
-choose-if: jungturken_strength >= 25 and staatspolitiker_strength < 25
-unavailable-subtitle: [? if jungturken_strength < 25 : The party's left wing isn't influential enough. ?][? if staatspolitiker_strength >= 25 : The *Staatspolitiker* hold enough sway to denouce this approach. ?]
+choose-if: neorevisionist_strength >= 25 and staatspolitiker_strength < 25
+unavailable-subtitle: [? if neorevisionist_strength < 25 : The party's left wing isn't influential enough. ?][? if staatspolitiker_strength >= 25 : The *Staatspolitiker* hold enough sway to denouce this approach. ?]
 on-arrival: sp_relation += 15; workers_sp += 5; unemployed_sp += 5; workers_spd += 5; unemployed_spd += 5; new_middle_spd -= 5; old_middle_spd -= 5; z_relation -= 10; lvp_relation -= 10; coalition_dissent = 4; communist_coalition += 2; rfb_strength += 100; rfb_militancy += 0.05; radicalization += 1
 
 It's a difficult decision for many in the party, given high support for reformism. However, our right-wing members eventually relent, although a deep distate for criticising a democratic system we fought so hard to establish is noticeable.

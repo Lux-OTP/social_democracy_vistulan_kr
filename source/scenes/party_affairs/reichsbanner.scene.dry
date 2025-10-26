@@ -28,7 +28,7 @@ The *Ruhrarbeiterverteidigungsbund*, or simply Verteidigungsbund, is a mass orga
 choose-if: resources >= rb_militarization_cost
 unavailable-subtitle: Not enough resources ([+ rb_militarization_cost +] needed).
 subtitle: -[+ rb_militarization_cost +] resources
-on-arrival: resources -= rb_militarization_cost; rb_investment += 1; rb_strength += 100; rb_militancy += 0.05; jungturken_strength += 2; jungturken_dissent -= 2; staatspolitiker_dissent += 5; workers_spd += 2*(1-dissent); unemployed_spd += 2*(1-dissent); z_relation -= 5 if historical_mode 
+on-arrival: resources -= rb_militarization_cost; rb_investment += 1; rb_strength += 100; rb_militancy += 0.05; neorevisionist_strength += 2; neorevisionist_dissent -= 2; staatspolitiker_dissent += 5; workers_spd += 2*(1-dissent); unemployed_spd += 2*(1-dissent); z_relation -= 5 if historical_mode 
 
 Some in our party decry the increasing militarization of the RAVB. They say it is playing into the conservative fearmongering, and risks alienating our more moderate supporters across the country. On the other hand, more left-leaning radicals are being lured to our organizations, and workers across Germany are growing more and more supportive of our struggle.
 
@@ -51,7 +51,7 @@ The Verteidigungsbund is already serving the purpose it needs to serve. There is
 
 @cut_rb
 subtitle: +1 resources
-on-arrival: resources += 1; rb_strength -= 100; rb_militancy -= 0.05; rfb_strength += 25; jungturken_strength -= 2; jungturken_dissent -= 2; spd_militancy -= 0.05; workers_sp += 2; unemployed_sp += 2
+on-arrival: resources += 1; rb_strength -= 100; rb_militancy -= 0.05; rfb_strength += 25; neorevisionist_strength -= 2; neorevisionist_dissent -= 2; spd_militancy -= 0.05; workers_sp += 2; unemployed_sp += 2
 
 Cutting resources to the Verteidigungsbund causes a drop in the membership, and leads some of the members to support the Socialist Party rather than the SPD.
 

@@ -81,7 +81,7 @@ Mass rallies are a common feature of social democratic life, especially in the l
 - @easy_discard
 
 @class_struggle
-on-arrival: workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent) if jungturken_strength > staatspolitiker_strength; workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; jungturken_strength += 5; jungturken_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2;
+on-arrival: workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent) if neorevisionist_strength > staatspolitiker_strength; workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; neorevisionist_strength += 5; neorevisionist_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2;
 
 Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
 

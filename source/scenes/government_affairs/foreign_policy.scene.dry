@@ -90,7 +90,7 @@ We renegotiate minor points of the treaty of Versailles to ease Entente tensions
 view-if: west_relation > 2
 unavailable-subtitle: Our political position doesn't allow for such a move
 choose-if: in_weimar_coalition == 1 or in_spd_majority == 1
-on-arrival: west_relation += 2; new_middle_spd -= 5; old_middle_spd -= 5; workers_spd -= 3; unemployed_spd -= 3; jungturken_dissent += 5; coalition_dissent += 1
+on-arrival: west_relation += 2; new_middle_spd -= 5; old_middle_spd -= 5; workers_spd -= 3; unemployed_spd -= 3; neorevisionist_dissent += 5; coalition_dissent += 1
 
 We approach Entente leadership with the final proposition to completely reformulate the Treaty of Versailles, turning it from an act of german supremacy into a groundwork for european cooperation. Unfortunately, this requires us to touch on the question of Elsass-Lothringen.
 

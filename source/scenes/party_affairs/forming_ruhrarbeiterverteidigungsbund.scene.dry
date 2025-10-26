@@ -1,7 +1,7 @@
 title: Forming the RAVB
 new-page: true
 is-card: true
-view-if: ruhrkampf == 1 and ((jungturken_strength >= 25 and staatspolitiker_strength < 10) or jungturken_strength >= 40)
+view-if: ruhrkampf == 1 and ((neorevisionist_strength >= 25 and staatspolitiker_strength < 10) or neorevisionist_strength >= 40)
 on-arrival: month_actions += 1; rb_militarization_cost = 2 if rb_militancy > 0.1 else rb_militarization_cost = 1; rb_militarization_cost = 3 if rb_militancy > 0.25
 card-image: img/iron_front.png
 frequency: 200
@@ -20,7 +20,7 @@ Many members of our party, mostly on the left wing, are calling for the SPD to l
 - @easy_discard
 
 @form_ravb
-on-arrival: rb_strength = 10; rb_militancy = 0.10; jungturken_dissent -= 5; staatspolitiker_dissent += 5; staatspolitiker_strength -= 5; center_dissent += 5; sp_relation += 5; lvp_relation -= 5; z_relation -= 5; pacifism -= 1; coalition_dissent += 1 if spd_in_government == 1 and in_emergency_government == 0 and in_spd_majority == 0; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); new_middle_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; ravb_formed = 1
+on-arrival: rb_strength = 10; rb_militancy = 0.10; neorevisionist_dissent -= 5; staatspolitiker_dissent += 5; staatspolitiker_strength -= 5; center_dissent += 5; sp_relation += 5; lvp_relation -= 5; z_relation -= 5; pacifism -= 1; coalition_dissent += 1 if spd_in_government == 1 and in_emergency_government == 0 and in_spd_majority == 0; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); new_middle_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; ravb_formed = 1
 
 We form the Ruhrarbeiterverteidigungsbund, or RAVB, an organization aiming to coordinate resistance against increasingly violent police actions.
 
@@ -39,12 +39,12 @@ on-arrival: sp_relation += 5; workers_sp += 2; unemployed_sp += 2; workers_spd +
 We allow the Socialist Party to join our ranks. This helps mend our relations and bolsters resolve and numbers of the demonstrators.
 
 @call_for_reform
-on-arrival: lvp_relation += 5 if chancellor == "Schleicher"; z_relation += 5 if chancellor == "Schleicher"; staatspolitiker_strength += 5; jungturken_dissent += 5; new_middle_spd += 3*(1-dissent) if radio > 0; old_middle_spd += 3*(1-dissent)  if radio > 0
+on-arrival: lvp_relation += 5 if chancellor == "Schleicher"; z_relation += 5 if chancellor == "Schleicher"; staatspolitiker_strength += 5; neorevisionist_dissent += 5; new_middle_spd += 3*(1-dissent) if radio > 0; old_middle_spd += 3*(1-dissent)  if radio > 0
 
 We divert the people's attention to the [+ chancellor +] government, responsible both for lackluster response to the economic depression and increasing levels of violence against the striking workers. [? if radio > 0 : Our radio station delivers news of violence and its perpetrators to great number of german households. ?]
 
 @call_for_restraint
-on-arrival: lvp_relation += 5; z_relation += 5; sp_relation -= 10; staatspolitiker_dissent -= 5; staatspolitiker_strength += 5; center_dissent -= 5; jungturken_dissent += 10; workers_spd -= 5; unemployed_spd -= 5; workers_sp += 2; unemployed_sp += 2; rfb_strength -= 15; rfb_militancy -= 0.05
+on-arrival: lvp_relation += 5; z_relation += 5; sp_relation -= 10; staatspolitiker_dissent -= 5; staatspolitiker_strength += 5; center_dissent -= 5; neorevisionist_dissent += 10; workers_spd -= 5; unemployed_spd -= 5; workers_sp += 2; unemployed_sp += 2; rfb_strength -= 15; rfb_militancy -= 0.05
 
 We urge the strikers to refrain from fighting the police, with little effect. Clashes between both sides occur more often and with greater brutality by day.
 

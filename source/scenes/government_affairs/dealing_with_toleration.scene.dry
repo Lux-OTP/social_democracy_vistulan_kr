@@ -58,12 +58,12 @@ We manage to convince the incumbent chancellor to cooperate. We secure Center's 
 Despite some protests from both sides, a deal like that ultimately helps mend relations between our parties, and slightly improves the workers' livelihood.
 
 @urge_success
-on-arrival: rfb_militancy -= 0.05; ruhrkampf_agreement += 1; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); jungturken_dissent -= 5; staatspolitiker_dissent -= 5; center_dissent -= 5; labor_dissent -= 5; z_relation += 5*(1-dissent); lvp_relation += 5*(1-dissent); minorit_bloc_relation += 5*(1-dissent); agrarians_relation += 5*(1-dissent)
+on-arrival: rfb_militancy -= 0.05; ruhrkampf_agreement += 1; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); neorevisionist_dissent -= 5; staatspolitiker_dissent -= 5; center_dissent -= 5; labor_dissent -= 5; z_relation += 5*(1-dissent); lvp_relation += 5*(1-dissent); minorit_bloc_relation += 5*(1-dissent); agrarians_relation += 5*(1-dissent)
 
 We have successfully negotiated concessions for the workers striking in the Ruhr! This has slightly cooled the atmosphere of the demonstrations. However, some particularly staunch reactionaries of the ruling coalition see it as giving in to syndicalist demands, and are growing frustrated with cooperating with us.
 
 @urge_failure
-on-arrival: jungturken_strength += 5; labor_strength += 5; rfb_militancy += 0.05
+on-arrival: neorevisionist_strength += 5; labor_strength += 5; rfb_militancy += 0.05
 
 Unfortunately, our negotiations have met with failure. The [+ chancellor +] cabinet sees us as merely a "different shade of syndicalist red" and won't consider our offers. The workers react to the news with fury. violence remains on the rise.
 
