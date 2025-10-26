@@ -10,11 +10,14 @@ max-visits: 1
 
 = Young Turks
 
-Younger members of the SPD, among them many respected weltkrieg veterans, have been- WIP
+Younger members of the SPD, among them many respected weltkrieg veterans, have been rising in influence in the recent years. Their advocacy for activity and harsher opposition to the far-right has been earning them popularity, especially among the rank and file members of our party.
+
+[? if center_strength >= 40 and staatspolitiker_strength < 10 : With great majority of our members turning towards reinforcing the internationalist doctrine of orthodox marxism, the neorevisionist faction of the "Young Turks" has dominated its reformist counterparts within the Hanover Group and has emerged as a new faction within the party, with some believing it will soon become its driving force. ?]
+[? if center_strength >= 40 and staatspolitiker_strength < 10 : With great majority of our members turning towards embracing parliamentary democracy and doctrine of socialism within the German Empire, the neorevisionist faction of the "Young Turks" has dominated its orthodox marxist counterparts within the neorevisionist faction and has emerged as a new, independent faction within the party, with some believing it will soon become its driving force. ?]
 
 #- @shuffle_leadership: It's time to change our advisors to take into account new ideas.
-- @support_neo: Support the neorevisionist movement.
-- @no_new_ideas: We don't need new ideas.
+- @support_neo: We are a *social* democratic party, afterall.
+- @no_new_ideas: We are a social *democratic* party, afterall.
 - @easy_discard
 
 @support_neo
@@ -25,8 +28,8 @@ We support the new leaders, and start using new-style propaganda techniques in o
 - @shuffle_leadership: We should use this opportunity to change the party's leadership.
 - @root: Continue...
 
-
+// idk why I am calling this neoreformism, someone shoot me in the back of the head twice and then throw me out a balcony window
 @no_new_ideas
-on-arrival:  -= 5; center_strength += 5; neorevisionism = 1
+on-arrival: jungturken_strength += 5; center_strength += 5; neoreformism = 1
 
 We do not need these new ideas; they seem to imitate too closely those of the Nazis and Communists.
