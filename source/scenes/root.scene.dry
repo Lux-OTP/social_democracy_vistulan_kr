@@ -47,10 +47,10 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['neorevision!ist', 'center', 'labor', 'staatspolitiker', 'neoreformist'];
+Q.factions = ['neorevisionist', 'center', 'labor', 'staatspolitiker', 'neoreformist'];
 // should this be normalized to 100%?
-Q.neo!revisionist_strength = 15;
-Q.neo!revisionist_dissent = 20;
+Q.neorevisionist_strength = 15;
+Q.neorevisionist_dissent = 20;
 Q.center_strength = 30;
 Q.center_dissent = 0;
 Q.labor_strength = 25;
