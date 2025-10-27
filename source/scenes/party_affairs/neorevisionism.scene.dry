@@ -28,7 +28,6 @@ We support the new leaders, and start using new-style propaganda techniques in o
 - @shuffle_leadership: We should use this opportunity to change the party's leadership.
 - @root: Continue...
 
-// idk why I am calling this neoreformism, someone shoot me in the back of the head twice and then throw me out a balcony window
 @no_new_ideas
 on-arrival: neorevisionist_strength += 5; center_strength += 5; neoreformism = 1
 
