@@ -1,14 +1,14 @@
 title: Waning influence in Russia
 subtitle: The russian government is meddling in our affairs.
 new-page: true
-on-arrival: economic_growth -= 0.5; inflation -= 0.5; russia_sanctions_seen = 1
+on-arrival: economic_growth -= 0.5; inflation += 0.2; russia_sanctions_seen = 1
 tags: event
-view-if: ((month == 8  and year == 1936) or (month == 6 and year == 1938)) and russia_sanctions_seen == 0 and sp_in_government == 1
+view-if: ((month >= 8  and year >= 1936) or (month == 6 and year == 1938)) and russia_sanctions_seen == 0
 max-visits: 2
 
 = Waning influence in Russia
 
-In response to economic turmoil caused in the Reichspakt by the Black Monday, Boris Savinkov, current [? if year == 1936: president?][? if year == 1937 or year == 1938: leader?] of Russia has tasked his administration with tackling the issue of german economic influence in Russia. Across the country, factories and infrastructure are being nationalized for symbolic compensation, worsening the already difficult situation of the German economy.
+In response to economic turmoil caused in the Reichspakt by the Black Monday, Boris Savinkov, current [? if year == 1936: president?][? if year >= 1937 : leader?] of Russia has tasked his administration with tackling the issue of german economic influence in Russia. Across the country, factories and infrastructure are being nationalized for symbolic compensation, worsening the already difficult situation of the German economy.
 
 While we can't send our troops to handle the situation like during the fallout of Weltkrieg, something has to be done to address this blatant defiance of our hegemony.
 
@@ -17,7 +17,7 @@ While we can't send our troops to handle the situation like during the fallout o
 @options
 
 - @russia_nothing_we_can_do: It's the government's issue.
-- @russia_nothing_we_can_do_govt: We can't do much.
+- @russia_nothing_we_can_do_govt: Just leave it be.
 - @compensate: Compensate our investors and shareholders.
 - @send_demands: We will threaten to use force in defence of our businesses.
 - @mitteleuropa_sanctions: Call for Mitteleuropa to impose sanctions on Russia.

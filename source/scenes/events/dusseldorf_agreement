@@ -1,2 +1,54 @@
 title: The Dusseldorf Agreement
 subtitle: An end to unrest in the Ruhr region?
+new-page: true
+tags: event
+view-if: ruhrkampf_agreement >= 5 and rfb_militancy < 0.69
+on-arrival: {!
+Q.strikers_position = Q.rfb_militancy*Q.rfb_strength*0.6;
+Q.strikers_position += Q.rb_militancy*Q.rb_strength;
+
+if (Q.year == 1937) {
+Q.strikers_position *= 0.9;
+}
+if (Q.year == 1938) {
+Q.strikers_position *= 0.8;
+}
+if (Q.year >= 1939) {
+Q.strikers_position *= 0.7;
+}
+
+Q.government_position = reichswehr_strength*reichswehr_militancy*0.25;
+Q.government_position += prussian_police_strength*prussian_police_militancy*(1-prussian_police_loyalty*0.5);
+if (Q.spd_in_government == 1) {
+Q.government_position *= 0.8;
+}
+!}
+max-visits: 1
+
+= The Dusseldorf Agreement
+
+Following prolonged and exhaustive talks between [+ chancellor +] cabinet and the strike committees, a satisfying compromise has been signed in the city of Dusseldorf.
+
+Despite the tensions between workers and the police, [? if rfb_militancy >= 0.44 : resulting in outbursts of violence in some places,  ?]negotiations proceeded peacefully and in a surprisingly cordial atmosphere, and at the end of the day...
+
+- @good_dusseldorf: ...the workers' representatives secured wide array of concessions from the government.
+- @mid_dusseldorf: ...both sides met in the middle of the road.
+- @bad_dusseldorf: ...the strike has failed to achieve many of its initial goals.
+
+@good_dusseldorf
+view-if: strikers_position >= government_position*1.2 
+on-arrival: workers_spd += 5*(1-dissent) if spd_in_government; unemployed_spd += 5*(1-dissent) if spd_in_government; new_middle_spd += 3*(1-dissent) if spd_in_government; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); new_middle_spd += 2*(1-dissent); rfb_militancy = 0; rfb_strength = 0; unemployed -= 5; economic_growth += 0.2; inflation += 0.1
+
+workers can feed their families, GG
+
+@mid_dusseldorf
+view-if: strikers_position < government_position*1.2 and government_position < strikers_position*1.2
+on-arrival: workers_spd + 6*(1-dissent) if spd_in_government; unemployed_spd += 6*(1-dissent) if spd_in_government; new_middle_spd += 4(1-dissent) if spd_in_government; rfb_militancy = 0; rfb_strength = 0
+
+workers can feed either themselves or their kids, can't win them all
+
+@bad_dusseldorf
+view-if: government_position >= strikers_position*1.2
+on-arrival: workers_spd -= 3; unemployed_spd -= 3; new_middle_spd -= 2
+
+honestly what the actual fuck

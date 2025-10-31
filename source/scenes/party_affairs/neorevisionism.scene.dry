@@ -16,19 +16,21 @@ Younger members of the SPD, among them many respected weltkrieg veterans, have b
 [? if center_strength >= 40 and staatspolitiker_strength < 10 : With great majority of our members turning towards embracing parliamentary democracy and doctrine of socialism within the German Empire, the reformist Hanover Group from the ranks of "Young Turks" has dominated its orthodox marxist counterparts within the neorevisionist faction and has emerged as a new, independent faction within the party, with some believing it will soon become its driving force. ?]
 
 #- @shuffle_leadership: It's time to change our advisors to take into account new ideas.
-- @support_neo: We are a *social* democratic party, afterall.
-- @no_new_ideas: We are a social *democratic* party, afterall.
+- @support_neorev: We are a *social* democratic party, afterall.
+- @support_neoref: We are a social *democratic* party, afterall.
 - @easy_discard
 
-@support_neo
-on-arrival: neorevisionist_strength += 10; nazi_urgency += 1; neorevisionism = 1; peoples_party_support += 1
+@support_neorev
+on-arrival: neorevisionist_strength += 10; center_strength += 5; nazi_urgency += 1; neorevisionism = 1
+choose-if: center_strength >= 40 and staatspolitiker_strength < 10
 
-We support the new leaders, and start using new-style propaganda techniques in our campaigns. The results are uncertain so far...
+We support the new leaders, and start reintroducing more orthodox marxist rhetoric in our campaigns while rallying against reactionary parties within the Reichstag. The results are uncertain so far...
 
 - @shuffle_leadership: We should use this opportunity to change the party's leadership.
 - @root: Continue...
 
-@no_new_ideas
-on-arrival: neorevisionist_strength += 5; center_strength += 5; neoreformism = 1
+@support_neoref
+on-arrival: neoreformist_strength += 10; staatspolitiker_strength += 5; neoreformism = 1
+choose-if: center_strength < 10 and staatspolitiker_strength >= 40
 
-We do not need these new ideas; they seem to imitate too closely those of the Nazis and Communists.
+We support the new leaders, and put democratization and antiauthoritarianism at the center of our campaign efforts.
