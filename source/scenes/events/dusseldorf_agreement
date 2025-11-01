@@ -11,15 +11,18 @@ if (Q.year == 1937) {
 Q.strikers_position *= 0.9;
 }
 if (Q.year == 1938) {
-Q.strikers_position *= 0.8;
+Q.strikers_position *= 0.75;
 }
 if (Q.year >= 1939) {
-Q.strikers_position *= 0.7;
+Q.strikers_position *= 0.4;
 }
 
 Q.government_position = reichswehr_strength*reichswehr_militancy*0.25;
 Q.government_position += prussian_police_strength*prussian_police_militancy*(1-prussian_police_loyalty*0.5);
-if (Q.spd_in_government == 1) {
+if (Q.spd_in_government == 1 and sp_relations >= 55) {
+Q.government_position = 0;
+}
+else if (Q.spd_in_government == 1) {
 Q.government_position *= 0.8;
 }
 !}
@@ -29,7 +32,12 @@ max-visits: 1
 
 Following prolonged and exhaustive talks between [+ chancellor +] cabinet and the strike committees, a satisfying compromise has been signed in the city of Dusseldorf.
 
-Despite the tensions between workers and the police, [? if rfb_militancy >= 0.44 : resulting in outbursts of violence in some places,  ?]negotiations proceeded peacefully and in a surprisingly cordial atmosphere, and at the end of the day...
+[? if year == 1936 : Owing to labor's resolve in face of the economic crisis, the workers found themselves in a strong position during the negotiations. ?]
+[? if year == 1937 : Despite the strike becoming an increasingly harsh burden to the workers, they have held their line so far and took an assertive stance throughout the negotiations. ?]
+[? if year == 1938 : Prolonged economic hardship and rising fears of an intervention by the german armed forces have made calls for a quick end to the strike increasingly common. As a result, government delegates took a harsh line throughtout the negotiations. ?]
+[? if year >= 1939 : The strike has largely died out by now, and the agreement is more or less an act of capitulation in face of an inevitable government crackdown. ?]
+
+Despite the tensions between workers and the police, [? if rfb_militancy >= 0.44 : resulting in outbursts of violence in some places,  ?]negotiations proceeded surprisingly peacefully, and at the end of the day...
 
 - @good_dusseldorf: ...the workers' representatives secured wide array of concessions from the government.
 - @mid_dusseldorf: ...both sides met in the middle of the road.
@@ -39,7 +47,7 @@ Despite the tensions between workers and the police, [? if rfb_militancy >= 0.44
 view-if: strikers_position >= government_position*1.2 
 on-arrival: workers_spd += 5*(1-dissent) if spd_in_government; unemployed_spd += 5*(1-dissent) if spd_in_government; new_middle_spd += 3*(1-dissent) if spd_in_government; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); new_middle_spd += 2*(1-dissent); rfb_militancy = 0; rfb_strength = 0; unemployed -= 5; economic_growth += 0.2; inflation += 0.1
 
-workers can feed their families, GG
+The end of the crisis
 
 @mid_dusseldorf
 view-if: strikers_position < government_position*1.2 and government_position < strikers_position*1.2
