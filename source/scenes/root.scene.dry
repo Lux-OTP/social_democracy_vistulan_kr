@@ -570,7 +570,7 @@ Q.march_on_berlin_timer = 0;
 
 
 // setup for reichstag power struggle if Schleicher is appointed chancellor
-Q.reichstag_struggle = 0;
+Q.reichstag_struggle = 1;
 Q.zentrum_spd_coop = 0;
 Q.zentrum_swr_coop = 0;
 Q.zentrum_sch_coop = 0;

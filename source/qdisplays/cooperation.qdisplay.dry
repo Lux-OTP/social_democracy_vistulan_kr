@@ -1,5 +1,7 @@
 
-(..0) obstructive
-(1..2) distrustful
-(3..4) warming up
-(5..6) cooperative
+(..1) <span style="color: #db2007;">distrustful</span>
+(2..3) <span style="color: #e8bf07;">receptive</span>
+(4..5) <span style="color: #87b509;">supportive</span>
+(6..) <span style="color: #1dc90a;">cooperative</span>
+
+# thank you mister modman

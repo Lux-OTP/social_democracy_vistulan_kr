@@ -103,7 +103,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if neorevisionism > 0 : Neorevisionist strength: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?]
 
-[? if reichstag_struggle : =  Struggle for Reichstag ?]
+[? if reichstag_struggle : =  Struggle for the Reichstag ?]
 
 [? if reichstag_struggle : **Z** SPD: [+ zentrum_spd_coop : cooperation +], Schleicher: [+ zentrum_sch_coop : cooperation +], SWR: [+ zentrum_swr_coop : cooperation +] ?]
 
