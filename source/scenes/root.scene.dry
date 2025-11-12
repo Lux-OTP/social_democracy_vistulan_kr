@@ -570,7 +570,9 @@ Q.march_on_berlin_timer = 0;
 
 
 // setup for reichstag power struggle if Schleicher is appointed chancellor
-Q.reichstag_struggle = 1;
+// is it active?
+Q.reichstag_struggle = 0;
+// progress for each party/faction (0-6)
 Q.zentrum_spd_coop = 0;
 Q.zentrum_swr_coop = 0;
 Q.zentrum_sch_coop = 0;
@@ -584,10 +586,24 @@ Q.minority_spd_coop = 0;
 Q.minority_swr_coop = 0;
 Q.minority_sch_coop = 0;
 
+// has the SPD did what each party/faction wants?
 Q.agrarians_pleased = 0;
 Q.minority_bloc_pleased = 0;
 Q.zentrum_pleased = 0;
 Q.lvp_pleased = 0;
+// has a given party/faction accepted cooperation with Schleicher/SPD/SWR? (once they accept it's permanent)
+Q.agrarians_cooperative_SWR = 0;
+Q.minority_bloc_cooperative_SWR = 0;
+Q.zentrum_cooperative_SWR = 0;
+Q.lvp_cooperative_SWR = 0;
+Q.agrarians_cooperative_SCH = 0;
+Q.minority_bloc_cooperative_SCH = 0;
+Q.zentrum_cooperative_SCH = 0;
+Q.lvp_cooperative_SCH = 0;
+Q.agrarians_cooperative_SPD = 0;
+Q.minority_bloc_cooperative_SPD = 0;
+Q.zentrum_cooperative_SPD = 0;
+Q.lvp_cooperative_SPD = 0;
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels

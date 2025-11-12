@@ -45,12 +45,14 @@ on-arrival: old_middle_spd += 5*(1-dissent); resources -= 1; old_middle_spd -= 3
 We have increased our campaigning among the old middle class. [? if nationalism >= 51 and peoples_party == 0: The high levels of nationalism among this group make our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
 
 @rural
-subtitle: -1 resources
+subtitle: -1 resources[? if reichstag_struggle : . Approaching the rural areas may help us sway loyalty of the agrarian parties. ?]
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: rural_spd += 5*(1-dissent); rural_spd -= 3*(1-dissent) if peoples_party == 0; resources -= 1; peoples_party_support += 1; rural_spd += 3*(1-dissent) if rural_policy >= 2
+on-arrival: rural_spd += 5*(1-dissent); rural_spd -= 3*(1-dissent) if peoples_party == 0; resources -= 1; peoples_party_support += 1; rural_spd += 3*(1-dissent) if rural_policy >= 2; agrarians_pleased = 1 if reichstag_struggle == 1
 
 We have increased our campaigning among farmers. [? if peoples_party == 0: We have not historically campaigned much among the farmers, and they do not trust us. ?][? if peoples_party > 0: As a people's party, we have an easier time increasing support among farmers than before. ?][? if rural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
+
+[? if reichstag_struggle : Additionally, we have made grassroots connections with the agrarian parties, promising a solution to the lingering agricultural problem. ?]
 
 @unemployed
 subtitle: -1 resources

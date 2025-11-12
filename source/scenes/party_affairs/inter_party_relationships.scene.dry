@@ -75,7 +75,7 @@ go-to: center_op if z_in_government = 1 and spd_in_government = 0; center_coalit
 @center_op
 on-arrival: z_relation += 5*(1 - dissent)
 
-We are currently in "permanent opposition" against Zentrum and their allies, making it difficult to mend relations.
+We are currently in "permanent opposition" to Zentrum and their allies, making it difficult to mend relations.
 
 @center_coalition
 on-arrival: z_relation += 8*(1 - dissent)
@@ -84,12 +84,12 @@ We are currently coalition partners with them, so improving relations comes natu
 
 @call_for_democracy
 view-if: n_elections <= 1 and schleicher_ousted != 1 and chancellor = "Schleicher"
-subtitle: -1 resources
-choose-if: resources >= 1
+subtitle: -2 resources
+choose-if: resources >= 2
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; z_relation += 5*(1 - dissent); lvp_relation += 5*(1 - dissent); minority_bloc_relation += 5*(1 - dissent); agrarians_relation += 5*(1 - dissent)
+on-arrival: resources -= 2; z_relation += 8*(1 - dissent); lvp_relation += 8*(1 - dissent); minority_bloc_relation += 8*(1 - dissent); agrarians_relation += 8*(1 - dissent)
 
-Appointment of Schleicher by Wilhelm II has caused turmoil in the parliament, making it easy for us to rally democratic parties of the Reichstag around us.
+Appointment of Schleicher by Wilhelm II poses a grave threat to german democracy. We rally the pro-democratic
 
 @liberals
 subtitle: -1 resources
