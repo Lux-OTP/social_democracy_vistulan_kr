@@ -103,7 +103,7 @@ on-arrival: pacifism += 1; nationalism -= 2*(1 - dissent); workers_spd += 4*(1 -
 
 Our speakers denounce the warhawks of the old military establishment and their aggression leading to incidents like the one at Lake Lubahn. Some adventurous speakers rail for rights of ethnic minorities of the Empire's borderlands, earning us cordiality of the more cooperative minority interest parties.
 
-[? if pacifism < 3 : Given the volume of nationalist indoctrination in our society, it is difficult to argue so vehemently against the military and overwhelming sense national pride. ?]
+[? if pacifism < 3 : Given the volume of nationalist indoctrination in our society, it is difficult to argue so vehemently against the military and overwhelming sense of national pride. ?]
 [? if pacifism >= 3 : Since we have consistently made pacifism a theme of our campaign, the workers are enthusiastic about our message. ?]
 
 @wtb

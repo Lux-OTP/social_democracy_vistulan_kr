@@ -18,6 +18,7 @@ The SPD is torn between many different ideological currents. What should be our 
 - @centrist: The Center Marxism of Karl Kautsky remains the best way to resolve our internal contradictions.
 - @labor: We should work with the trade unions to improve the lives of workers.
 - @reform: Following Eduard Bernstein, we should work for ethical socialism, strengthen democracy, and expand the party's electorate.
+- @social_patriotism: We should struggle for socialism within the German Empire, for the german people.
 - @easy_discard
 
 @class_struggle
@@ -26,10 +27,11 @@ if (Q.ideology && Q.ideology != "left") {
     Q.changed = 1;
 }
 !}
+view-if: neorevisionism == 1
 go-to: changed if changed = 1
 on-departure: ideology = "left"; neorevisionist_strength += 10; communist_coalition += 1; neorevisionist_dissent -= 5; z_relation -= 3; dvp_relation -= 5; nationalization_support += 1; kpd_relation += 3
 
-The radical left of the party supports a course of class struggle, and potentially a reconcilliation with the Communists.
+The neorevisionist radical left of the party supports a course of class struggle, and potentially a reconcilliation with the Socialists.
 
 @centrist
 on-arrival: {!
@@ -62,7 +64,20 @@ if (Q.ideology && Q.ideology != "reformist") {
 go-to: changed if changed = 1
 on-departure: ideology = "reformist"; staatspolitiker_strength += 10; democratization += 1; staatspolitiker_dissent -= 5; z_relation += 5; dvp_relation += 5; kpd_relation -= 8; moderate_plan_support += 1
 
-The reformist wing of the party seeks to preserve the Republic and the democratic system of government, and is most supportive of coalitions with the other pro-democracy parties.
+The reformist wing of the party seeks to preserve the Republic and the democratic system of government, and is most supportive of coalitions with the other pro-democracy parties. [? if reichstag_struggle : Empowering reformist politicians with history of cooperation with left liberals of the LVP helps with easing tensions during our coalition talks. ?]
+
+@social_patriotism
+on-arrival: {!
+if (Q.ideology && Q.ideology != "neoreformist") {
+    Q.changed = 1;
+}
+!}
+view-if: neoreformism == 1
+go-to: changed if changed = 1
+on-departure: ideology = "neoreformist"; neoreformist_strength += 10; communist_coalition += 1; neoreformist_dissent -= 5; sp_relation -= 3; nationalization_support += 1
+
+The recently empowered Hanover Group advocates for pursuit of social democracy under the imperial system and embracing of so-called social patriotism.
+
 
 @changed
 on-arrival: neorevisionist_dissent += 5; center_dissent += 5; labor_dissent += 5; staatspolitiker_dissent += 5
