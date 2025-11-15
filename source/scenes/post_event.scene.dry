@@ -401,6 +401,14 @@ if (Q.month_actions >= 1) {
         Q.unemployed_dvlp += 18/12;
         Q.sa_strength += 125/12;
         Q.sh_strength += 145/12;
+        if (Q.ruhrkampf == 1) {
+            Q.rfb_strength += 150/12;
+            Q.rfb_militancy += 0.15/12;
+            if (Q.works_program != 1) {
+                Q.rfb_strength += 50/12;
+                Q.rfb_militancy += 0.05/12;
+            }
+        }
     } else if (Q.year == 1937) {
         Q.rural_dvlp += 3/12;
         Q.rural_dkp += 5/12
@@ -425,6 +433,14 @@ if (Q.month_actions >= 1) {
         Q.sh_strength += 190/12;
         Q.sa_militancy += 0.1/12;
         Q.sh_militancy += 0.1/12;
+        if (Q.ruhrkampf == 1) {
+            Q.rfb_strength += 200/12;
+            Q.rfb_militancy += 0.15/12;
+            if (Q.works_program != 1) {
+                Q.rfb_strength += 100/12;
+                Q.rfb_militancy += 0.15/12;
+            }
+        }
     } else if (Q.year == 1938) {
         Q.catholics_z += 2/12;
         Q.rural_dvp -= 8/12;
@@ -438,6 +454,18 @@ if (Q.month_actions >= 1) {
         Q.rural_other -= 5/12;
         Q.rural_dvlp += 9/12;
         // TODO: economic policies should reduce dvlp rurals
+        if (Q.ruhrkampf == 1) {
+            Q.rfb_strength += 50/12;
+            Q.rfb_militancy += 0.05/12;
+            if (Q.works_program != 1) {
+                Q.rfb_strength += 25/12;
+                Q.rfb_militancy += 0.10/12;
+            }
+            if (Q.works_program != 1 && Q.unemployed >= 15) {
+                Q.rfb_strength += 50/12;
+                Q.rfb_militancy += 0.15/12;
+            }
+        }
         if (!Q.works_program) {
             Q.old_middle_lvp -= 6/12;
             Q.new_middle_lvp -= 6/12;

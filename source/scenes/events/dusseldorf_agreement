@@ -35,11 +35,11 @@ Following prolonged and exhaustive talks between [+ chancellor +] cabinet and th
 [? if year == 1936 : Owing to labor's resolve in face of the economic crisis, the workers found themselves in a strong position during the negotiations. ?]
 [? if year == 1937 : Despite the strike becoming an increasingly harsh burden to the workers, they have held their line so far and took an assertive stance throughout the negotiations. ?]
 [? if year == 1938 : Prolonged economic hardship and rising fears of an intervention by the german armed forces have made calls for a quick end to the strike increasingly common. As a result, government delegates took a harsh line throughtout the negotiations. ?]
-[? if year >= 1939 : The strike has largely died out by now, and the agreement is more or less an act of capitulation in face of an inevitable government crackdown. ?]
+[? if year >= 1939 : The strike has largely died out by now, and the agreement is mostly dictated by the government delegates. ?]
 
 Despite the tensions between workers and the police, [? if rfb_militancy >= 0.44 : resulting in outbursts of violence in some places,  ?]negotiations proceeded surprisingly peacefully, and at the end of the day...
 
-- @good_dusseldorf: ...the workers' representatives secured wide array of concessions from the government.
+- @good_dusseldorf: ...the workers' representatives secured a wide array of concessions from the government.
 - @mid_dusseldorf: ...both sides met in the middle of the road.
 - @bad_dusseldorf: ...the strike has failed to achieve many of its initial goals.
 
@@ -57,6 +57,6 @@ workers can feed either themselves or their kids, can't win them all
 
 @bad_dusseldorf
 view-if: government_position >= strikers_position*1.2
-on-arrival: workers_spd -= 3; unemployed_spd -= 3; new_middle_spd -= 2
+on-arrival: workers_spd -= 3; unemployed_spd -= 3; new_middle_spd -= 2; workers_spd -= 3 if spd_in_government; unemployed_spd -= 3 if spd_in_government; new_middle_spd -= 2 if spd_in_government; ruhrkampf = 0; rfb_strength = 0; rfb_militancy = 0
 
 honestly what the actual fuck
