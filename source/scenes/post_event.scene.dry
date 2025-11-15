@@ -190,7 +190,7 @@ if (Q.month_actions >= 1) {
         Q.economic_growth -= 0.3;
     }
 
-//// Reichstag struggle mechanic: every month Schleicher and SWR improve party_swr/sch_coop, once it reaches 6 a party is considered courted
+//// Reichstag struggle mechanic: every month Schleicher and SWR improve party_swr_coop/party_sch_coop, once it reaches 6 a party is considered courted
     if (Q.reichstag_struggle == 1) {
         if (Q.zentrum_sch_coop <= 5) {
             Q.zentrum_sch_coop += 1;
@@ -207,10 +207,10 @@ if (Q.month_actions >= 1) {
         if (Q.agrarians_swr_coop <= 5) {
             Q.agrarians_swr_coop += 1;
         }
-        else if (Q.zentrum_swr_coop <= 5) {
+        else if (Q.zentrum_swr_coop <= 5.5) {
             Q.zentrum_swr_coop += 0.5;
         }
-        else if (Q.lvp_swr_coop <= 5) {
+        else if (Q.lvp_swr_coop <= 5.5) {
             Q.lvp_swr_coop += 0.5;
         }
         else if (Q.minority_bloc_swr_coop <= 2) {
@@ -252,26 +252,33 @@ if (Q.month_actions >= 1) {
         if (Q.minority_bloc_pleased == 1) {
             minority_spd_coop += 1;
         }
-        if (Q.agrarians_sch_coop == 6) {
+        if (Q.agrarians_sch_coop == 6 && Q.agrarians_cooperative_SCH != 1) {
             Q.agrarians_cooperative_SCH = 1;
+            Q.struggle_schleicher_coalition += agrarians_r;
         }
-        if (Q.agrarians_swr_coop == 6) {
+        if (Q.agrarians_swr_coop == 6 && Q.agrarians_cooperative_SWR != 1) {
             Q.agrarians_cooperative_SWR = 1;
+            Q.struggle_right_coalition += agrarians_r;
         }
-        if (Q.lvp_sch_coop == 6) {
+        if (Q.lvp_sch_coop == 6 && Q.lvp_cooperative_SCH != 1) {
             Q.lvp_cooperative_SCH = 1;
+            Q.struggle_schleicher_coalition += lvp_r;
         }
-        if (Q.lvp_swr_coop == 6) {
+        if (Q.lvp_swr_coop == 6 && Q.lvp_cooperative_SWR != 1) {
             Q.lvp_cooperative_SWR = 1;
+            Q.struggle_right_coalition += lvp_r;
         }
-        if (Q.zentrum_sch_coop == 6) {
+        if (Q.zentrum_sch_coop == 6 && Q.zentrum_cooperative_SCH != 1) {
             Q.zentrum_cooperative_SCH = 1;
+            Q.struggle_schleicher_coalition += z_r;
         }
-        if (Q.zentrum_swr_coop == 6) {
+        if (Q.zentrum_swr_coop == 6 && Q.zentrum_cooperative_SWR != 1) {
             Q.zentrum_cooperative_SWR = 1;
+            Q.struggle_right_coalition += z_r;
         }
-        if (Q.minority_sch_coop == 6) {
+        if (Q.minority_sch_coop == 6 && Q.minority_cooperative_SCH != 1) {
             Q.minority_cooperative_SCH = 1;
+            Q.struggle_schleicher_coalition += minority_bloc_r;
         }
     }
 

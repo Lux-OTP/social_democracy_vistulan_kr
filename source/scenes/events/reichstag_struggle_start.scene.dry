@@ -1,7 +1,25 @@
 title: Struggle for the Reichstag
 view-if: chancellor == "Schleicher"
 max-visits: 1
-on-arrival: reichstag_struggle = 1; zentrum_sch_coop = 2; zentrum_spd_coop = 2; zentrum_swr_coop = 1; lvp_sch_coop = 1; lvp_spd_coop = 3; lvp_swr_coop = 0; agrarians_sch_coop = 2; agrarians_spd_coop = 1; agrarians_swr_coop = 2; minority_sch_coop = 1; minority_spd_coop = 2; minority_swr_coop = 0
+on-arrival: {!
+
+Q.reichstag_struggle = 1;
+Q.zentrum_sch_coop = 2;
+Q.zentrum_spd_coop = 2;
+Q.zentrum_swr_coop = 1;
+Q.lvp_sch_coop = 1;
+Q.lvp_spd_coop = 3;
+Q.lvp_swr_coop = 0;
+Q.agrarians_sch_coop = 2;
+Q.agrarians_spd_coop = 1;
+Q.agrarians_swr_coop = 2;
+Q.minority_sch_coop = 1;
+Q.minority_spd_coop = 2;
+Q.minority_swr_coop = 0;
+Q.struggle_right_coalition = Q.dkp_r + Q.dvlp_r;
+Q.struggle_schleicher_coalition = 0;
+
+!}
 
 = Struggle for the Reichstag
 

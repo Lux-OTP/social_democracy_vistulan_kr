@@ -1,18 +1,18 @@
-title: Hitler takes power.
+title: Black-White-Red Coalition forms a government
 subtitle: The beginning of the end.
-view-if: chancellor == "Hitler" or president == "Hitler" or chancellor_party == "NSDAP"
+view-if: struggle_right_coalition >= 50 or chancellor == "Hitler" 
 on-arrival: spd_in_government = 0
 tags: event
 new-page: true
 
 [? if hitler_deported and president != "Hitler" and chancellor != "Hitler": The first act that Chancellor [+ chancellor +] takes upon assuming office is bringing Adolf Hitler back to Germany, and giving him citizenship and an official cabinet position. ?]
 
-Hitler has promised a campaign of revenge against the socialists, and the Nazis have already spilled much blood on the streets. In his published manifesto, he promises a campaign of unspeakable horror against our Jews, and endless wars of violent expansion that will ruin all of Europe.
+DVLP has promised a campaign of revenge against the socialists[? if ruhrkampf : , and workers in the Ruhr strike are already being met with increased police brutality and mass arrests ?]. WIP
 
 What are we to do now?
 
-- @fight: We will fight on the streets to prevent Hitler from taking power.
-- @give_up: We will vote against the nazis in the Reichstag.
+- @fight: We will fight on the streets to prevent the far-right from taking power.
+- @give_up: We will vote against them in the Reichstag.
 
 
 @fight
