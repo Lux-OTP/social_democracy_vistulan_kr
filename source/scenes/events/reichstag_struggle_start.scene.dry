@@ -7,6 +7,15 @@ Q.reichstag_struggle = 1;
 Q.zentrum_sch_coop = 2;
 Q.zentrum_spd_coop = 2;
 Q.zentrum_swr_coop = 1;
+if (z_party_leader == "stegerwald") {
+    Q.zentrum_sch_coop += 1;
+}
+if (z_party_leader == "schaffer") {
+    Q.zentrum_swr_coop += 1;
+}
+if (z_party_leader == "ulitzka") {
+    Q.zentrum_spd_coop += 1;
+}
 Q.lvp_sch_coop = 1;
 Q.lvp_spd_coop = 3;
 Q.lvp_swr_coop = 0;

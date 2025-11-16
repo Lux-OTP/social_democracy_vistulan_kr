@@ -15,7 +15,7 @@ The consensus candidate on the center is Adam Stegerwald, Schleicher-aligned tra
 
 - @kaas: The Center Party elects Stegerwald as the party chair.
 - @joos: The Center Party elects Schäffer as the party chair.
-- @joos_campaign: We must hold a campaign in support of Ulitzka as party chair.
+- @joos_campaign: We hold a campaign in support of Ulitzka as party chair.
 
 @kaas
 choose-if: z_relation >= 30 and (z_relation < 62 or resources < 1)
@@ -27,12 +27,12 @@ Adam Stegerwald has been elected as the party chairman. Hostility shown to the C
 choose-if: z_relation < 30
 on-arrival: z_party_leader = "schaffer"; z_relation -= 10; catholics_dkp += 2; catholics_dvlp += 2; workers_z -= 3
 
-In a shocking turn of events, Center Party has elected Fritz Schäffer as the party chairman. His hardline conservatism and opposition to the SPD will make further cooperation with the party difficult, if not impossible. His election brings center-right voters closer to the Schweiz-Weiß-Rot coalition, and causes controversy among catholic workers.
+In a shocking turn of events, Center Party has elected Fritz Schäffer as the party chairman. His hardline conservatism and opposition to the SPD will make further cooperation with the party difficult, if not impossible. His election brings center-right voters closer to the Schwerz-Weiß-Rot coalition, and causes controversy among catholic workers.
 
 @joos_campaign
 choose-if: z_relation >= 62 and resources >= 1
 unavailable-subtitle: [? if z_relation <= 62 : Our relations are not good enough. ?] [? if resources < 1 : We do not have enough resources. ?]
 subtitle: -1 resource. Ulitzka is likely to be friendlier to us than Stegerwald or Schäffer.
-on-arrival: resources -= 1; z_party_leader = "Ulitzka"; catholics_spd += 5; workers_z += 3
+on-arrival: resources -= 1; z_party_leader = "ulitzka"; catholics_spd += 5; workers_z += 3
 
-With our grassroots connections as well as a professional campaign, we have been able to influence the Center delegates to support Carl Ulitzka as the new Center chairman. He will be more inclined to collaborate with us compared to other candidates. He also increases the appeal of the Center Party to the working class.
+With our grassroots connections as well as a professional campaign, we have been able to influence the Center delegates to support Carl Ulitzka as the new party chairman. He will be more inclined to collaborate with us compared to other candidates. He also increases the appeal of the Center Party to the working class.

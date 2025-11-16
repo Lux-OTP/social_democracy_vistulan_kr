@@ -135,6 +135,7 @@ Q.heer_research = 0;
 // Reichsbanner, stahlhelm, SA, rotfrontkämpferbund
 // RB will be used for RAVB (ruhr defense association)
 // RFB will be used as the ruhrkampf forces
+// Whenever anything is added to RB, subtract from RFB and vice versa
 // SA will be the Moscow Accords
 // SH will be the 3I
 // should add Entente, might just make it something diff tho idk

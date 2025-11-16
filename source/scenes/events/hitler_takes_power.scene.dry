@@ -4,10 +4,11 @@ view-if: struggle_right_coalition >= 50 or chancellor == "Hitler"
 on-arrival: spd_in_government = 0
 tags: event
 new-page: true
+max-visits: 1
 
-[? if hitler_deported and president != "Hitler" and chancellor != "Hitler": The first act that Chancellor [+ chancellor +] takes upon assuming office is bringing Adolf Hitler back to Germany, and giving him citizenship and an official cabinet position. ?]
+Seeing our inability
 
-DVLP has promised a campaign of revenge against the socialists[? if ruhrkampf : , and workers in the Ruhr strike are already being met with increased police brutality and mass arrests ?]. WIP
+DVLP has promised a campaign of revenge against the socialists[? if ruhrkampf : , and workers participating in the Ruhr strike are already being met with increased police brutality and mass arrests ?]. With the german political landscape shifting to the right,
 
 What are we to do now?
 
@@ -22,12 +23,9 @@ Do we realize that this means civil war, against the full force of the state?
 - @civil_war: Yes.
 - @give_up: We are not ready for war. Instead, we will vote against the nazis in the Reichstag.
 
-@give_up
+@persevere
+subtitle: The democratic system is not yet lost.
 
-Speeches are made. Votes are held. Bullets fly in the streets. Some socialists are killed or jailed. Others flee the country. What can votes even do at this juncture?
+Many within our party believe the DkP and especially the DVLP to be unable to govern in a coalition with more moderate, pro-democratic parties. Hopes of forming a new government to replace chancellor [+ chancellor +] are currently high.
 
-The Reichstag is burned, ostensibly by a foreign communist. In the wake, the Nazis pass decrees giving them unlimited power. They, combined with the DNVP, will win a majority at the next elections.
-
-Germany is lost.
-
-- @game_over: Game over.
+The alternative is a return to the anti-socialist laws and harsh persecution of our movement.

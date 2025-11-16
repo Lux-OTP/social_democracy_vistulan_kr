@@ -17,8 +17,7 @@ As with the state police units and the Heer, the internal police tends to be rea
 - @investigate_far_right: Investigate illegal activity among the far right.
 - @domestic_enemies: Investigate or ban our domestic enemies.
 - @establish_abteilung_3: Establish Abteilung III.
-- @operation_euler: Draft plans for sabotage operation in France.
-- @deport_hitler
+- @operation_euler: Draft plans for a sabotage operation in France.
 - @root: Take no action for now.
 - @easy_discard
 - @cancel_advisor_action

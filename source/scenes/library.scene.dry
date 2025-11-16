@@ -23,11 +23,11 @@ Herein contains relevant information about the government and politics of the Ge
 @government
 go-to: menu
 
-The German Republic, called by some of our detractors as the "Weimar Republic", is a parliamentary republic with a somewhat weak president and a strong parliament, called the Reichstag. The Reichstag is responsible for governing, while the President has a largely ceremonial role but also has some important governing responsibilities.
+The German Empire, sometimes referred to as "Kaiserreich", is a constitutional monarchy with a somewhat weak monarch and a strong parliament, called the Reichstag. The Reichstag is responsible for governing, while the Kaiser has a largely ceremonial role but also has some important governing responsibilities.
 
 The Reichstag is elected based on a proportional representation system, giving parties seats roughly proportional to their vote share in each electoral district. The Reichstag then elects the Chancellor and the cabinet by a majority vote, who are responsible for government. A majority vote-of-no-confidence can remove the current government.
 
-The President is elected by a national direct vote, in two rounds. The second round is used if the first round does not result in a majority for one candidate; the candidate who receives a plurality in the second round becomes president (there is no obligation for weaker candidates to drop out). The role of the president is mostly to represent Germany, but he also has some crucial governing powers. The president and chancellor can together use emergency decrees to govern, bypassing the Reichstag. The president can also appoint or remove a chancellor when a parliamentary majority is unable to be established, and can thus influence the formation of a government.
+The Kaiser is the hereditary position of the head of the state. Despite his influence being highly curtailed by the Reichstag, he still retains some powers, such as appointing the chancellor, leading
 
 Germany is divided into a number of states, each of which have their own governments with some responsibilities. By far the largest and most important state is Prussia.
 
@@ -144,7 +144,7 @@ set-jump: election_projections
 
 #Support for Nationalism: [+ nationalism +]%
 
-Support for the Republic: [+ pro_republic_disp +]%
+Support for parliamentarianism: [+ pro_republic_disp +]%
 
 
 @election_projections
@@ -203,7 +203,7 @@ go-to: menu
 Current relations: [+ z_relation : relationships +]
 
 # TODO: replace this with the german state party after 1930
-**LVP** - *Liberale Volkspartei* (Liberal People's Party) - a center to center-left liberal party, popular among the intelligensia and educated middle class. They have often been in coalitions with us.
+**LVP** - *Liberale Volkspartei* (Liberal People's Party) - leading german liberal party, popular among the intelligensia and educated middle class. They have often been in coalitions with us.
 
 Current relations: [+ lvp_relation : relationships +]
 
@@ -219,7 +219,7 @@ Current relations: [+ dkp_relation : relationships +]
 
 **SP** - *Sozialistische Partei* (Socialist Party) - a radical left-wing offshoot of the SPD that emerged in the aftermath of the September Insurrections.
 
-Current relations: [+ kpd_relation : relationships +]
+Current relations: [+ sp_relation : relationships +]
 
 [? if sapd_formed: SAPD - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Germany) - a party recently formed in a split from the SPD, the SAPD is essentially an agglomeration of various left-wing splinter groups between the SPD and KPD. ?]
 
