@@ -21,7 +21,12 @@ Younger members of the SPD, among them many respected weltkrieg veterans, have b
 - @easy_discard
 
 @support_neorev
-on-arrival: neorevisionist_strength += 10; center_strength += 5; nazi_urgency += 1; neorevisionism = 1
+on-arrival: {!
+Q.neorevisionist_strength *= (0.5*Q.center_strength);
+Q.center_strength += 5;
+Q.nazi_urgency +=1;
+Q.neorevisionism = 1;
+!}
 choose-if: center_strength >= 40 and staatspolitiker_strength < 10
 
 We support the new leaders, and start reintroducing more orthodox marxist rhetoric in our campaigns while rallying against reactionary parties within the Reichstag. The results are uncertain so far...
@@ -30,7 +35,12 @@ We support the new leaders, and start reintroducing more orthodox marxist rhetor
 - @root: Continue...
 
 @support_neoref
-on-arrival: neoreformist_strength += 10; staatspolitiker_strength += 5; neoreformism = 1
+on-arrival: {!
+Q.neoreformist_strength *= (0.5*Q.staatspolitiker_strength);
+Q.staatspolitiker_strength += 5;
+Q.neoreformism = 1;
+Q.people;
+!}
 choose-if: center_strength < 10 and staatspolitiker_strength >= 40
 
 We support the new leaders, and put democratization and antiauthoritarianism at the center of our campaign efforts.

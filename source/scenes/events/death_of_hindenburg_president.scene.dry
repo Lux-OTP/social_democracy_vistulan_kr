@@ -76,7 +76,7 @@ max-visits: 1
 go-to: weltkrieg_menu
 on-arrival: weltkrieg_choices += 1
 
-We order Oststaats to delay the russian advance until Heer mobilizes enough men. Their armies will have to hold out long enough for our forces to defeat the western syndicalist powers. Hopefully they will buy us enough time.
+We order the Oststaats to delay the russian advance until Heer mobilizes enough men. Their armies will have to hold out long enough for our forces to defeat the western syndicalist powers. Hopefully they will buy us enough time.
 
 [? if ukraine_revolt and not belarus_revolt : Unfortunately, fractures created in the Reichspakt in the aftermath of the Black Monday are hindering our resistance. ?]
 
