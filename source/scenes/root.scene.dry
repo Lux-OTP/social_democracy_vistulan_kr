@@ -161,6 +161,12 @@ Q.rfb_banned_prussia = 0;
 Q.ruhrkampf_agreement = 0;
 Q.russia_sanctions_seen = 0;
 
+// civil war allegiances
+Q.fight_for_germany = 0;
+Q.fight_for_republic = 0;
+Q.fight_for_socialism = 0;
+Q.do_not_fight = 0;
+
 Q.interior_police_strength = 50;
 Q.interior_police_militancy = 1;
 Q.interior_police_loyalty = 0.45;
