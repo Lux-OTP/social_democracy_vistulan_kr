@@ -62,7 +62,7 @@ What exactly are we fighting for?
 - @civil_war_socialism: For the revolution against the corrupt bourgeois democracy.
 
 @civil_war_germany
-choose-if: neoreformist_strength + staatspolitiker_strength > center_strength += neorevisionist_strength and (z_relation >= 40 and lvp_relation >= 40)
+choose-if: (neoreformist_strength + staatspolitiker_strength) > (center_strength + neorevisionist_strength) and (z_relation >= 40 and lvp_relation >= 40)
 on-arrival: {!
 
 Q.fight_for_germany = 1;
