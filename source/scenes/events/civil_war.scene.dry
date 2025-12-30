@@ -69,7 +69,7 @@ What exactly are we fighting for?
 
 @civil_war_germany
 choose-if: (center_strength >= 25 or neoreformist_strength >= 25) and (z_relation >= 40 or lvp_relation >= 40 or reichswehr_loyalty >= 0.3) and (neorevisionist_strength < 25 and center_strength < 25)
-unavailable-subtitle: [? if center_strength < 25 and neoreformist_strength < 25 : The reformist wing of our party isn't strong enough to rally our forces behind the German Empire. ?][? if z_relation < 40 and lvp_relation < 40 reichswehr_loyalty < 0.3 : Forces of the <span style="color: #81878aff;">**state**</span> see us as their foes ?]
+unavailable-subtitle: [? if center_strength < 25 and neoreformist_strength < 25 : The reformist wing of our party isn't strong enough to rally our forces behind the German Empire. ?][? if z_relation < 40 and lvp_relation < 40 and reichswehr_loyalty < 0.3 : Forces of the <span style="color: #81878aff;">**state**</span> see us as their foes ?]
 on-arrival: fight_for_germany = 1
 
 @civil_war_republic
@@ -112,13 +112,13 @@ The SPD calls upon its supporters to lay down their arms and stay out of the upc
 max-visits: 1
 go-to: war_menu_2
 on-arrival: war_choices += 1
-view-if: fight_for_germany == 0
+view-if: fight_for_germany == 0 and do_not_fight == 0
 
 We have urged the Heer to join our ranks, to avoid killing their countrymen fighting against [? if fight_for_republic : the oppressive monarchy ?][? if fight_for_socialism : the bourgeois democracy ?]. [? if reichswehr_loyalty < 0.2 : Unfortunately, few heed our calls; the soldiers detest us. ?][? if reichswehr_loyalty >= 0.2 and reichswehr_loyalty < 0.4 : Some officers and troops heed our calls to not fight against us. Some even join us. ?][? if reichswehr_loyalty >= 0.4 and reichswehr_loyalty < 0.6 : The Reichswehr is split. Many avoid taking a side, or join our side. ?][? if reichswehr_loyalty >= 0.6 : Surprisingly, the majority of the Reichswehr is on our side! Our preparations have worked. ?]
 
 @kpd_help
 max-visits: 1
-view-if: chancellor_party != "SP" and president != "Thälmann" 
+view-if: chancellor_party != "SP" and president != "Thälmann" and do_not_fight == 0 
 go-to: war_menu_2
 on-arrival: war_choices += 1
 
@@ -128,6 +128,7 @@ There are [+ rfb_strength +] thousand fighters with the Communist RFB, in additi
 
 @general_strike
 max-visits: 1
+view-if: do_not_fight == 0
 go-to: war_menu_2
 on-arrival: war_choices += 1
 
@@ -138,7 +139,7 @@ A general strike is considered an unthinkable option in german politics, however
 max-visits: 1
 go-to: war_menu_2
 on-arrival: war_choices += 1
-view-if: spd_prussia = 1
+view-if: spd_prussia = 1 and do_not_fight == 0
 
 Since we still control the Prussian government, we can call upon the Prussian police. [? if prussian_police_loyalty < 0.4 : Unfortunately, the police are politically unreliable at best. ?][? if prussian_police_loyalty >= 0.4 and prussian_police_loyalty < 0.65 : In this crucial hour, the Prussian police are split, with about half actively supporting our efforts. ?][? if prussian_police_loyalty >= 0.65 : Most join in supporting our efforts. Our efforts in cultivating republican loyalties in the police have proven their worth. ?]
 
@@ -154,7 +155,7 @@ on-arrival: war_choices += 1;
 
 
 @war_outcome
-view-if: war_choices >= 2
+view-if: war_choices >= 2 or do_not_fight == 1
 on-arrival: {!
 
 if (Q.fight_for_germany == 1) {

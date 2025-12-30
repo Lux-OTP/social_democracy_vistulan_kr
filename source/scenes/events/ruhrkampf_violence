@@ -22,10 +22,15 @@ How should we respond?
 
 
 @decrease_police
+unavailable_subtitle: We don't control the interior ministry.
+choose-if: interior_minister_party "SPD"
+on-arrival:  prussian_police_militancy -= 0.05 if prussian_police_loyalty > 0.75; prussian_police_loyalty -= 0.07; coalition_dissent += 1; rfb_militancy += 0.05
 # decrease police loyalty on arrival, reduce police militancy if loyalty is high enough, +coalition dissent
 
 @crackdown
+on-arrival: sp_relation -= 15; workers_spd -= 8, unemployed_spd -= 8; center_dissent += 15; jungturken_dissent += 20; rfb_strength += 25; rfb_militancy -= 0.05
 # decrease SP relation, decrease agitation but reduce worker's and unemployed spd support, flip them to sp and dvlp (dkp?)
 
 @support_the_workers
+on-arrival: sp_relation += 5; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); prussian_police_militancy -= 0.03 if prussian_police_loyalty > 0.75; prussian_police_loyalty -= 0.1; coalition_dissent += 2
 # increase strikers numbers, +2 coalition dissent, increase militancy by further 0.05, increase bf strength to answer, if in control of interior ministry apply decrease police effects but more severe penalties and less rewards
