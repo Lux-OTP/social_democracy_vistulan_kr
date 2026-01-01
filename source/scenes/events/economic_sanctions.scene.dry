@@ -26,13 +26,13 @@ While we can't send our troops to handle the situation like during the fallout o
 view-if: spd_in_government == 0
 on-arrival: economic_growth -= 1.5; ostwall_strength -= 25; ostwall_loyalty -= 0.05; sa_militancy -= 0.10; sa_strength -= 50
 
-[+ chancellor +]'s government answers by urging Mitteleuropa to impose an embargo on Russia. While this measure succeeds in weakening the russian economy, it doesn't help to ease the impact this crisis has on our economy. Additionally, most of the burden of the sanctions falls on our eastern european allies.
+[+ chancellor +]'s government answers by urging Mitteleuropa to impose an embargo on Russia. While this measure succeeds in weakening the russian economy, it doesn't ease the impact this crisis has on our economy. Additionally, most of the burden of the sanctions falls on our eastern european allies.
 
 @russia_nothing_we_can_do_govt
 view-if: spd_in_government == 1
 on-arrival: economic_growth -= 1.5; inflation -= 0.2; new_middle_spd -= 3*(1-dissent); old_middle_spd -= 3*(1-dissent); workers_spd -= 3; unemployed_spd -= 3
 
-We remain apathetic to the crisis. German-owned industries in Russia are no more, unlike the popular distaste caused by our inaction. 
+We remain apathetic to the crisis. Many german industries in Russia are no more, unlike the popular distaste caused by our inaction. 
 
 @compensate
 view-if: spd_in_government == 1
@@ -70,6 +70,6 @@ Fearing the Heer's military might, the russian government quickly backs down fro
 unavailable-subtitle: Ukrainian opposition renders this motion impossible.
 view-if: spd_in_government == 1
 choose-if: ukraine_revolt == 0
-on-arrival: ostwall_loyalty -= 0.1; inflation += 0.2; economic_growth -= 1.5; sa_militancy -= 0.05; sa_strength -= 50
+on-arrival: ostwall_loyalty -= 0.1; inflation -= 0.2; economic_growth -= 1.5; sa_militancy -= 0.05; sa_strength -= 50
 
 We call for members of Mitteleuropa to impose sanctions on Russia. While the russian economy is noticeably shaken by our actions, our eastern european allies are forced to suffer most of the economic hardships. The sanctions are also detrimental to the already struggling german economy.
